@@ -6,8 +6,24 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: showcase
-    label: Showcase
+  - name: settings
+    label: Settings
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: general
+        label: Site settings
+        description: General site settings
+        file: src/global/settings.json
+        fields:
+          - {label: Global title, name: 'site_title', widget: string, default: Eskon}
+          - {label: Showcase settings, name: showcase, widget: object, fields: [{label: Number of showcase items on frontpage, name: front_limit, widget: number, min: 3, max: 12}]}
+  - name: showcases
+    label: Showcases
+    label_singular: showcase
+    description: >
+      Description to be added
     folder: src/pages/showcase
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -17,6 +33,7 @@ collections:
 
   - name: pages
     label: Pages
+    delete: false
     files:
       - file: src/pages/index.md
         label: Strona głowna
