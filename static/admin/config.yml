@@ -6,10 +6,51 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "showcase"
-    label: "Showcase"
-    folder: "src/pages/showcase"
+  - name: showcase
+    label: Showcase
+    folder: src/pages/showcase
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "showcase-post"}
+      - {label: Template Key, name: templateKey, widget: hidden, default: showcase-posts}
+      - {label: Title, name: title, widget: string}
+
+  - name: pages
+    label: Pages
+    files:
+      - file: src/pages/index.md
+        label: Strona głowna
+        name: index
+        fields:
+          - {label: Template Key, name: templateKey, widget: hidden, default: index-page}
+          - {label: Title, name: title, widget: string}
+      - file: src/pages/domy-pod-klucz/index.md
+        label: Domy pod klucz
+        name: domy-pod-klucz
+        fields:
+          - {label: Template Key, name: templateKey, widget: hidden, default: domy-pod-klucz}
+          - {label: Title, name: title, widget: string}
+      - file: src/pages/uslugi-inzynieryjne/index.md
+        label: Usługi inżynieryjne
+        name: uslugi-inzynieryjne
+        fields:
+          - {label: Template Key, name: templateKey, widget: hidden, default: uslugi-inzynieryjne}
+          - {label: Title, name: title, widget: string}
+      - file: src/pages/realizacje/index.md
+        label: Realizacje
+        name: realizacje
+        fields:
+          - {label: Template Key, name: templateKey, widget: hidden, default: relizacje}
+          - {label: Title, name: title, widget: string}
+      - file: src/pages/o-nas/index.md
+        label: O nas
+        name: o-nas
+        fields:
+          - {label: Template Key, name: templateKey, widget: hidden, default: o-nas}
+          - {label: Title, name: title, widget: string}
+      - file: src/pages/kontakt/index.md
+        label: Kontakt
+        name: kontakt
+        fields:
+          - {label: Template Key, name: templateKey, widget: hidden, default: kontakt}
+          - {label: Title, name: title, widget: string}
