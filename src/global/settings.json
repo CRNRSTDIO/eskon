@@ -1,0 +1,31 @@
+{
+  "site_title": "ESKON",
+  "showcase": {
+    "front_limit": 3
+  },
+  "footer_cta": {
+    "heading": "W czym możemy Tobie pomóc",
+    "body": "Będziemy solidnym wsparciem na każdym etapie prac budowlanych.",
+    "cta": "Napisz do nas"
+  },
+  "footer": {
+    "columns": [
+      {
+        "body": "**Eskon** \n\nPrzedsiębiorstwo budowlane\n\nSzymon Siemiński\n\nJanickiego 16a\n\n71-020 Szczecin"
+      },
+      {
+        "body": "Skontaktuj się \n\np. [+48 601 858 412](<tel: +48 601 858 412>)\n\nm. [biuro@eskon.com.pl ](<mailto: biuro@eskon.com.pl>)"
+      }
+    ]
+  },
+  "footer_notes": {
+    "notes": [
+      {
+        "note": "[Polityka Prywatności](/pp)"
+      },
+      {
+        "note": "Wszystkie prawa zastrzeżone © Eskon 2019"
+      }
+    ]
+  }
+}
