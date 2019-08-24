@@ -1,4 +1,5 @@
 ---
+templateKey: index-page
 title: Strona główna
 landing:
   box01:
@@ -16,7 +17,7 @@ section01:
   body: >-
     Jesteśmy przedsiębiorstwem dostarczającym wszelkiej maści usługi budowlane.
     Rozwiązujemy problemy konstrukcyjne zarówno prywatnych inwestorów jak i
-    klientów biznesowych. 
+    klientów biznesowych.
   heading: Nowoczesne rozwiązania dla Twojej firmy i dla Twojego domu
 section02:
   body: >-
@@ -49,4 +50,3 @@ section03:
     - body: 'Podłączanie do sieci prądu, gazu, wody itd.'
       heading: Instalacje mediów
 ---
-

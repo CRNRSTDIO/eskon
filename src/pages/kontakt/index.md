@@ -1,4 +1,5 @@
 ---
+templateKey: kontakt
 title: Kontakt
 section01:
   body: |-
@@ -10,4 +11,3 @@ section02:
   body: Skorzystaj z poniższego formularza
   heading: Napisz do nas
 ---
-
