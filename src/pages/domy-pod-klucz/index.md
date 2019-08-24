@@ -3,8 +3,10 @@ landing:
   body: >-
     Jesteśmy po to aby służyć Ci pomocą i doradztwem w realizacji Twojego
     przyszłego domu od fundamentów po wykończenie - gwarantując, że cały proces
-    budowy będzie kontrolowany. Oszczędzimy zarówno Twój czas jak i pieniądze
-    poprzez organizację i optymalizacje kosztów.
+    budowy będzie kontrolowany.
+
+    Oszczędzimy zarówno Twój czas jak i pieniądze poprzez organizację i
+    optymalizacje kosztów.
   cta: Dowiedz się więcej
   heading: Twój wymarzony dom  w technologii energooszczędnej
 section01:
