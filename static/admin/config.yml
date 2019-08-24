@@ -171,6 +171,10 @@ collections:
         label: Strona głowna
         name: index
         fields:
+          - label: templateKey
+            name: templateKey
+            widget: hidden
+            default: index-page
           - label: Title
             name: title
             widget: string
@@ -232,6 +236,10 @@ collections:
         label: Domy pod klucz
         name: domy-pod-klucz
         fields:
+          - label: templateKey
+            name: templateKey
+            widget: hidden
+            default: domy-pod-klucz
           - label: Title
             name: title
             widget: string
@@ -271,6 +279,10 @@ collections:
         label: Usługi inżynieryjne
         name: uslugi-inzynieryjne
         fields:
+          - label: templateKey
+            name: templateKey
+            widget: hidden
+            default: uslugi-inzynieryjne
           - label: Title
             name: title
             widget: string
@@ -312,6 +324,10 @@ collections:
         label: Realizacje
         name: realizacje
         fields:
+          - label: templateKey
+            name: templateKey
+            widget: hidden
+            default: realizacje
           - label: Title
             name: title
             widget: string
@@ -320,6 +336,10 @@ collections:
         label: O nas
         name: o-nas
         fields:
+          - label: templateKey
+            name: templateKey
+            widget: hidden
+            default: o-nas
           - label: Title
             name: title
             widget: string
@@ -354,6 +374,10 @@ collections:
         label: Kontakt
         name: kontakt
         fields:
+          - label: templateKey
+            name: templateKey
+            widget: hidden
+            default: kontakt
           - label: Title
             name: title
             widget: string
