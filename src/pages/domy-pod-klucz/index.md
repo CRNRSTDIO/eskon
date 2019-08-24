@@ -1,4 +1,6 @@
 ---
+templateKey: domy-pod-klucz
+title: Domy pod klucz
 landing:
   body: >-
     Jesteśmy po to aby służyć Ci pomocą i doradztwem w realizacji Twojego
