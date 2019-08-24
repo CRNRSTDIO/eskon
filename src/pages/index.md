@@ -1,5 +1,5 @@
 ---
-templateKey: index-page
+title: Strona główna
 landing:
   box01:
     body: >-
