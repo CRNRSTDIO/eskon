@@ -1,4 +1,5 @@
 ---
+templateKey: domy-pod-klucz
 title: Domy pod klucz
 landing:
   body: >-
@@ -7,7 +8,7 @@ landing:
     budowy będzie kontrolowany.
 
     Oszczędzimy zarówno Twój czas jak i pieniądze poprzez organizację i
-    optymalizacje kosztów. 
+    optymalizacje kosztów.
   cta: Dowiedz się więcej
   heading: Twój wymarzony dom  w technologii energooszczędnej
 section01:
@@ -23,4 +24,3 @@ section02:
     i energooszczędnych.
   heading: Dom z wykorzystaniem nowoczesnych technologii
 ---
-
