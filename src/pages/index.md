@@ -8,6 +8,7 @@ landing:
       w Szczecinie i okolicach
     cta: Czytaj więcej
     heading: Budowa domu pod klucz
+    image: /img/housebuilding-1407462.png
   box02:
     body: Doradztwo i usługi budowlane dla przemysłu i przedsiębiorstw
     cta: Czytaj więcej
@@ -50,3 +51,4 @@ section03:
     - body: 'Podłączanie do sieci prądu, gazu, wody itd.'
       heading: Instalacje mediów
 ---
+
