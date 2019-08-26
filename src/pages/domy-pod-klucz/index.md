@@ -1,4 +1,5 @@
 ---
+templateKey: domy-pod-klucz
 title: Domy pod klucz
 landing:
   body: >-
@@ -23,4 +24,3 @@ section02:
     i energooszczędnych.
   heading: Dom z wykorzystaniem nowoczesnych technologii
 ---
-
