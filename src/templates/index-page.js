@@ -10,6 +10,7 @@ import IndexBox from '../components/IndexBox'
 import Counters from '../components/Counters'
 import Solutions from '../components/IndexSolutions'
 import Landing from '../components/Landing'
+import Img from 'gatsby-image'
 
 export const IndexTemplate = ({
   landing,
@@ -26,7 +27,7 @@ export const IndexTemplate = ({
         {...landing}
         boxes={(
           <styled.BoxesContainer>
-            <IndexBox offset {...landing.box01} />
+            <IndexBox {...landing.box01} />
             <IndexBox alternate {...landing.box02} />
           </styled.BoxesContainer>
         )}
@@ -41,7 +42,9 @@ export const IndexTemplate = ({
       </Grid>
       <styled.ImageContainer>
         <Grid>
-          <styled.ImageWrapper />
+          <styled.ImageWrapper>
+            <Img fixed={landing.box01.image.childImageSharp.fixed} />
+          </styled.ImageWrapper>
         </Grid>
       </styled.ImageContainer>
       <Grid>
@@ -80,6 +83,13 @@ export const indexPageQuery = graphql`
             heading
             body
             cta
+            image {
+              childImageSharp {
+                fixed(width: 538, height: 330, quality: 100) {
+                  ...GatsbyImageSharpFixed_tracedSVG
+                }
+              }
+            }
           }
           box02 {
             heading

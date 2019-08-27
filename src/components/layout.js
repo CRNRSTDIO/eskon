@@ -2,6 +2,7 @@ import React from 'react'
 import * as styled from './styled/Layout'
 import { motion, useCycle } from 'framer-motion'
 import NavList, { Nav, NavBar } from '../components/Nav'
+import FooterCta from '../components/FooterCta'
 
 const mainVariants = {
   open: {
@@ -28,6 +29,9 @@ const Layout = ({ children }) => {
       <NavList />
       <styled.Main>
         {children}
+        <styled.Footer>
+          <FooterCta />
+        </styled.Footer>
       </styled.Main>
     </styled.Wrapper>
   </motion.div>

@@ -1,19 +1,42 @@
-// import React from 'react'
-// import { Link, graphql, StaticQuery } from 'gatsby'
-//
-// const FooterCTA = ({ data }) => {
-//
-// }
-//
-// export default () => {
-//   <StaticQuery
-//     query={graphql`
-//       queryFooterCTAQuery {
-//         allMarkdownRemark {
-//
-//         }
-//       }
-//       `}
-//     render={data => <FooterCTA data={data} />}
-//   />
-// }
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Grid from './styled/Grid'
+import Heading from './styled/Heading'
+import Paragraph from './styled/Paragraph'
+import Link from './styled/Link'
+import * as styled from './styled/Footer'
+
+const FooterCta = ({ data: { globalJson: { footer_cta: { heading, body, cta } } } }) => (
+  <Grid>
+    <styled.FooterCta>
+      <Grid>
+        <styled.FooterBoxesContainer>
+          <styled.FooterBox>
+            <Heading noline regular as='h3'>{heading}</Heading>
+            <Paragraph>{body}</Paragraph>
+          </styled.FooterBox>
+          <styled.FooterBox alternate>
+            <Link to='/'>{cta}</Link>
+          </styled.FooterBox>
+        </styled.FooterBoxesContainer>
+      </Grid>
+    </styled.FooterCta>
+  </Grid>
+)
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query FooterCtaQuery {
+        globalJson {
+          footer_cta {
+            heading
+            body
+            cta
+          }
+        }
+      }
+    `}
+    render={data => <FooterCta data={data} />}
+  />
+)

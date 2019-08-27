@@ -5,8 +5,8 @@ import Heading from './styled/Heading'
 import Paragraph from './styled/Paragraph'
 import Columns from './styled/Columns'
 
-const Landing = ({ center, heading, body, boxes, ...size }) => (
-  <styled.Landing>
+const Landing = ({ center, heading, body, boxes, style, ...size }) => (
+  <styled.Landing style={style}>
     <Grid center={center}>
       <styled.LandingHeadingContainer>
         <Heading {...size} as='h1'>{heading}</Heading>

@@ -20,3 +20,7 @@ export const Main = styled.main`
   top: 0;
   width: 100%;
 `
+
+export const Footer = styled.footer`
+  position: relative;
+`

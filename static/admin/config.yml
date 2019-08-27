@@ -41,16 +41,11 @@ collections:
                 name: columns
                 widget: list
                 fields:
-                  - {label: Body, name: body, widget: markdown}
-          - label: Footer notes
-            name: footer_notes
-            widget: object
-            fields:
-              - label: Notes
-                name: notes
-                widget: list
-                fields:
-                  - {label: Note, name: note, widget: markdown}
+                  - label: Line
+                    name: line
+                    widget: list
+                    fields:
+                      - {label: Line, name: line, widget: string}
   - name: showcases
     label: Showcases
     label_singular: showcase

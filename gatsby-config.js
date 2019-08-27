@@ -2,6 +2,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-transformer-json`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -27,7 +28,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'settings',
-        path: `${__dirname}/src/global/settings.json`
+        path: `${__dirname}/src/global`
       }
     },
     `gatsby-plugin-sharp`,
