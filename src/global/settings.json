@@ -11,36 +11,10 @@
   "footer": {
     "columns": [
       {
-        "line": [
-          {
-            "line": "Eskon"
-          },
-          {
-            "line": "Przedsiębiorstwo budowlane"
-          },
-          {
-            "line": "Szymon Siemiński"
-          },
-          {
-            "line": "Janickiego 16a"
-          },
-          {
-            "line": "71-020 Szczecin"
-          }
-        ]
+        "body": "Eskon \nPrzedsiębiorstwo budowlane\nSzymon Siemiński\nJanickiego 16a\n71-020 Szczecin"
       },
       {
-        "line": [
-          {
-            "line": "Skontaktuj się "
-          },
-          {
-            "line": "p. +48 601 858 412"
-          },
-          {
-            "line": "m. biuro@eskon.com.pl"
-          }
-        ]
+        "body": "Skontaktuj się \np. +48 601 858 412\nm. biuro@eskon.com.pl "
       }
     ]
   }
