@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
-const FooterNav = ({ data: { allMarkdownRemark: { edges: pages } } }) => {
+const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { footer: { columns } } } }) => {
   return (
     <>
       {pages && pages.map(({ node: page }) => (
@@ -11,6 +11,7 @@ const FooterNav = ({ data: { allMarkdownRemark: { edges: pages } } }) => {
           </Link>
         </div>
       ))}
+      {console.log(columns.map(({ body }) => body))}
     </>
   )
 }
@@ -30,6 +31,14 @@ export default () => (
               }
               fields {
                 slug
+              }
+            }
+          }
+        }
+        globalJson {
+          footer {
+            columns {
+              body
               }
             }
           }

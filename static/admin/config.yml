@@ -41,11 +41,7 @@ collections:
                 name: columns
                 widget: list
                 fields:
-                  - label: Line
-                    name: line
-                    widget: list
-                    fields:
-                      - {label: Line, name: line, widget: string}
+                  - {label: Body, name: body, widget: text}
   - name: showcases
     label: Showcases
     label_singular: showcase
