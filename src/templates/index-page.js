@@ -32,35 +32,47 @@ export const IndexTemplate = ({
           </styled.BoxesContainer>
         )}
       />
-      <Grid>
-        <styled.Column offset>
-          <Heading dark regular as='h3'>{section01.heading}</Heading>
-        </styled.Column>
-        <styled.Column>
-          <Paragraph dark>{section01.body}</Paragraph>
-        </styled.Column>
-      </Grid>
+      <styled.Section box>
+        <Grid>
+          <styled.ColumnWrapper>
+            <styled.Column>
+              <Heading dark regular as='h3'>{section01.heading}</Heading>
+            </styled.Column>
+            <styled.Column>
+              <Paragraph dark>{section01.body}</Paragraph>
+            </styled.Column>
+          </styled.ColumnWrapper>
+          <styled.ColumnImage>
+            <div />
+          </styled.ColumnImage>
+        </Grid>
+      </styled.Section>
       <styled.ImageContainer>
         <Grid>
           <styled.ImageWrapper>
-            <Img fixed={landing.box01.image.childImageSharp.fixed} />
+
           </styled.ImageWrapper>
         </Grid>
       </styled.ImageContainer>
-      <Grid>
-        <styled.Column offset>
-          <Heading dark regular as='h3'>{section02.heading}</Heading>
-          <Paragraph dark>{section02.body}</Paragraph>
-        </styled.Column>
-        <Counters counters={counters} />
-      </Grid>
-      <Grid>
-        <styled.Column offset>
-          <Heading dark regular noline as='h3'>{section03.heading}</Heading>
-          <Paragraph dark>{section03.body}</Paragraph>
-        </styled.Column>
-        <Solutions items={section03.items} />
-      </Grid>
+      <styled.Section>
+        <Grid>
+          <styled.Column offset>
+            <Heading dark regular as='h3'>{section02.heading}</Heading>
+            <Paragraph dark>{section02.body}</Paragraph>
+          </styled.Column>
+          <Counters counters={counters} />
+        </Grid>
+      </styled.Section>
+      <styled.Section>
+        <Grid>
+          <styled.Column offset>
+            <Heading dark regular noline as='h3'>{section03.heading}</Heading>
+            <Paragraph dark>{section03.body}</Paragraph>
+          </styled.Column>
+          <Solutions items={section03.items} />
+        </Grid>
+        <styled.LogoBox />
+      </styled.Section>
     </Layout>
   </Theme>
 )
@@ -83,13 +95,6 @@ export const indexPageQuery = graphql`
             heading
             body
             cta
-            image {
-              childImageSharp {
-                fixed(width: 538, height: 330, quality: 100) {
-                  ...GatsbyImageSharpFixed_tracedSVG
-                }
-              }
-            }
           }
           box02 {
             heading
@@ -108,10 +113,13 @@ export const indexPageQuery = graphql`
         counters {
           desc
           value
+          special
           desc
           value
+          special
           desc
           value
+          special
         }
         section03 {
           heading
