@@ -19,6 +19,8 @@ section01:
     - body: Lorem ipsum
       heading: Diagnoza
       isOpen: true
+    - body: Lorem ipsum
+      heading: Konstrukcje stalowe
   heading: Nasze usługi dla biznesu
 section02:
   carousel:
@@ -28,7 +30,7 @@ section02:
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
         clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
         amet. Lorem ipsum
-      link: 'http://google.pl'
+      link: ''
       linkText: Koss Global
       name: Tomasz Koss
   heading: Referencje
