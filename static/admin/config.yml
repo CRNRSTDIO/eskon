@@ -82,24 +82,14 @@ collections:
         name: section01
         widget: object
         fields:
-          - {label: Heading, name: heading, widget: markdown}
-          - label: Column
-            name: col01
-            widget: object
-            fields:
-              - {label: Body, name: body}
-          - label: Column
-            name: col02
-            widget: object
-            required: false
-            fields:
-              - {label: Body, name: body}
+          - {label: Heading, name: heading, widget: text}
+          - {label: Body, name: body, widget: text}
       - label: Section
         name: section02
         widget: object
         fields:
-          - {label: Heading, name: heading, widget: string}
-          - {label: Body, name: body, widget: markdown}
+          - {label: Heading, name: heading, widget: text}
+          - {label: Body, name: body, widget: text}
           - {label: Image, name: image, required: false, widget: image}
       - label: Section
         name: section03
@@ -111,7 +101,7 @@ collections:
         name: section04
         widget: object
         fields:
-          - {label: Heading, name: heading, widget: string}
+          - {label: Heading, name: heading, widget: text}
           - {label: Body, name: body, widget: text}
           - {label: Image, name: image, required: false, widget: image}
       - label: Section
@@ -174,12 +164,12 @@ collections:
             name: landing
             widget: object
             fields:
-            - {label: Heading, name: heading, widget: string}
+            - {label: Heading, name: heading, widget: text}
             - label: Box
               name: box01
               widget: object
               fields:
-                - {label: Heading, name: heading, widget: string}
+                - {label: Heading, name: heading, widget: text}
                 - {label: Body, name: body, widget: text}
                 - {label: CTA, name: cta, widget: string}
                 - {label: Image, name: image, required: false, widget: image}
@@ -187,7 +177,7 @@ collections:
               name: box02
               widget: object
               fields:
-                - {label: Heading, name: heading, widget: string}
+                - {label: Heading, name: heading, widget: text}
                 - {label: Body, name: body, widget: text}
                 - {label: CTA, name: cta, widget: string}
                 - {label: Image, name: image, required: false, widget: image}
@@ -195,14 +185,14 @@ collections:
             name: section01
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - {label: Image, name: image, required: false, widget: image}
           - label: Section
             name: section02
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               -  {label: Body, name: body, widget: text}
           - label: Counters
             name: counters
@@ -210,11 +200,12 @@ collections:
             fields:
               - {label: Value, name: value, widget: number}
               - {label: Description, name: desc, widget: string}
+              - {label: Special character, required: false, name: special, widget: string}
           - label: Section
             name: section03
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - label: Items
                 name: items
@@ -239,14 +230,14 @@ collections:
             name: landing
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - {label: CTA, name: cta, widget: string}
           - label: Section
             name: section01
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - label: Accordions
                 name: accordions
@@ -254,13 +245,13 @@ collections:
                 fields:
                   - {label: Heading, name: heading, widget: string}
                   - {label: Body, name: body, widget: markdown}
-                  - {label: Open, name: isOpen, widget: boolean}
+                  - {label: Open, name: isOpen, required: false, widget: boolean}
           - label: Section
             name: section02
             widget: object
             fields:
               - {label: Image, name: image, required: false, widget: image}
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
           - label: Table
             name: table
@@ -282,7 +273,7 @@ collections:
             name: landing
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Image, required: false, name: image, widget: image}
               - {label: Body, name: body, widget: text}
               - {label: CTA, name: cta, widget: string}
@@ -290,26 +281,26 @@ collections:
             name: section01
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - label: Accordions
                 name: accordions
                 widget: list
                 fields:
                 - {label: Heading, name: heading, widget: string}
                 - {label: Body, name: body, widget: markdown}
-                - {label: Open, name: isOpen, widget: boolean}
+                - {label: Open, name: isOpen, required: false, widget: boolean}
           - label: Section
             name: section02
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - label: Carousel
                 name: carousel
                 widget: list
                 fields:
-                  - {label: Body, name: body, widget: string}
+                  - {label: Body, name: body, widget: text}
                   - {label: Name, name: name, widget: string}
-                  - {label: Link, name: link, widget: string}
+                  - {label: Link, name: link, required: false, widget: string}
                   - {label: Link text, name: linkText, widget: string}
       - file: src/pages/realizacje/index.md
         label: Realizacje
@@ -339,28 +330,28 @@ collections:
             name: section01
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - {label: Image, name: image, required: false, widget: image}
           - label: Section
             name: section02
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
-              - {label: Body, name: body, widget: string}
+              - {label: Heading, name: heading, widget: text}
+              - {label: Body, name: body, widget: text}
               - {label: Image, name: image, required: false, widget: image}
           - label: Section
             name: section03
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - label: Cards
                 name: cards
                 widget: list
                 fields:
                   - {label: Image, name: image, required: false, widget: image}
                   - {label: Name, name: name, widget: string}
-                  - {label: Description, name: descr, widget: markdown}
+                  - {label: Description, name: descr, widget: text}
       - file: src/pages/kontakt/index.md
         label: Kontakt
         name: kontakt
@@ -377,15 +368,15 @@ collections:
             name: section01
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
+              - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: markdown}
               - {label: Image, name: image, required: false, widget: image}
           - label: Section
             name: section02
             widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
-              - {label: Body, name: body, widget: string}
+              - {label: Heading, name: heading, widget: text}
+              - {label: Body, name: body, widget: text}
               - label: Options
                 name: options
                 widget: list

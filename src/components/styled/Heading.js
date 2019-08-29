@@ -24,8 +24,9 @@ const Heading = styled.h1`
     line-height: 2.5rem;
   `}
   font-weight: ${({ regular, small }) => regular || small ? 400 : 300};
-  margin: 1rem 0;
+  margin: 0 0 1rem;
   position: relative;
+  white-space: pre-line;
 
   ::after {
     background-color: ${({ theme: { grey1 } }) => grey1};

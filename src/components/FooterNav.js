@@ -1,18 +1,35 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
+import Grid from './styled/Grid'
+import * as styled from './styled/Footer'
 
 const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { footer: { columns } } } }) => {
   return (
-    <>
-      {pages && pages.map(({ node: page }) => (
-        <div key={page.id}>
-          <Link to={page.fields.slug}>
-            {page.frontmatter.title}
-          </Link>
-        </div>
-      ))}
-      {console.log(columns.map(({ body }) => body))}
-    </>
+    <styled.FooterWrapper>
+      <Grid>
+        <styled.FooterNav>
+          {pages && pages.map(({ node: page }) => (
+            <styled.FooterLink key={page.id} to={page.fields.slug}>
+              {page.frontmatter.title}
+            </styled.FooterLink>
+          ))}
+        </styled.FooterNav>
+      </Grid>
+      <Grid>
+        <styled.FooterHr />
+      </Grid>
+      <Grid>
+        {columns.map(({ body }) => (
+          <styled.FooterColumn>
+            <styled.FooterColumnInside>
+              {body.split('\n').map(line => (
+                <styled.FooterColumnLine>{line}</styled.FooterColumnLine>
+              ))}
+            </styled.FooterColumnInside>
+          </styled.FooterColumn>
+        ))}
+      </Grid>
+    </styled.FooterWrapper>
   )
 }
 
@@ -39,7 +56,6 @@ export default () => (
           footer {
             columns {
               body
-              }
             }
           }
         }

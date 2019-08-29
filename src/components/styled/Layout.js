@@ -14,7 +14,7 @@ export const Wrapper = styled(motion.div)`
 export const Main = styled.main`
   background-color: ${({ theme: { white } }) => white};
   height: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   position: absolute;
   right: 0;
   top: 0;
