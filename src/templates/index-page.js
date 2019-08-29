@@ -43,7 +43,7 @@ export const IndexTemplate = ({
             </styled.Column>
           </styled.ColumnWrapper>
           <styled.ColumnImage>
-            <div />
+            <Img fluid={section01.image.childImageSharp.fluid} />
           </styled.ColumnImage>
         </Grid>
       </styled.Section>
@@ -105,6 +105,13 @@ export const indexPageQuery = graphql`
         section01 {
           heading
           body
+          image {
+            childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         section02 {
           heading

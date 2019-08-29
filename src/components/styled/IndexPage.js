@@ -77,6 +77,7 @@ export const Column = styled.div`
 export const ColumnImage = styled.div`
   grid-column: span 3;
   padding: 4rem 0 4.375rem;
+  width: 25rem;
 `
 
 export const ImageContainer = styled.div`

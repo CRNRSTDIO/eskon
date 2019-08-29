@@ -188,6 +188,9 @@ collections:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - {label: Image, name: image, required: false, widget: image}
+          - label: Image
+            name: image
+            widget: image
           - label: Section
             name: section02
             widget: object
