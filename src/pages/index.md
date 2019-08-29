@@ -8,30 +8,41 @@ landing:
       w Szczecinie i okolicach
     cta: Czytaj więcej
     heading: Budowa domu pod klucz
-    image: /img/housebuilding-1407462.png
+    image: ''
   box02:
     body: Doradztwo i usługi budowlane dla przemysłu i przedsiębiorstw
     cta: Czytaj więcej
     heading: Usługi Inżynieryjne
-  heading: Domy i konstrukcje stawiane na czas
+  heading: |-
+    Domy i konstrukcje 
+    stawiane na czas
 section01:
   body: >-
     Jesteśmy przedsiębiorstwem dostarczającym wszelkiej maści usługi budowlane.
     Rozwiązujemy problemy konstrukcyjne zarówno prywatnych inwestorów jak i
-    klientów biznesowych.
-  heading: Nowoczesne rozwiązania dla Twojej firmy i dla Twojego domu
+    klientów biznesowych. 
+  heading: |-
+    Nowoczesne rozwiązania 
+    dla Twojej firmy
+    i dla Twojego domu
 section02:
   body: >-
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et
-  heading: Bogate doświadczenie w projektach dla firm i dla osób prywatnych
+  heading: |-
+    Bogate doświadczenie 
+    w projektach dla firm
+    i dla osób prywatnych
 counters:
   - desc: Lat doświadczenia
+    special: +
     value: 10
   - desc: Domy pod klucz
+    special: ' '
     value: 32
   - desc: Projekty komercyjne
+    special: ' '
     value: 48
 section03:
   body: >-
