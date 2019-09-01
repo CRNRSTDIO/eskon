@@ -46,6 +46,7 @@ section01:
     Kompletny proces,
     który zapewnia, 
     wysoką jakość
+image: /img/modern-house-with-garden-swimming-pool-and-wooden-rzg7hu2-2x.png
 section02:
   body: >-
     Zarówno technologia materiałów budowlanych jak i prefabrykatów pozwala na
@@ -59,3 +60,4 @@ section02:
     nowoczesnych 
     technologii
 ---
+
