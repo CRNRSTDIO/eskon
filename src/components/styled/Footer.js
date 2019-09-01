@@ -39,6 +39,7 @@ export const FooterBox = styled.div`
   display: ${({ alternate }) => alternate && `flex`};
   grid-column: span 4;
   padding: ${({ alternate }) => alternate ? `1.4375rem 1.8125rem 2.375rem 2.375rem` : `.4375rem 2rem 2.375rem 0`};
+  position: relative;
 
   *:last-child {
 
@@ -51,6 +52,13 @@ export const FooterBox = styled.div`
       width: ${({ alternate }) => alternate ? `100%` : `75%`};
     }
   }
+`
+
+export const FooterBoxLogo = styled.div`
+  color: ${({ theme: { white } }) => white};
+  position: absolute;
+  right: 1.875rem;
+  top: 1.5rem;
 `
 
 export const FooterNav = styled.div`

@@ -4,6 +4,7 @@ import Grid from './styled/Grid'
 import Heading from './styled/Heading'
 import Paragraph from './styled/Paragraph'
 import Link from './styled/Link'
+import Icon from './Icons'
 import * as styled from './styled/Footer'
 
 const FooterCta = ({ data: { globalJson: { footer_cta: { heading, body, cta } } } }) => (
@@ -16,6 +17,9 @@ const FooterCta = ({ data: { globalJson: { footer_cta: { heading, body, cta } } 
             <Paragraph>{body}</Paragraph>
           </styled.FooterBox>
           <styled.FooterBox alternate>
+            <styled.FooterBoxLogo>
+              <Icon name='logo' height='20px' />
+            </styled.FooterBoxLogo>
             <Link to='/'>{cta}</Link>
           </styled.FooterBox>
         </styled.FooterBoxesContainer>

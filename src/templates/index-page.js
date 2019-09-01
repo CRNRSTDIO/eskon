@@ -16,6 +16,7 @@ export const IndexTemplate = ({
   landing,
   counters,
   section01,
+  image,
   section02,
   section03
 }) => (
@@ -50,7 +51,7 @@ export const IndexTemplate = ({
       <styled.ImageContainer>
         <Grid>
           <styled.ImageWrapper>
-
+            <Img fluid={image.childImageSharp.fluid} />
           </styled.ImageWrapper>
         </Grid>
       </styled.ImageContainer>
@@ -102,6 +103,13 @@ export const indexPageQuery = graphql`
             cta
           }
         }
+        image {
+          childImageSharp {
+            fluid(maxWidth: 538) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         section01 {
           heading
           body
@@ -134,12 +142,16 @@ export const indexPageQuery = graphql`
           items {
             heading
             body
+            icon
             heading
             body
+            icon
             heading
             body
+            icon
             heading
             body
+            icon
           }
         }
       }
