@@ -249,17 +249,16 @@ collections:
                   - {label: Heading, name: heading, widget: string}
                   - {label: Body, name: body, widget: markdown}
                   - {label: Open, name: isOpen, required: false, widget: boolean}
+          - label: Image
+            name: image
+            widget: image
+            required: false
           - label: Section
             name: section02
             widget: object
             fields:
-              - {label: Image, name: image, required: false, widget: image}
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
-          - label: Table
-            name: table
-            widget: object
-            fields: []
       - file: src/pages/uslugi-inzynieryjne/index.md
         label: Usługi inżynieryjne
         name: uslugi-inzynieryjne

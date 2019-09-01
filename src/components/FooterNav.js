@@ -19,11 +19,11 @@ const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { 
         <styled.FooterHr />
       </Grid>
       <Grid>
-        {columns.map(({ body }) => (
-          <styled.FooterColumn>
+        {columns.map(({ body }, index) => (
+          <styled.FooterColumn key={index}>
             <styled.FooterColumnInside>
-              {body.split('\n').map(line => (
-                <styled.FooterColumnLine>{line}</styled.FooterColumnLine>
+              {body.split('\n').map((line, index) => (
+                <styled.FooterColumnLine key={index}>{line}</styled.FooterColumnLine>
               ))}
             </styled.FooterColumnInside>
           </styled.FooterColumn>

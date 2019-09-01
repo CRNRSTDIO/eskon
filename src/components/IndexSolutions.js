@@ -6,7 +6,7 @@ const IndexSolutions = ({ items }) => (
   <styled.Solutions>
     {items.map(({ heading, body, icon }) => (
       <styled.SolutionsItem key={heading}>
-        <Icon name={icon} />
+        <Icon name={icon} height='50px' />
         <styled.SolutionsItemHeading>{heading}</styled.SolutionsItemHeading>
         <styled.SolutionsItemDesc>{body}</styled.SolutionsItemDesc>
       </styled.SolutionsItem>
