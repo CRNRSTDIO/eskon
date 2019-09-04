@@ -17,20 +17,10 @@ export const Section = styled.section`
   }
 `
 
-export const BoxesContainer = styled.div`
-  display: grid;
-  grid-column: 2 / span 10;
-  grid-template-columns: repeat(10, 1fr);
-  grid-column-gap: 1rem;
-  height: max-content;
-  margin: 5.125rem 0 0;
-`
-
 export const Box = styled.div`
   background-color: ${({ alternate, theme: { white, blue2 } }) => alternate ? white : blue2};
   display: flex;
   flex-direction: column;
-  grid-column: span 5;
   position: relative;
 
   ::after {
@@ -62,24 +52,6 @@ export const BoxBody = styled.section`
   }
 `
 
-export const ColumnWrapper = styled.div`
-  align-self: center;
-  display: grid;
-  grid-column: 2 / span 8;
-  grid-template-columns: repeat(8, 1fr);
-  grid-column-gap: 1rem;
-`
-
-export const Column = styled.div`
-  grid-column: ${({ offset }) => offset ? '2 / span 4' : 'span 4'};
-`
-
-export const ColumnImage = styled.div`
-  grid-column: span 3;
-  padding: 4rem 0 4.375rem;
-  width: 25rem;
-`
-
 export const ImageContainer = styled.div`
   position: relative;
   width: 100vw;
@@ -95,19 +67,9 @@ export const ImageContainer = styled.div`
   }
 `
 
-export const ImageWrapper = styled.div`
-  grid-column: span 6;
-  height: 20.625rem
-`
-
 export const Counters = styled.aside`
   background-color: ${({ theme: { blue2 } }) => blue2};
   color: ${({ theme: { white } }) => white};
-  display: grid;
-  grid-column: 9 / span 4;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 1rem;
-  grid-row-gap: 3.625rem;
   padding: 7.875rem 0 8.625rem;
   position: relative;
   z-index: 1;
@@ -147,7 +109,7 @@ export const CounterLabel = styled.span`
 `
 
 export const CountersItem = styled.div`
-  grid-column: 2 / span 2;
+
 `
 
 export const CounterItemValue = styled.span`
@@ -162,16 +124,11 @@ export const CounterItemDesc = styled.span`
 `
 
 export const Solutions = styled.section`
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-column-gap: 1rem;
-  grid-column: 2 / span 8;
   margin: 6.625rem 0 9.5rem;
 `
 
 export const SolutionsItem = styled.div`
   font-family: 'Roboto';
-  grid-column: span 2;
 `
 
 export const SolutionsItemHeading = styled.h4`

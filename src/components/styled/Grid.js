@@ -1,12 +1,9 @@
 import styled from 'styled-components'
 
-const Grid = styled.div`
-  align-content: ${({ center }) => center ? 'center' : 'start'};
+export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(12, 76px);
-  grid-auto-rows: auto;
+  grid-template-columns: repeat(12, 4.5rem);
   grid-column-gap: 1rem;
-  height: ${({ center }) => center ? '100%' : 'auto'};
   justify-content: center;
 `
 

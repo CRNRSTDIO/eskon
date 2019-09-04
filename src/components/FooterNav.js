@@ -1,34 +1,44 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Grid from './styled/Grid'
+import { Container, Row, Col } from 'react-awesome-styled-grid'
 import * as styled from './styled/Footer'
 
 const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { footer: { columns } } } }) => {
   return (
     <styled.FooterWrapper>
-      <Grid>
-        <styled.FooterNav>
-          {pages && pages.map(({ node: page }) => (
-            <styled.FooterLink key={page.id} to={page.fields.slug}>
-              {page.frontmatter.title}
-            </styled.FooterLink>
-          ))}
-        </styled.FooterNav>
-      </Grid>
-      <Grid>
-        <styled.FooterHr />
-      </Grid>
-      <Grid>
-        {columns.map(({ body }, index) => (
-          <styled.FooterColumn key={index}>
-            <styled.FooterColumnInside>
-              {body.split('\n').map((line, index) => (
-                <styled.FooterColumnLine key={index}>{line}</styled.FooterColumnLine>
+      <Container>
+        <Row>
+          <Col xs={4} md={11} offset={{ md: 1 }}>
+            <div>
+              {pages && pages.map(({ node: page }) => (
+                <styled.FooterLink key={page.id} to={page.fields.slug}>
+                  {page.frontmatter.title}
+                </styled.FooterLink>
               ))}
-            </styled.FooterColumnInside>
-          </styled.FooterColumn>
-        ))}
-      </Grid>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={4}>
+            <styled.FooterHr />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={4} md={12}>
+            <Row>
+              {columns.map(({ body }, index) => (
+                <Col key={index} xs={4} md={2} offset={{ md: 1 }}>
+                  <styled.FooterColumnInside>
+                    {body.split('\n').map((line, index) => (
+                      <styled.FooterColumnLine key={index}>{line}</styled.FooterColumnLine>
+                    ))}
+                  </styled.FooterColumnInside>
+                </Col>
+              ))}
+            </Row>
+          </Col>
+        </Row>
+      </Container>
     </styled.FooterWrapper>
   )
 }

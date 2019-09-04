@@ -5,7 +5,6 @@ const Columns = styled.article`
   column-count: 2;
   column-gap: 1rem;
   column-width: 9.375rem;
-  grid-column: 2 / span 6;
   padding: 1.625rem 0 0;
   position: relative;
 

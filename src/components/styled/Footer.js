@@ -5,7 +5,6 @@ import { Link } from 'gatsby'
 export const FooterCta = styled.div`
   background-color: ${({ theme: { blue2 } }) => blue2};
   padding: 4.875rem 0;
-  grid-column: 1 / span 12;
   position: relative;
 
   ::after,
@@ -25,19 +24,10 @@ export const FooterCta = styled.div`
   }
 `
 
-export const FooterBoxesContainer = styled.div`
-  display: grid;
-  grid-column: 3 / span 8;
-  grid-template-columns: repeat(8, 1fr);
-  grid-column-gap: 1rem;
-  height: max-content;
-`
-
 export const FooterBox = styled.div`
   align-items: ${({ alternate }) => alternate && `flex-end`};
   background-color: ${({ alternate, theme: { blue1 } }) => alternate ? blue1 : 'transparent'};
   display: ${({ alternate }) => alternate && `flex`};
-  grid-column: span 4;
   padding: ${({ alternate }) => alternate ? `1.4375rem 1.8125rem 2.375rem 2.375rem` : `.4375rem 2rem 2.375rem 0`};
   position: relative;
 
@@ -61,12 +51,6 @@ export const FooterBoxLogo = styled.div`
   top: 1.5rem;
 `
 
-export const FooterNav = styled.div`
-  display: flex;
-  grid-column: 2 / span 10;
-  justify-content: flex-start;
-`
-
 export const FooterWrapper = styled.div`
   background-color: ${({ theme: { dark1 } }) => dark1};
 `
@@ -74,7 +58,6 @@ export const FooterWrapper = styled.div`
 export const FooterHr = styled.hr`
   background-color: ${({ theme: { white } }) => `${rgba(white, .11)}`};
   border: 0;
-  grid-column: 1 / span 12;
   height: 1px;
   margin: 0;
   width: 100%;
@@ -82,6 +65,7 @@ export const FooterHr = styled.hr`
 
 export const FooterLink = styled(Link)`
   color: ${({ theme: { grey2 } }) => grey2};
+  display: inline-block;
   font-size: .75rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -96,15 +80,7 @@ export const FooterLink = styled(Link)`
   }
 `
 
-export const FooterColumn = styled.div`
-  display: grid;
-  grid-column: span 3;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 1rem;
-`
-
 export const FooterColumnInside = styled.div`
-  grid-column: 2 / 4;
   white-space: pre;
 `
 

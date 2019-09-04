@@ -15,6 +15,29 @@ const theme = {
   black: '#000000',
   blue1: '#022358',
   blue2: '#12479D',
+  awesomegrid: {
+    columns: {
+      xs: 4,
+      sm: 8,
+      md: 12,
+      lg: 12,
+      xl: 12
+    },
+    gutterWidth: {
+      xs: 1,
+      sm: 1,
+      md: 1,
+      lg: 1,
+      xl: 1
+    },
+    container: {
+      xs: 'full',
+      sm: 38,
+      md: 68,
+      lg: 90,
+      xl: 90
+    }
+  }
 }
 
 export default theme

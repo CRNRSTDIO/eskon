@@ -4,13 +4,16 @@ import Theme from '../components/Theme'
 import Layout from '../components/Layout'
 import Heading from '../components/styled/Heading'
 import Paragraph from '../components/styled/Paragraph'
-import Grid from '../components/styled/Grid'
+import { Container, Row, Col } from 'react-grid-system'
 import Section from '../components/styled/Section'
 import Landing from '../components/Landing'
 import Img from 'gatsby-image'
 
 export const DomyPodKluczTemplate = ({
-  landing
+  landing,
+  section01,
+  image,
+  section02
 }) => (
   <Theme>
     <Layout>
@@ -19,10 +22,10 @@ export const DomyPodKluczTemplate = ({
         medium
         {...landing}
       />
+      <Section>
+          <Heading dark regular as='h3'>{section01.heading}</Heading>
+      </Section>
     </Layout>
-    <Section>
-      <Heading dark regular as='h3'>{section}</Heading>
-    </Section>
   </Theme>
 )
 
@@ -51,14 +54,14 @@ export const domyPodKluczQuery = graphql`
             isOpen
           }
         }
-        section02 {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048) {
-                ...GatsbyImageSharpFluid
-              }
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048) {
+              ...GatsbyImageSharpFluid
             }
           }
+        }
+        section02 {
           heading
           body
         }

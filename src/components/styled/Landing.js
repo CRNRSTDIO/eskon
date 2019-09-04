@@ -5,7 +5,3 @@ export const Landing = styled.section`
   height: 100vh;
   width: 100vw;
 `
-
-export const LandingHeadingContainer = styled.div`
-  grid-column: 2 / span 6;
-`

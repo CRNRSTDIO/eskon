@@ -1,16 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Theme from '../components/Theme'
 import Layout from '../components/Layout'
 import Heading from '../components/styled/Heading'
 import Paragraph from '../components/styled/Paragraph'
-import Grid from '../components/styled/Grid'
 import * as styled from '../components/styled/IndexPage'
-import IndexBox from '../components/IndexBox'
+import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Counters from '../components/Counters'
 import Solutions from '../components/IndexSolutions'
 import Landing from '../components/Landing'
-import Img from 'gatsby-image'
 
 export const IndexTemplate = ({
   landing,
@@ -23,56 +22,78 @@ export const IndexTemplate = ({
   <Theme>
     <Layout>
       <Landing
-        center
         huge
         {...landing}
-        boxes={(
-          <styled.BoxesContainer>
-            <IndexBox {...landing.box01} />
-            <IndexBox alternate {...landing.box02} />
-          </styled.BoxesContainer>
-        )}
       />
       <styled.Section box>
-        <Grid>
-          <styled.ColumnWrapper>
-            <styled.Column>
-              <Heading dark regular as='h3'>{section01.heading}</Heading>
-            </styled.Column>
-            <styled.Column>
-              <Paragraph dark>{section01.body}</Paragraph>
-            </styled.Column>
-          </styled.ColumnWrapper>
-          <styled.ColumnImage>
-            <Img fluid={section01.image.childImageSharp.fluid} />
-          </styled.ColumnImage>
-        </Grid>
+        <Container className='container'>
+          <Row className='row' reverse={['sm', 'md', 'lg', 'xl']}>
+            <Col xs={3} offset={{ xs: 1, sm: 1, md: 1 }} sm={2} md={3} className='col'>
+              <Img fluid={section01.image.childImageSharp.fluid} />
+            </Col>
+            <Col xs={4} sm={4} md={7}>
+              <Row>
+                <Col xs={4} className='col'>
+                  <Row>
+                    <Col xs={4} md={6}>
+                      <Heading dark regular as='h3'>{section01.heading}</Heading>
+                    </Col>
+                    <Col xs={4} md={6}>
+                      <Paragraph dark>{section01.body}</Paragraph>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       </styled.Section>
       <styled.ImageContainer>
-        <Grid>
-          <styled.ImageWrapper>
-            <Img fluid={image.childImageSharp.fluid} />
-          </styled.ImageWrapper>
-        </Grid>
+        <Container>
+          <Row>
+            <Col xs={4} sm={6} md={6}>
+              <Img fluid={image.childImageSharp.fluid} />
+            </Col>
+          </Row>
+        </Container>
       </styled.ImageContainer>
       <styled.Section>
-        <Grid>
-          <styled.Column offset>
-            <Heading dark regular as='h3'>{section02.heading}</Heading>
-            <Paragraph dark>{section02.body}</Paragraph>
-          </styled.Column>
-          <Counters counters={counters} />
-        </Grid>
+        <Container>
+          <Row>
+            <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
+              <Row>
+                <Col xs={4}>
+                  <Heading dark regular as='h3'>{section02.heading}</Heading>
+                </Col>
+                <Col xs={4}>
+                  <Paragraph dark>{section02.body}</Paragraph>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={4} sm={8} md={4} offset={{ md: 3 }}>
+              Counters
+            </Col>
+          </Row>
+        </Container>
       </styled.Section>
       <styled.Section>
-        <Grid>
-          <styled.Column offset>
-            <Heading dark regular noline as='h3'>{section03.heading}</Heading>
-            <Paragraph dark>{section03.body}</Paragraph>
-          </styled.Column>
-          <Solutions items={section03.items} />
-        </Grid>
-        <styled.LogoBox />
+        <Container>
+          <Row>
+            <Col xs={4} sm={5} offset={{ sm: 1, md: 1}} md={4}>
+              <Row>
+                <Col xs={4}>
+                  <Heading dark regular noline as='h3'>{section03.heading}</Heading>
+                </Col>
+                <Col xs={4}>
+                  <Paragraph dark>{section03.body}</Paragraph>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={4} sm={8} offset={{ sm: 0, md: 1 }} md={8}>
+              <Solutions {...section03} />
+            </Col>
+          </Row>
+        </Container>
       </styled.Section>
     </Layout>
   </Theme>
