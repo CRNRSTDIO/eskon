@@ -12,6 +12,7 @@ section01:
   heading: |-
     Budujemy nowocześnie 
     jak przystało na XXI wiek
+  image: /img/abstract-glass-window-roof-architecture-exterior-4z7hcy3-2x.png
 section02:
   body: >-
     Wyznacznikiem naszych czasów jest brak czasu. Ogromna część inwestorów
@@ -21,17 +22,19 @@ section02:
   heading: |-
     Zajmiemy się 
     całym procesem
-  image: ''
+  image: /img/modern-silver-facade-p7bjps7-2x.png
 section03:
   cards:
     - descr: |-
         Właściciel
         Meneger budowy
         magister inżynier
+      image: /img/rooney-00-2x.png
       name: Szymon Siemiński
     - descr: |-
         Meneger budowy
         magister inżynier
+      image: /img/zlatan-2x.png
       name: Tata Siemiński
   heading: Zespół Eskon
 ---
