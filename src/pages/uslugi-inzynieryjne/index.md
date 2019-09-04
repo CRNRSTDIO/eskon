@@ -14,6 +14,7 @@ landing:
     Doradzimy najlepsze 
     rozwiązanie konstrukcyjne 
     dla Twojego biznesu
+  image: /img/empty-steel-structure-building-pvbeuj4-2x.png
 section01:
   accordions:
     - body: Lorem ipsum
