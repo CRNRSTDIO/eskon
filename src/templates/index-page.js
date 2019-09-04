@@ -150,26 +150,11 @@ export const indexPageQuery = graphql`
           desc
           value
           special
-          desc
-          value
-          special
-          desc
-          value
-          special
         }
         section03 {
           heading
           body
           items {
-            heading
-            body
-            icon
-            heading
-            body
-            icon
-            heading
-            body
-            icon
             heading
             body
             icon

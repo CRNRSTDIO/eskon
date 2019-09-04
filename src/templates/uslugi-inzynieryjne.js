@@ -1,20 +1,33 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Theme from '../components/Theme'
 import Layout from '../components/Layout'
 import Heading from '../components/styled/Heading'
-import Paragraph from '../components/styled/Paragraph'
 import Section from '../components/styled/Section'
 import Landing from '../components/Landing'
 
 export const UslugiInzynieryjneTemplate = ({
-
+  landing,
+  section01
 }) => (
   <Theme>
     <Layout>
-      <Landing />
+      <Landing
+        background={landing.image.childImageSharp.fluid}
+      />
+      <Section>
+        <Container>
+          <Row>
+            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
+              <Heading>{section01.heading}</Heading>
+            </Col>
+            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
+              accordions
+            </Col>
+          </Row>
+        </Container>
+      </Section>
     </Layout>
   </Theme>
 )
@@ -27,13 +40,19 @@ export default ({ data }) => {
   )
 }
 
-export const uslugiInzynieryjneQUery = graphql`
+export const uslugiInzynieryjneQuery = graphql`
   query UslugiInzynieryjne {
     markdownRemark(frontmatter: { templateKey: { eq: "uslugi-inzynieryjne" } }) {
       frontmatter {
         landing {
           heading
-          image
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           body
           cta
         }

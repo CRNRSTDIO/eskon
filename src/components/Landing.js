@@ -6,7 +6,7 @@ import Paragraph from './styled/Paragraph'
 import Columns from './styled/Columns'
 import IndexBox from './IndexBox'
 
-const Landing = ({ heading, body, box01, box02, ...size }) => (
+const Landing = ({ heading, body, cta, background, box01, box02, ...size }) => (
   <styled.Landing>
     <Container>
       <Row>
@@ -36,6 +36,10 @@ const Landing = ({ heading, body, box01, box02, ...size }) => (
         </Col>
       </Row>
     </Container>
+    {background && <styled.Image
+      fluid={background}
+      style={{ position: 'absolute' }}
+    />}
   </styled.Landing>
 )
 
