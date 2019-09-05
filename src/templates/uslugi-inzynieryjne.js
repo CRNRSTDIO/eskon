@@ -15,12 +15,14 @@ export const UslugiInzynieryjneTemplate = ({
     <Layout>
       <Landing
         background={landing.image.childImageSharp.fluid}
+        {...landing}
+        image={null}
       />
       <Section>
         <Container>
           <Row>
             <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
-              <Heading>{section01.heading}</Heading>
+              <Heading regular dark as='h3' noline>{section01.heading}</Heading>
             </Col>
             <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
               accordions

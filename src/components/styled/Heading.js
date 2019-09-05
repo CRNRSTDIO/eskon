@@ -4,24 +4,44 @@ const Heading = styled.h1`
   color: ${({ dark, theme: { white, grey6 } }) => dark ? grey6 : white};
   font-family: 'Noway';
   ${({ huge }) => huge && css`
-    font-size: 3.5rem;
-    line-height: 3.75rem
+    font-size: 2.125rem;
+    line-height: 2.5rem;
+
+    ${({ theme: { queries } }) => queries.sm`
+      font-size: 3.5rem;
+      line-height: 3.75rem
+    `}
   `};
   ${({ big }) => big && css`
-    font-size: 3.125rem;
+    font-size: 2.5rem;
     line-height: 3.375rem;
+
+    ${({ theme: { queries } }) => queries.sm`
+      font-size: 3.125rem;
+      line-height: 3.375rem;
+    `}
   `};
   ${({ medium }) => medium && css`
-    font-size: 2.625rem;
-    line-height: 3.375rem;
+    font-size: 2.125rem;
+    line-height: 2.5rem;
+
+    ${({ theme: { queries } }) => queries.sm`
+      font-size: 2.625rem;
+      line-height: 3.375rem;
+    `}
   `};
   ${({ regular }) => regular && css`
     font-size: 1.625rem;
     line-height: 1.875rem;
   `}
   ${({ small }) => small && css`
-    font-size: 1.3125rem;
-    line-height: 2.5rem;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+
+    ${({ theme: { queries } }) => queries.sm`
+      font-size: 1.3125rem;
+      line-height: 2.5rem;
+    `}
   `}
   font-weight: ${({ regular, small }) => regular || small ? 400 : 300};
   margin: 0 0 1rem;

@@ -1,4 +1,25 @@
+import mqAPI from 'cssapi-mq'
+const mq = mqAPI({
+  width: {
+    sm: 768,
+    md: 1024,
+    lg: 1440
+  }
+})
+
+const { query, mediaType, aboveWidth } = mq
+
+const aboveSmQuery = query([mediaType(), aboveWidth('sm')])
+const aboveMdQuery = query([mediaType(), aboveWidth('md')])
+const aboveLgQuery = query([mediaType(), aboveWidth('lg')])
+
+
 const theme = {
+  queries: {
+    sm: aboveSmQuery,
+    md: aboveMdQuery,
+    lg: aboveLgQuery
+  },
   white: '#FFFFFF',
   pink1: '#FFF9F9',
   grey0: '#F2F2F2',
