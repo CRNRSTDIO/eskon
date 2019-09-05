@@ -55,17 +55,17 @@ section03:
   items:
     - body: Kompletny proces od początku do końca
       heading: dom pod klucz
-      icon: /img/image_svg.svg
+      icon: /img/image_svg11.svg
     - body: |-
         Stalowe, drewniane,
         czy betonowe
       heading: Konstrukcje
-      icon: structures
+      icon: /img/image_svg13.svg
     - body: Budowa stanów surowych zgodna z normami
       heading: stany surowe
-      icon: rawState
+      icon: /img/image_svg12.svg
     - body: 'Podłączanie do sieci prądu, gazu, wody itd.'
       heading: Instalacje mediów
-      icon: media
+      icon: /img/image_svg14.svg
 ---
 
