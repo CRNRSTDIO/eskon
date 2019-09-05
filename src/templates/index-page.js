@@ -157,7 +157,13 @@ export const indexPageQuery = graphql`
           items {
             heading
             body
-            icon
+            icon {
+              childImageSharp {
+                fixed(height: 52) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
