@@ -55,7 +55,7 @@ section03:
   items:
     - body: Kompletny proces od początku do końca
       heading: dom pod klucz
-      icon: /img/zasób-1.svg
+      icon: /img/image_svg.svg
     - body: |-
         Stalowe, drewniane,
         czy betonowe
