@@ -214,7 +214,7 @@ collections:
                 name: items
                 widget: list
                 fields:
-                - {label: Icon, name: icon, required: false, widget: string}
+                - {label: Icon, name: icon, required: false, widget: image}
                 - {label: Heading, name: heading, widget: string}
                 - {label: Body, name: body, widget: text}
       - file: src/pages/domy-pod-klucz/index.md
@@ -259,6 +259,14 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
+          - label: Section
+            name: section03
+            widget: object
+            fields:
+              - label: Table
+                name: table
+                widget: list
+
       - file: src/pages/uslugi-inzynieryjne/index.md
         label: Usługi inżynieryjne
         name: uslugi-inzynieryjne
