@@ -9,7 +9,7 @@ const IndexSolutions = ({ items }) => (
         {items.map(({ heading, body, icon }, index) => (
           <Col key={index} xs={2} sm={2} offset={{ sm: 1, md: 0 }} md={2}>
             <styled.SolutionsItem>
-              <Icon name={icon} height='50px' />
+              <img src={icon.publicURL} />
               <styled.SolutionsItemHeading>{heading}</styled.SolutionsItemHeading>
               <styled.SolutionsItemDesc>{body}</styled.SolutionsItemDesc>
             </styled.SolutionsItem>

@@ -63,21 +63,15 @@ collections:
         name: image
         required: false
         widget: image
-      - label: Space
-        name: space
-        widget: number
+      - label: Tags
+        name: tags
+        widget: list
+        fields:
+          - {label: Tag, name: tag, widget: string}
       - label: Category
         name: category
-        widget: string
-      - label: Started
-        name: dateFrom
-        widget: date
-        format: MMM Do YY
-      - label: Finished
-        name: dateTo
-        required: false
-        widget: date
-        format: MMM Do YY
+        widget: select
+        options: ["Domy pod klucz", "Komercyjne"]
       - label: Section
         name: section01
         widget: object
@@ -116,7 +110,7 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Body, name: body, widget: text}
-              - {label: Open, name: isOpen, widget: boolean}
+              - {label: Open, name: isOpen, required: false, widget: boolean}
       - label: Section
         name: section06
         widget: list
@@ -127,6 +121,7 @@ collections:
         widget: list
         fields:
           - {label: Value, name: value, widget: string}
+          - {label: Addition, name: addition, widget: string}
           - {label: Description, name: description, widget: string}
       - label: Section
         name: section 08
@@ -137,7 +132,7 @@ collections:
             name: items
             widget: list
             fields:
-              - {label: Icon, name: icon, widget: string}
+              - {label: Icon, name: icon, widget: image}
               - {label: Heading, name: heading, widget: string}
               - {label: Description, name: descr, widget: text}
       - label: Section

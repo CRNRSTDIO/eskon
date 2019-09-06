@@ -10,6 +10,7 @@ import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Counters from '../components/Counters'
 import Solutions from '../components/IndexSolutions'
 import Landing from '../components/Landing'
+import ShowcaseRoll from '../components/ShowcaseRoll'
 
 export const IndexTemplate = ({
   landing,
@@ -71,7 +72,7 @@ export const IndexTemplate = ({
               </Row>
             </Col>
             <Col xs={4} sm={8} md={4} offset={{ md: 3 }}>
-              Counters
+              <Counters counters={counters} />
             </Col>
           </Row>
         </Container>
@@ -94,6 +95,9 @@ export const IndexTemplate = ({
             </Col>
           </Row>
         </Container>
+      </styled.Section>
+      <styled.Section>
+        <ShowcaseRoll />
       </styled.Section>
     </Layout>
   </Theme>
@@ -163,6 +167,7 @@ export const indexPageQuery = graphql`
                   ...GatsbyImageSharpFixed
                 }
               }
+              publicURL
             }
           }
         }
