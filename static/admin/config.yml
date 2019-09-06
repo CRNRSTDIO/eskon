@@ -99,7 +99,7 @@ collections:
           - {label: Body, name: body, widget: text}
           - {label: Image, name: image, required: false, widget: image}
       - label: Section
-        name: showcaseSectio05
+        name: showcaseSection05
         widget: object
         fields:
           - {label: Heading, name: heading, widget: string}
