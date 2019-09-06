@@ -14,11 +14,11 @@ import ShowcaseRoll from '../components/ShowcaseRoll'
 
 export const IndexTemplate = ({
   landing,
-  counters,
-  section01,
+  indexSection01,
   image,
-  section02,
-  section03
+  indexSection02,
+  indexSection03,
+  indexSection04
 }) => (
   <Theme>
     <Layout>
@@ -30,17 +30,17 @@ export const IndexTemplate = ({
         <Container className='container'>
           <Row className='row' reverse={['sm', 'md', 'lg', 'xl']}>
             <Col xs={3} offset={{ xs: 1, sm: 1, md: 1 }} sm={2} md={3} className='col'>
-              <Img fluid={section01.image.childImageSharp.fluid} />
+              <Img fluid={indexSection01.image.childImageSharp.fluid} />
             </Col>
             <Col xs={4} sm={4} md={7}>
               <Row>
                 <Col xs={4} className='col'>
                   <Row>
                     <Col xs={4} md={6}>
-                      <Heading dark regular as='h3'>{section01.heading}</Heading>
+                      <Heading dark regular as='h3'>{indexSection01.heading}</Heading>
                     </Col>
                     <Col xs={4} md={6}>
-                      <Paragraph dark>{section01.body}</Paragraph>
+                      <Paragraph dark>{indexSection01.body}</Paragraph>
                     </Col>
                   </Row>
                 </Col>
@@ -64,15 +64,15 @@ export const IndexTemplate = ({
             <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
               <Row>
                 <Col xs={4}>
-                  <Heading dark regular as='h3'>{section02.heading}</Heading>
+                  <Heading dark regular as='h3'>{indexSection02.heading}</Heading>
                 </Col>
                 <Col xs={4}>
-                  <Paragraph dark>{section02.body}</Paragraph>
+                  <Paragraph dark>{indexSection02.body}</Paragraph>
                 </Col>
               </Row>
             </Col>
             <Col xs={4} sm={8} md={4} offset={{ md: 3 }}>
-              <Counters counters={counters} />
+              <Counters counters={indexSection03} />
             </Col>
           </Row>
         </Container>
@@ -83,15 +83,15 @@ export const IndexTemplate = ({
             <Col xs={4} sm={5} offset={{ sm: 1, md: 1}} md={4}>
               <Row>
                 <Col xs={4}>
-                  <Heading dark regular noline as='h3'>{section03.heading}</Heading>
+                  <Heading dark regular noline as='h3'>{indexSection04.heading}</Heading>
                 </Col>
                 <Col xs={4}>
-                  <Paragraph dark>{section03.body}</Paragraph>
+                  <Paragraph dark>{indexSection04.body}</Paragraph>
                 </Col>
               </Row>
             </Col>
             <Col xs={4} sm={8} offset={{ sm: 0, md: 1 }} md={8}>
-              <Solutions {...section03} />
+              <Solutions {...indexSection04} />
             </Col>
           </Row>
         </Container>
@@ -135,7 +135,7 @@ export const indexPageQuery = graphql`
             }
           }
         }
-        section01 {
+        indexSection01 {
           heading
           body
           image {
@@ -146,16 +146,16 @@ export const indexPageQuery = graphql`
             }
           }
         }
-        section02 {
+        indexSection02 {
           heading
           body
         }
-        counters {
+        indexSection03 {
           desc
           value
           special
         }
-        section03 {
+        indexSection04 {
           heading
           body
           items {

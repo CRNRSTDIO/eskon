@@ -4,18 +4,18 @@ title: Usługi inżynieryjne
 landing:
   body: >-
     Posiadamy kilkunastoletnie doświadczenie w doradztwie i wykonywaniu
-    konstrukcji i napraw dla przemysłu i biznesu. 
+    konstrukcji i napraw dla przemysłu i biznesu.
 
-    Oszczędzimy zarówno Twój czas jak 
+    Oszczędzimy zarówno Twój czas jak
 
     i pieniądze poprzez organizację i optymalizacje kosztów.
   cta: Dowiedz się więcej
   heading: |-
-    Doradzimy najlepsze 
-    rozwiązanie konstrukcyjne 
+    Doradzimy najlepsze
+    rozwiązanie konstrukcyjne
     dla Twojego biznesu
   image: /img/empty-steel-structure-building-pvbeuj4-2x.png
-section01:
+uslugiSection01:
   accordions:
     - body: Lorem ipsum
       heading: Diagnoza
@@ -23,7 +23,7 @@ section01:
     - body: Lorem ipsum
       heading: Konstrukcje stalowe
   heading: Nasze usługi dla biznesu
-section02:
+uslugiSection02:
   carousel:
     - body: >-
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -36,4 +36,3 @@ section02:
       name: Tomasz Koss
   heading: Referencje
 ---
-

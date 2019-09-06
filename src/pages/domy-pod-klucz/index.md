@@ -5,15 +5,15 @@ landing:
   body: >-
     Jesteśmy po to aby służyć Ci pomocą i doradztwem w realizacji Twojego
     przyszłego domu od fundamentów po wykończenie - gwarantując, że cały proces
-    budowy będzie kontrolowany. 
+    budowy będzie kontrolowany.
 
     Oszczędzimy zarówno Twój czas jak i pieniądze poprzez organizację i
     optymalizacje kosztów.
   cta: Dowiedz się więcej
   heading: |-
-    Twój wymarzony dom 
+    Twój wymarzony dom
     w technologii energooszczędnej
-section01:
+domySection01:
   accordions:
     - body: >-
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -44,20 +44,19 @@ section01:
     etapy, które są w zakresie naszej kompleksowej usługi domu pod klucz.
   heading: |
     Kompletny proces,
-    który zapewnia, 
+    który zapewnia,
     wysoką jakość
 image: /img/modern-house-with-garden-swimming-pool-and-wooden-rzg7hu2-2x.png
-section02:
+domySection02:
   body: >-
     Zarówno technologia materiałów budowlanych jak i prefabrykatów pozwala na
     budowę domów, które potrafią drastycznie obniżyć koszty ogrzewania i
-    energii. 
+    energii.
 
     Porównaj wyposażenie, funkcjonalności i zalety domów standardowych i
     energooszczędnych.
   heading: |
     Dom z wykorzystaniem
-    nowoczesnych 
+    nowoczesnych
     technologii
 ---
-

@@ -9,7 +9,7 @@ import Landing from '../components/Landing'
 
 export const UslugiInzynieryjneTemplate = ({
   landing,
-  section01
+  uslugiSection01
 }) => (
   <Theme>
     <Layout>
@@ -22,7 +22,7 @@ export const UslugiInzynieryjneTemplate = ({
         <Container>
           <Row>
             <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
-              <Heading regular dark as='h3' noline>{section01.heading}</Heading>
+              <Heading regular dark as='h3' noline>{uslugiSection01.heading}</Heading>
             </Col>
             <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
               accordions
@@ -58,7 +58,7 @@ export const uslugiInzynieryjneQuery = graphql`
           body
           cta
         }
-        section01 {
+        uslugiSection01 {
           heading
           accordions {
             heading

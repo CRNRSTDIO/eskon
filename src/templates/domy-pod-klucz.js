@@ -11,9 +11,9 @@ import Img from 'gatsby-image'
 
 export const DomyPodKluczTemplate = ({
   landing,
-  section01,
+  domySection01,
   image,
-  section02
+  domySection02
 }) => (
   <Theme>
     <Layout>
@@ -23,7 +23,7 @@ export const DomyPodKluczTemplate = ({
         {...landing}
       />
       <Section>
-          <Heading dark regular as='h3'>{section01.heading}</Heading>
+          <Heading dark regular as='h3'>{domySection01.heading}</Heading>
       </Section>
     </Layout>
   </Theme>
@@ -45,7 +45,7 @@ export const domyPodKluczQuery = graphql`
           heading
           body
         }
-        section01 {
+        domySection01 {
           heading
           body
           accordions {
@@ -61,7 +61,7 @@ export const domyPodKluczQuery = graphql`
             }
           }
         }
-        section02 {
+        domySection02 {
           heading
           body
         }

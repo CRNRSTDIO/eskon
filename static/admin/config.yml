@@ -73,33 +73,33 @@ collections:
         widget: select
         options: ["Domy pod klucz", "Komercyjne"]
       - label: Section
-        name: section01
+        name: showcaseSection01
         widget: object
         fields:
           - {label: Heading, name: heading, widget: text}
           - {label: Body, name: body, widget: text}
       - label: Section
-        name: section02
+        name: showcaseSection02
         widget: object
         fields:
           - {label: Heading, name: heading, widget: text}
           - {label: Body, name: body, widget: text}
           - {label: Image, name: image, required: false, widget: image}
       - label: Section
-        name: section03
+        name: showcaseSection03
         widget: list
         fields:
           - {label: Heading, name: heading, widget: string}
           - {label: Body, name: body, widget: text}
       - label: Section
-        name: section04
+        name: showcaseSection04
         widget: object
         fields:
           - {label: Heading, name: heading, widget: text}
           - {label: Body, name: body, widget: text}
           - {label: Image, name: image, required: false, widget: image}
       - label: Section
-        name: sectio05
+        name: showcaseSectio05
         widget: object
         fields:
           - {label: Heading, name: heading, widget: string}
@@ -112,19 +112,19 @@ collections:
               - {label: Body, name: body, widget: text}
               - {label: Open, name: isOpen, required: false, widget: boolean}
       - label: Section
-        name: section06
+        name: showcaseSection06
         widget: list
         fields:
           - {label: Image, name: image, required: false, widget: image}
       - label: Section
-        name: section07
+        name: showcaseSection07
         widget: list
         fields:
           - {label: Value, name: value, widget: string}
           - {label: Addition, name: addition, widget: string}
           - {label: Description, name: description, widget: string}
       - label: Section
-        name: section 08
+        name: showcaseSection 08
         widget: object
         fields:
           - {label: Heading, name: heading, widget: string}
@@ -187,20 +187,20 @@ collections:
             name: image
             widget: image
           - label: Section
-            name: section02
+            name: indexSection02
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
               -  {label: Body, name: body, widget: text}
-          - label: Counters
-            name: counters
+          - label: indexSection03
+            name: Section
             widget: list
             fields:
               - {label: Value, name: value, widget: number}
               - {label: Description, name: desc, widget: string}
               - {label: Special character, required: false, name: special, widget: string}
           - label: Section
-            name: section03
+            name: indexSection04
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
@@ -232,7 +232,7 @@ collections:
               - {label: Body, name: body, widget: text}
               - {label: CTA, name: cta, widget: string}
           - label: Section
-            name: section01
+            name: domySection01
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
@@ -249,7 +249,7 @@ collections:
             widget: image
             required: false
           - label: Section
-            name: section02
+            name: domySection02
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
@@ -261,7 +261,6 @@ collections:
               - label: Table
                 name: table
                 widget: list
-
       - file: src/pages/uslugi-inzynieryjne/index.md
         label: Usługi inżynieryjne
         name: uslugi-inzynieryjne
@@ -283,7 +282,7 @@ collections:
               - {label: Body, name: body, widget: text}
               - {label: CTA, name: cta, widget: string}
           - label: Section
-            name: section01
+            name: uslugiSection01
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
@@ -295,7 +294,7 @@ collections:
                 - {label: Body, name: body, widget: markdown}
                 - {label: Open, name: isOpen, required: false, widget: boolean}
           - label: Section
-            name: section02
+            name: uslugiSection02
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
@@ -332,21 +331,21 @@ collections:
             widget: string
             default: O nas
           - label: Section
-            name: section01
+            name: oSection01
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - {label: Image, name: image, required: false, widget: image}
           - label: Section
-            name: section02
+            name: oSection02
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
               - {label: Image, name: image, required: false, widget: image}
           - label: Section
-            name: section03
+            name: oSection03
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
@@ -370,14 +369,14 @@ collections:
             widget: string
             default: Kontakt
           - label: Section
-            name: section01
+            name: kontaktSection01
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: markdown}
               - {label: Image, name: image, required: false, widget: image}
           - label: Section
-            name: section02
+            name: kontaktSection02
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}

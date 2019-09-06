@@ -11,29 +11,29 @@ import Landing from '../components/Landing'
 import Cards from '../components/Cards'
 
 export const ONasTemplate = ({
-  section01,
-  section02,
-  section03
+  oSection01,
+  oSection02,
+  oSection03
 }) => (
   <Theme>
     <Layout>
       <Landing
         dark
-        {...section01}
+        {...oSection01}
       />
       <Section>
         <Container>
           <Row>
             <Col xs={3} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
-              <Img fluid={section02.image.childImageSharp.fluid} />
+              <Img fluid={oSection02.image.childImageSharp.fluid} />
             </Col>
             <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={3}>
               <Row>
                 <Col xs={4}>
-                  <Heading dark regular as='h3'>{section02.heading}</Heading>
+                  <Heading dark regular as='h3'>{oSection02.heading}</Heading>
                 </Col>
                 <Col xs={4}>
-                  <Paragraph dark>{section02.body}</Paragraph>
+                  <Paragraph dark>{oSection02.body}</Paragraph>
                 </Col>
               </Row>
             </Col>
@@ -41,7 +41,7 @@ export const ONasTemplate = ({
         </Container>
       </Section>
       <Section>
-        <Cards {...section03} />
+        <Cards {...oSection03} />
       </Section>
     </Layout>
   </Theme>
@@ -59,7 +59,7 @@ export const oNasQuery = graphql`
   query ONas {
     markdownRemark(frontmatter: { templateKey: { eq: "o-nas" } }) {
       frontmatter {
-        section01 {
+        oSection01 {
           heading
           body
           image {
@@ -70,7 +70,7 @@ export const oNasQuery = graphql`
             }
           }
         }
-        section02 {
+        oSection02 {
           heading
           body
           image {
@@ -81,7 +81,7 @@ export const oNasQuery = graphql`
             }
           }
         }
-        section03 {
+        oSection03 {
           heading
           cards {
             image {
