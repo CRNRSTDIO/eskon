@@ -192,8 +192,8 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: text}
               -  {label: Body, name: body, widget: text}
-          - label: indexSection03
-            name: Section
+          - label: Section
+            name: indexSection03
             widget: list
             fields:
               - {label: Value, name: value, widget: number}
