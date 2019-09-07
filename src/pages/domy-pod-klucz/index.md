@@ -18,6 +18,10 @@ domySection01:
     - body: >-
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      heading: Doradztwo i opt.
+    - body: >-
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 
 
         * Geodezja
@@ -39,6 +43,12 @@ domySection01:
         * Stolarka
       heading: Proces budowlany
       isOpen: true
+    - body: Geologia
+      heading: Geologia
+    - body: Projekt
+      heading: Projekt
+    - body: Formalności
+      heading: Formalności
   body: >
     Stworzymy dla Ciebie dom dostosowany do Twoich potrzeb. Poznaj wszystkie
     etapy, które są w zakresie naszej kompleksowej usługi domu pod klucz.
@@ -59,4 +69,8 @@ domySection02:
     Dom z wykorzystaniem
     nowoczesnych
     technologii
+section03:
+  table:
+    - Formalności
 ---
+
