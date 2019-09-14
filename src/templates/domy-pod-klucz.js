@@ -4,10 +4,12 @@ import Theme from '../components/Theme'
 import Layout from '../components/Layout'
 import Heading from '../components/styled/Heading'
 import Paragraph from '../components/styled/Paragraph'
-import { Container, Row, Col } from 'react-grid-system'
+import Columns from '../components/styled/Columns'
+import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Section from '../components/styled/Section'
 import Landing from '../components/Landing'
 import Img from 'gatsby-image'
+import Accordions from '../components/Accordions'
 
 export const DomyPodKluczTemplate = ({
   landing,
@@ -23,7 +25,46 @@ export const DomyPodKluczTemplate = ({
         {...landing}
       />
       <Section>
-          <Heading dark regular as='h3'>{domySection01.heading}</Heading>
+        <Container>
+          <Row>
+            <Col xs={4} md={3} offset={{ md: 1 }}>
+              <Row>
+                <Col xs={4}>
+                  <Heading dark regular as='h3'>{domySection01.heading}</Heading>
+                </Col>
+                <Col xs={4}>
+                  <Paragraph dark>{domySection01.body}</Paragraph>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={4} md={6} offset={{ md: 1}}>
+              <Accordions cols={2} accordions={domySection01.accordions} />
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Row>
+            <Col xs={4}>
+              <Img fluid={image.childImageSharp.fluid} />
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Row>
+            <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
+              <Heading dark regular as='h3'>{domySection02.heading}</Heading>
+            </Col>
+            <Col xs={4} sm={6} offset={{ sm: 1, md: 0 }} md={6}>
+              <Columns noline>
+                <Paragraph dark>{domySection02.body}</Paragraph>
+              </Columns>
+            </Col>
+          </Row>
+        </Container>
       </Section>
     </Layout>
   </Theme>

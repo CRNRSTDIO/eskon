@@ -97,7 +97,7 @@ export const IndexTemplate = ({
         </Container>
       </styled.Section>
       <styled.Section>
-        <ShowcaseRoll />
+        <ShowcaseRoll nested/>
       </styled.Section>
     </Layout>
   </Theme>

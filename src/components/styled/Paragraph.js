@@ -6,6 +6,7 @@ const Paragraph = styled.p`
   font-size: .9375rem;
   font-weight: 400;
   margin: 0;
+  white-space: pre-line;
 `
 
 export default Paragraph

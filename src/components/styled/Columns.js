@@ -5,7 +5,7 @@ const Columns = styled.article`
   column-count: 2;
   column-gap: 1rem;
   column-width: 9.375rem;
-  padding: 1.625rem 0 0;
+  padding: ${({ noline }) => noline ? '0' : '1.625rem 0 0'};
   position: relative;
 
   ::after {
@@ -13,6 +13,7 @@ const Columns = styled.article`
       90deg, ${grey0} 0%, ${grey0} calc(50% - .5rem), transparent calc(50% - .5rem), transparent calc(50% + .5rem), ${grey0} calc(50% + .5rem), ${grey0} 100%)`
     };
     content: '';
+    display: ${({ noline }) => noline ? 'none' : 'block'};
     height: .125rem;
     left: 0;
     position: absolute;
