@@ -1,16 +1,19 @@
 import React, { useState, useRef, useEffect, cloneElement } from 'react'
+import Img from 'gatsby-image'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import { Tabs, useTabState, Panel } from './Tabs'
+import Heading from './styled/Heading'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import { motion } from 'framer-motion'
+import * as styled from './styled/ShowcaseRoll'
 
 const Tab = ({ children }) => {
   const { isActive, onClick } = useTabState()
 
   return (
-    <button onClick={onClick}>
+    <styled.ShowcaseTab active={isActive} onClick={onClick}>
       {children}
-    </button>
+    </styled.ShowcaseTab>
   )
 }
 
@@ -32,7 +35,11 @@ const PanelList = ({ state, children }) => {
   )
 }
 
-const ShowcaseRoll = ({ data: { allMarkdownRemark: { edges: items }, globalJson: { showcase: { front_limit } } }, nested }) => {
+const ShowcaseRoll = ({ data: {
+  allMarkdownRemark: { edges: items },
+  globalJson: { showcase: { front_limit } },
+  markdownRemark: { frontmatter: { title }, fields: { slug } }
+}, nested }) => {
   const state = useState(0)
   const [komercyjne, podKlucz] = items.reduce((arr, item) => {
     arr[item.node.frontmatter.category === 'Komercyjne' ? 0 : 1].push(item)
@@ -41,48 +48,80 @@ const ShowcaseRoll = ({ data: { allMarkdownRemark: { edges: items }, globalJson:
   }, [[], []])
 
   return (
-    <Tabs state={state}>
+    <styled.ShowcaseRoll>
       <Container>
         <Row>
-          <Col xs={2} sm={3} offset={{ sm: 1, md: 4 }} md={2}>
-            <Tab>Tab1</Tab>
-          </Col>
-          <Col xs={2} sm={3} offset={{ sm: 1, md: 0 }} md={2}>
-            <Tab>Tab2</Tab>
+          <Col xs={4}>
+            <styled.ShowcaseHeading>
+              <Heading noline dark regular as='h3'>{title}</Heading>
+            </styled.ShowcaseHeading>
           </Col>
         </Row>
       </Container>
+      <Tabs state={state}>
+        <Container>
+          <Row>
+            <Col xs={2} sm={3} offset={{ sm: 1, md: 4 }} md={2}>
+              <Tab>Domy pod klucz</Tab>
+            </Col>
+            <Col xs={2} sm={3} offset={{ sm: 1, md: 0 }} md={2}>
+              <Tab>Komercyjne</Tab>
+            </Col>
+          </Row>
+        </Container>
+        <Container>
+          <Row>
+            <Col xs={4} sm={6} offset={{ sm: 1, md: 0 }} md={12}>
+              <PanelList state={state}>
+                <Panel>
+                  {
+                    podKlucz.slice(0, nested ? front_limit : undefined).map(({
+                      node: { fields: { slug }, frontmatter: { title, image } }
+                    }, index) => (
+                      <Col key={index} xs={4} sm={8} md={4}>
+                        <styled.ShowcaseLink to={slug}>
+                          {image && (
+                            <Img fluid={image.childImageSharp.fluid} />
+                          )}
+                          <styled.ShowcaseLinkBottom>
+                            <styled.ShowcaseLinkText>{title}</styled.ShowcaseLinkText>
+                          </styled.ShowcaseLinkBottom>
+                        </styled.ShowcaseLink>
+                      </Col>
+                    ))
+                  }
+                </Panel>
+                <Panel>
+                  {
+                    komercyjne.slice(0, nested ? front_limit : undefined).map(({
+                      node: { fields: { slug }, frontmatter: { title, image } }
+                    }, index) => (
+                      <Col key={index} xs={4} sm={8} md={4}>
+                        <styled.ShowcaseLink to={slug}>
+                          {image && (
+                            <Img fluid={image.childImageSharp.fluid} />
+                          )}
+                          <styled.ShowcaseLinkBottom>
+                            <styled.ShowcaseLinkText>{title}</styled.ShowcaseLinkText>
+                          </styled.ShowcaseLinkBottom>
+                        </styled.ShowcaseLink>
+                      </Col>
+                    ))
+                  }
+                </Panel>
+              </PanelList>
+            </Col>
+          </Row>
+        </Container>
+      </Tabs>
       <Container>
         <Row>
-          <Col xs={4} sm={6} offset={{ sm: 1, md: 0 }} md={12}>
-            <PanelList state={state}>
-              <Panel>
-                {
-                  podKlucz.slice(0, nested ? front_limit : undefined).map(({ node: { fields: { slug }, frontmatter: { title } } }, index) => (
-                    <Col key={index} xs={4} sm={8} md={4}>
-                      <Link to={slug}>
-                        {title}
-                      </Link>
-                    </Col>
-                  ))
-                }
-              </Panel>
-              <Panel>
-                {
-                  komercyjne.slice(0, nested ? front_limit : undefined).map(({ node: { fields: { slug }, frontmatter: { title } } }, index) => (
-                    <Col key={index} xs={4} sm={8} md={4}>
-                      <Link to={slug}>
-                        {title}
-                      </Link>
-                    </Col>
-                  ))
-                }
-              </Panel>
-            </PanelList>
+          <Col xs={4} sm={4} offset={{ sm: 2, md: 4 }} md={4}>
+            <styled.ShowcaseAllLink to={slug}>Zobacz więcej</styled.ShowcaseAllLink>
           </Col>
         </Row>
       </Container>
-    </Tabs>
+    </styled.ShowcaseRoll>
   )
 }
 
@@ -99,6 +138,13 @@ export default ({ nested }) => (
               frontmatter {
                 title
                 category
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 356) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
               fields {
                 slug
@@ -109,6 +155,15 @@ export default ({ nested }) => (
         globalJson {
           showcase {
             front_limit
+          }
+        }
+        markdownRemark(frontmatter: {templateKey: {eq: "realizacje"}}) {
+          id
+          frontmatter {
+            title
+          }
+          fields {
+            slug
           }
         }
       }
