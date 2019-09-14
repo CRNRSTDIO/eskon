@@ -138,13 +138,13 @@ export const indexPageQuery = graphql`
         indexSection01 {
           heading
           body
-          image {
-            childImageSharp {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
+          # image {
+          #   childImageSharp {
+          #     fluid(maxWidth: 400) {
+          #       ...GatsbyImageSharpFluid
+          #     }
+          #   }
+          # }
         }
         indexSection02 {
           heading
