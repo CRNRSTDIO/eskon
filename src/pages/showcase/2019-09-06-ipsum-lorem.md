@@ -1,6 +1,7 @@
 ---
 templateKey: showcase
 title: Ipsum Lorem
+image: /img/holst_karuna__mg_6205_f4_web-2x.png
 category: Domy pod klucz
 showcaseSection01:
   body: Ipsum Lorem
