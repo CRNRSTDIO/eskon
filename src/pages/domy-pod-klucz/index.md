@@ -13,6 +13,7 @@ landing:
   heading: |-
     Twój wymarzony dom
     w technologii energooszczędnej
+  image: /img/solar-panels-on-house-px8nbjz-2x.png
 domySection01:
   accordions:
     - body: >-
