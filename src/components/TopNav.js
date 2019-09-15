@@ -38,10 +38,11 @@ const itemVariants = {
   }
 }
 
-const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] } } }) => (
+const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: { logo } } }) => (
   <styled.TopNav variants={variants}>
     <Container>
       <Row>
+        {console.log(logo)}
         <Visible xs>
           <Col xs={1}>
             Menu
@@ -49,7 +50,7 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] } } }) => (
         </Visible>
         <Col xs={2} sm={1} offset={{ sm: 1, md: 1 }} md={1}>
           <styled.TopNavLogo variants={itemVariants}>
-            Logo
+            <img src={logo[0].variant} />
           </styled.TopNavLogo>
         </Col>
         <Hidden xs sm>
@@ -67,7 +68,9 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] } } }) => (
         </Hidden>
         <Visible xs sm>
           <Col xs={1} offset={{ sm: 5 }} sm={1}>
-            Logo2
+            <styled.TopNavLogo variants={itemVariants}>
+              <img src={logo[1].variant} />
+            </styled.TopNavLogo>
           </Col>
         </Visible>
         <Hidden xs sm>
@@ -100,6 +103,11 @@ export default () => (
                 slug
               }
             }
+          }
+        }
+        globalJson {
+          logo {
+            variant
           }
         }
       }
