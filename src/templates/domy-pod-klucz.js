@@ -20,14 +20,15 @@ export const DomyPodKluczTemplate = ({
   <Theme>
     <Layout>
       <Landing
-        center
         medium
+        background={landing.image.childImageSharp.fluid}
         {...landing}
+        image={null}
       />
       <Section>
         <Container>
           <Row>
-            <Col xs={4} md={3} offset={{ md: 1 }}>
+            <Col xs={4} sm={6} md={3} offset={{ sm: 1, md: 1 }}>
               <Row>
                 <Col xs={4}>
                   <Heading dark regular as='h3'>{domySection01.heading}</Heading>
@@ -37,7 +38,7 @@ export const DomyPodKluczTemplate = ({
                 </Col>
               </Row>
             </Col>
-            <Col xs={4} md={6} offset={{ md: 1}}>
+            <Col xs={4} sm={6} md={6} offset={{ sm: 1, md: 1}}>
               <Accordions cols={2} accordions={domySection01.accordions} />
             </Col>
           </Row>
@@ -85,6 +86,13 @@ export const domyPodKluczQuery = graphql`
         landing {
           heading
           body
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         domySection01 {
           heading

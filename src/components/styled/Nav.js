@@ -11,6 +11,9 @@ export const NavBar = styled.div`
   height: 100vh;
   justify-content: space-between;
   position: fixed;
+  visibility: ${props => (props.show ? 'visible' : 'hidden')};
+  transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+  transform: ${props => (props.show ? 'none' : 'translate(0, 100%)')};
   width: 3.75rem;
   z-index: 2;
 `

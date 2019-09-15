@@ -18,6 +18,7 @@ export const ONasTemplate = ({
   <Theme>
     <Layout>
       <Landing
+        medium
         dark
         {...oSection01}
       />

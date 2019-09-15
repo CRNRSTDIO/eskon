@@ -21,6 +21,11 @@ collections:
             name: 'site_title'
             widget: string
             default: Eskon
+          - label: Logo variants
+            name: logo
+            widget: list
+            fields:
+              - {label: Variant, name: variant, widget: image}
           - label: Showcase settings
             name: showcase
             widget: object

@@ -25,11 +25,11 @@ const itemVariants = {
   }
 }
 
-export const NavBar = ({ toggleOpen }) => (
-  <styled.NavBar onClick={() => toggleOpen()}>
+export const NavBar = ({ show, toggleOpen }) => (
+  <styled.NavBar show={show} onClick={() => toggleOpen()}>
     Menu
     <styled.NavBarText>
-      Eskon Przedsiębiorstwo budowlane © Eskon 2019
+      Eskon Przedsiębiorstwo budowlane &copy; Eskon {new Date().getFullYear()}
     </styled.NavBarText>
   </styled.NavBar>
 )

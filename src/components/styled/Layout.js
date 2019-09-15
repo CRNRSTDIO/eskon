@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { motion } from 'framer-motion'
 
 export const Wrapper = styled(motion.div)`
@@ -19,6 +19,11 @@ export const Main = styled.main`
   right: 0;
   top: 0;
   width: 100%;
+
+  ${({ scrollLock }) => scrollLock && css`
+    overflow: hidden;
+    pointer-events: none;
+  `}
 `
 
 export const Footer = styled.footer`

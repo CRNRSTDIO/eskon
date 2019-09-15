@@ -14,6 +14,7 @@ export const UslugiInzynieryjneTemplate = ({
   <Theme>
     <Layout>
       <Landing
+        medium
         background={landing.image.childImageSharp.fluid}
         {...landing}
         image={null}

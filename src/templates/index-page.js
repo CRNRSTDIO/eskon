@@ -24,7 +24,9 @@ export const IndexTemplate = ({
     <Layout>
       <Landing
         huge
+        background={landing.image.childImageSharp.fluid}
         {...landing}
+        image={null}
       />
       <styled.Section box>
         <Container className='container'>
@@ -117,6 +119,13 @@ export const indexPageQuery = graphql`
       frontmatter {
         landing {
           heading
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           box01 {
             heading
             body
@@ -138,13 +147,13 @@ export const indexPageQuery = graphql`
         indexSection01 {
           heading
           body
-          # image {
-          #   childImageSharp {
-          #     fluid(maxWidth: 400) {
-          #       ...GatsbyImageSharpFluid
-          #     }
-          #   }
-          # }
+          image {
+            childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         indexSection02 {
           heading
