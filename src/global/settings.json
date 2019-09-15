@@ -1,5 +1,16 @@
 {
   "site_title": "ESKON",
+  "logo": [
+    {
+      "variant": "/img/zasób-17.svg"
+    },
+    {
+      "variant": "/img/zasób-15.svg"
+    },
+    {
+      "variant": "/img/zasób-16.svg"
+    }
+  ],
   "showcase": {
     "front_limit": 3
   },
