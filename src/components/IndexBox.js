@@ -7,11 +7,11 @@ import Link from './styled/Link'
 const IndexBox = ({ alternate, heading, body, cta }) => (
   <styled.Box alternate={alternate}>
     <styled.BoxHeading alternate={alternate}>
-      <Heading dark={alternate} small as='h3'>{heading}</Heading>
+      <Heading inherit small as='h3'>{heading}</Heading>
     </styled.BoxHeading>
-    <styled.BoxBody>
-      <Paragraph dark={alternate}>{body}</Paragraph>
-      <Link blue={alternate} to='/'>{cta}</Link>
+    <styled.BoxBody alternate={alternate}>
+      <Paragraph inherit>{body}</Paragraph>
+      <Link inherit to='/'>{cta}</Link>
     </styled.BoxBody>
   </styled.Box>
 )

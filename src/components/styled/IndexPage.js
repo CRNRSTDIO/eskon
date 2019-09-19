@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from './Link'
 
 export const Section = styled.section`
   margin: 0;
@@ -9,36 +10,71 @@ export const Section = styled.section`
     background-color: ${({ theme: { grey0 } }) => grey0};
     content: '';
     display: ${({ box }) => box ? 'block' : 'none'};
-    height: 6.875rem;
+    height: 4.375rem;
     left: 0;
     position: absolute;
     top: 0;
-    width: calc(50% - .5rem);
+    width: calc(75% - .75rem);
+
+    ${({ theme: { queries } }) => queries.sm`
+      height: 4.625rem;
+      width: calc(60% - .5rem);
+    `}
+
+    ${({ theme: { queries } }) => queries.md`
+      height: 6.875rem;
+      width: calc(65% - .5rem);
+    `}
   }
 `
 
+export const PullUp = styled.div`
+  margin-bottom: auto;
+`
+
+export const PullDown = styled.div`
+  margin-top: auto
+`
+
 export const Box = styled.div`
-  background-color: ${({ alternate, theme: { white, blue2 } }) => alternate ? white : blue2};
+  background-color: ${({ theme: { blue2 } }) => blue2};
+  color: ${({ theme: { white } }) => white};
   display: flex;
   flex-direction: column;
+  margin: .625rem 0;
   position: relative;
+
+  ${({ theme: { queries } }) => queries.md`
+    background-color: ${({ alternate, theme: { white, blue2 } }) => alternate ? white : blue2};
+    color: ${({ alternate, theme: { white, grey6} }) => alternate ? grey6 : white};
+    height: 100%;
+    margin: 0;
+  `}
 
   ::after {
     background-color: ${({ theme: { blue2 } }) => blue2};
     content: '';
-    display: ${({ alternate }) => alternate ? 'block' : 'none'};
+    display: none;
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     width: .75rem;
+
+    ${({ theme: { queries } }) => queries.md`
+      display: ${({ alternate }) => alternate ? 'block' : 'none'};
+    `}
   }
 `
 
 export const BoxHeading = styled.header`
   border-bottom: ${({ alternate, theme: { white, grey1 } }) => `1px solid ${alternate ? grey1 : white}`};
   flex-shrink: 0;
-  padding: 2rem 3.375rem 0;
+  padding: 2rem 1.375rem 0;
+
+  ${({ theme: { queries } }) => queries.md`
+    padding: 2rem 3.375rem 0;
+  `}
 `
 
 export const BoxBody = styled.section`
@@ -46,10 +82,50 @@ export const BoxBody = styled.section`
   flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.125rem 3.375rem 2.375rem;
+  padding: 1.125rem 1.375rem 1.625rem;
   * + * {
     margin-top: 1rem;
   }
+
+  ${({ theme: { queries } }) => queries.md`
+    color: ${({ alternate, theme: { white, grey4 } }) => alternate ? grey4 : white};
+    padding: 1.125rem 3.375rem 2.375rem;
+  `}
+
+  ${Link} {
+    ${({ theme: { queries } }) => queries.md`
+      color: ${({ alternate, theme: { white, blue2 } }) => alternate ? blue2 : white};
+    `}
+  }
+`
+
+export const SectionImage = styled.div`
+  margin: 2.25rem 0 3.5rem 0;
+  width: 16.25rem;
+
+  ${({ theme: { queries } }) => queries.sm`
+    margin: 4.625rem 0 7rem;
+    width: 13.75rem;
+  `}
+
+  ${({ theme: { queries } }) => queries.md`
+    margin: 4.125rem 0 4.375rem;
+    width: 25rem;
+  `}
+`
+
+export const SectionHeadingWrapper = styled.div`
+  margin: auto 0 0;
+
+  ${({ theme: { queries } }) => queries.md`
+    margin: auto 0 9.875rem;
+  `}
+`
+
+export const SectionParagraphWrapper = styled.div`
+${({ theme: { queries } }) => queries.md`
+  margin: auto 0 11.375rem;
+`}
 `
 
 export const ImageContainer = styled.div`
@@ -129,6 +205,11 @@ export const Solutions = styled.section`
 
 export const SolutionsItem = styled.div`
   font-family: 'Roboto';
+
+  img {
+    max-height: 3.125rem;
+    max-width: 6.25rem;
+  }
 `
 
 export const SolutionsItemHeading = styled.h4`

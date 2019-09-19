@@ -1,15 +1,21 @@
 import styled, { css } from 'styled-components'
 
 const Heading = styled.h1`
-  color: ${({ dark, theme: { white, grey6 } }) => dark ? grey6 : white};
+  color: ${({ inherit, dark, theme: { white, grey6 } }) => inherit ? 'inherit' : dark ? grey6 : white};
   font-family: 'Noway';
+  margin: 0 0 1rem;
+  position: relative;
+  white-space: pre-line;
+
   ${({ huge }) => huge && css`
     font-size: 2.125rem;
     line-height: 2.5rem;
+    margin: 6.25rem 0 .75rem;
 
     ${({ theme: { queries } }) => queries.sm`
       font-size: 3.5rem;
-      line-height: 3.75rem
+      line-height: 3.75rem;
+      margin: 0 0 5.125rem;
     `}
   `};
   ${({ big }) => big && css`
@@ -44,9 +50,6 @@ const Heading = styled.h1`
     `}
   `}
   font-weight: ${({ regular, small }) => regular || small ? 400 : 300};
-  margin: 0 0 1rem;
-  position: relative;
-  white-space: pre-line;
 
   ::after {
     background-color: ${({ theme: { grey1 } }) => grey1};

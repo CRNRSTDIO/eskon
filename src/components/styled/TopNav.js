@@ -15,15 +15,21 @@ export const TopNavLogo = styled(motion.div)`
 `
 
 export const TopNavPhone = styled(motion.div)`
+  align-items: center;
   color: ${({ theme: { white } }) => white};
+  display: flex;
   font-family: 'Roboto';
   font-size: .75rem;
+  height: 100%;
+  justify-content: flex-end;
   letter-spacing: 1px;
   text-align: right;
 `
 
 export const TopNavList = styled(motion.ul)`
+  align-items: center;
   display: flex;
+  height: 100%;
   justify-content: space-between;
   margin: 0;
   padding: 0;

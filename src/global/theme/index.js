@@ -52,8 +52,8 @@ const theme = {
       xl: 1
     },
     container: {
-      xs: 'full',
-      sm: 38,
+      xs: 20.875,
+      sm: 40,
       md: 68,
       lg: 90,
       xl: 90

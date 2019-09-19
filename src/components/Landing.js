@@ -16,15 +16,15 @@ const Landing = ({ heading, body, cta, background, box01, box02, image, ...rest 
             <Col xs={4} sm={8} md={image ? 12 : 10} offset={{ md: image ? 0 : 1 }}>
               <Heading {...rest} as='h1'>{heading}</Heading>
             </Col>
-            <Col xs={4}>
+            <Col xs={4} sm={8}>
               <Row>
                 {box01 && (
-                  <Col xs={4} sm={4} md={5} offset={{ md: 1 }}>
+                  <Col xs={4} sm={8} md={5} offset={{ md: 1 }}>
                     <IndexBox {...box01} />
                   </Col>
                 )}
                 {box02 && (
-                  <Col xs={4} sm={4} md={5}>
+                  <Col xs={4} sm={8} md={5}>
                     <IndexBox alternate {...box02} />
                   </Col>
                 )}

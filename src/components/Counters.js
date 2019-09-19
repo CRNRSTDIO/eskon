@@ -7,7 +7,7 @@ const Counters = ({ counters }) => (
     <Container>
       <Row>
         {counters.map(({ desc, value, special }, index) => (
-          <Col key={value} xs={3} offset={{ xs: 1, sm: index === 0 ? 1 : 0, md: 3 }} sm={2} md={6}>
+          <Col key={index} xs={3} offset={{ xs: 1, sm: index === 0 ? 1 : 0, md: 3 }} sm={2} md={6}>
             <styled.CountersItem>
               <styled.CounterItemValue>
                 {`${value}${special}`}

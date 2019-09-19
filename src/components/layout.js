@@ -81,16 +81,14 @@ const Layout = ({ children }) => {
     animate={isOpen ? 'open' : 'closed'}
   >
     <NavBar show={showOnScroll} toggleOpen={toggleOpen} />
+    <motion.div animate={showOnScroll ? isOpen ? 'show' : 'hide' : 'show'}>
+      <TopNav open={isOpen} />
+    </motion.div>
     <styled.Wrapper
       variants={mainVariants}
     >
       <NavList />
       <styled.Main ref={mainRef} scrollLock={isOpen}>
-        <motion.div
-          animate={showOnScroll ? 'hide' : 'show'}
-        >
-          <TopNav/>
-        </motion.div>
         {children}
         <styled.Footer>
           <FooterCta />

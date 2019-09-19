@@ -32,17 +32,23 @@ export const IndexTemplate = ({
         <Container className='container'>
           <Row className='row' reverse={['sm', 'md', 'lg', 'xl']}>
             <Col xs={3} offset={{ xs: 1, sm: 1, md: 1 }} sm={2} md={3} className='col'>
-              <Img fluid={indexSection01.image.childImageSharp.fluid} />
+              <styled.SectionImage>
+                <Img fluid={indexSection01.image.childImageSharp.fluid} />
+              </styled.SectionImage>
             </Col>
-            <Col xs={4} sm={4} md={7}>
+            <Col xs={4} sm={4} md={7} offset={{ md: 1 }}>
               <Row>
                 <Col xs={4} className='col'>
                   <Row>
                     <Col xs={4} md={6}>
-                      <Heading dark regular as='h3'>{indexSection01.heading}</Heading>
+                      <styled.SectionHeadingWrapper>
+                        <Heading dark regular as='h3'>{indexSection01.heading}</Heading>
+                      </styled.SectionHeadingWrapper>
                     </Col>
                     <Col xs={4} md={6}>
-                      <Paragraph dark>{indexSection01.body}</Paragraph>
+                      <styled.SectionParagraphWrapper>
+                        <Paragraph dark>{indexSection01.body}</Paragraph>
+                      </styled.SectionParagraphWrapper>
                     </Col>
                   </Row>
                 </Col>
@@ -66,10 +72,14 @@ export const IndexTemplate = ({
             <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
               <Row>
                 <Col xs={4}>
-                  <Heading dark regular as='h3'>{indexSection02.heading}</Heading>
+                  <styled.PullDown>
+                    <Heading dark regular as='h3'>{indexSection02.heading}</Heading>
+                  </styled.PullDown>
                 </Col>
                 <Col xs={4}>
-                  <Paragraph dark>{indexSection02.body}</Paragraph>
+                  <styled.PullUp>
+                    <Paragraph dark>{indexSection02.body}</Paragraph>
+                  </styled.PullUp>
                 </Col>
               </Row>
             </Col>
@@ -92,7 +102,7 @@ export const IndexTemplate = ({
                 </Col>
               </Row>
             </Col>
-            <Col xs={4} sm={8} offset={{ sm: 0, md: 1 }} md={8}>
+            <Col xs={4} sm={8} offset={{ sm: 0, md: 1 }} md={10}>
               <Solutions {...indexSection04} />
             </Col>
           </Row>

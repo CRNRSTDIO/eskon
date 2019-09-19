@@ -38,11 +38,10 @@ const itemVariants = {
   }
 }
 
-const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: { logo } } }) => (
+const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: { logo } }, dark, open }) => (
   <styled.TopNav variants={variants}>
     <Container>
       <Row>
-        {console.log(logo)}
         <Visible xs>
           <Col xs={1}>
             Menu
@@ -50,42 +49,47 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
         </Visible>
         <Col xs={2} sm={1} offset={{ sm: 1, md: 1 }} md={1}>
           <styled.TopNavLogo variants={itemVariants}>
-            <img src={logo[0].variant} />
+            <img src={dark ? logo[0].variant : logo[1].variant} height={14} />
           </styled.TopNavLogo>
         </Col>
-        <Hidden xs sm>
-          <Col md={7} offset={{ md: 1 }}>
-            <styled.TopNavList variants={listVariants}>
-              {pages.filter(({ node: { frontmatter: { templateKey } } }) => templateKey !== 'index-page').map(({ node: page }) => (
-                <styled.TopNavItem key={page.id} variants={itemVariants}>
-                  <styled.TopNavLink to={page.fields.slug}>
-                    {page.frontmatter.title}
-                  </styled.TopNavLink>
-                </styled.TopNavItem>
-              ))}
-            </styled.TopNavList>
-          </Col>
-        </Hidden>
+        {console.log(open)}
+        {!open && (
+          <Hidden xs sm>
+            <Col md={7} offset={{ md: 1 }}>
+              <styled.TopNavList variants={listVariants}>
+                {pages.filter(({ node: { frontmatter: { templateKey } } }) => templateKey !== 'index-page').map(({ node: page }) => (
+                  <styled.TopNavItem key={page.id} variants={itemVariants}>
+                    <styled.TopNavLink to={page.fields.slug}>
+                      {page.frontmatter.title}
+                    </styled.TopNavLink>
+                  </styled.TopNavItem>
+                ))}
+              </styled.TopNavList>
+            </Col>
+          </Hidden>
+        )}
         <Visible xs sm>
           <Col xs={1} offset={{ sm: 5 }} sm={1}>
             <styled.TopNavLogo variants={itemVariants}>
-              <img src={logo[1].variant} />
+                <img src={dark ? logo[4].variant : logo[5].variant} height={30} />
             </styled.TopNavLogo>
           </Col>
         </Visible>
-        <Hidden xs sm>
-          <Col md={2}>
-            <styled.TopNavPhone variants={itemVariants}>
-              Telefon
-            </styled.TopNavPhone>
-          </Col>
-        </Hidden>
+        {!open && (
+          <Hidden xs sm>
+            <Col md={2}>
+              <styled.TopNavPhone variants={itemVariants}>
+                Telefon
+              </styled.TopNavPhone>
+            </Col>
+          </Hidden>
+        )}
       </Row>
     </Container>
   </styled.TopNav>
 )
 
-export default () => (
+export default ({ dark, open }) => (
   <StaticQuery
     query={graphql`
       query TopNavQuery {
@@ -112,6 +116,6 @@ export default () => (
         }
       }
     `}
-    render={data => <TopNav data={data} />}
+    render={(data) => <TopNav data={data} dark={dark} open={open} />}
   />
 )

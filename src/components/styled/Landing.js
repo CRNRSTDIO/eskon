@@ -3,7 +3,9 @@ import { rgba } from 'polished'
 import Img from 'gatsby-image'
 
 export const Landing = styled.section`
-  height: 100vh;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
   position: relative;
   width: 100vw;
   z-index: 1;

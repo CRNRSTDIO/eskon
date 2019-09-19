@@ -129,7 +129,7 @@ collections:
           - {label: Addition, name: addition, widget: string}
           - {label: Description, name: description, widget: string}
       - label: Section
-        name: showcaseSection 08
+        name: showcaseSection08
         widget: object
         fields:
           - {label: Heading, name: heading, widget: string}
@@ -141,7 +141,7 @@ collections:
               - {label: Heading, name: heading, widget: string}
               - {label: Description, name: descr, widget: text}
       - label: Section
-        name: section09
+        name: showcaseSection09
         widget: list
         fields:
           - {label: Image, name: image, required: false, widget: image}
