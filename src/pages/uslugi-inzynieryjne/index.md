@@ -34,5 +34,23 @@ uslugiSection02:
       link: ''
       linkText: Koss Global
       name: Tomasz Koss
+    - body: >-
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna 
+      linkText: Tomasz Koss
+      name: Tomasz Koss
+    - body: Tomasz Koss
+      linkText: Tomasz Koss
+      name: Tomasz Koss
+    - body: >-
+        or sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut la
+      linkText: >-
+        or sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut la
+      name: >-
+        or sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut la
   heading: Referencje
 ---
+
