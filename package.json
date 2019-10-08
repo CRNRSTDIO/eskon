@@ -5,7 +5,9 @@
   "version": "0.1.0",
   "author": "CRNR STUDIO <crnr.studio@gmail.com>",
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.10.24",
     "@n8tb1t/use-scroll-position": "^1.0.35",
+    "@popmotion/popcorn": "^0.4.2",
     "babel-plugin-styled-components": "^1.10.6",
     "cssapi-mq": "^2.1.1",
     "framer-motion": "^1.6.3",
@@ -33,10 +35,13 @@
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
+    "react-alice-carousel": "^1.15.3",
     "react-awesome-styled-grid": "^2.3.1",
+    "react-countup": "^4.2.2",
     "react-dom": "^16.9.0",
     "react-grid-system": "^5.0.2",
     "react-helmet": "^5.2.1",
+    "react-intersection-observer": "^8.24.2",
     "showdown": "^1.9.0",
     "styled-components": "^4.3.2"
   },

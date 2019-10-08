@@ -8,11 +8,14 @@ import Section from '../components/styled/Section'
 import Heading from '../components/styled/Heading'
 import Columns from '../components/styled/Columns'
 import Paragraph from '../components/styled/Paragraph'
+import Accordions from '../components/Accordions'
+import Count from '../components/Count'
 import * as styled from '../components/styled/Showcase'
 
 export const ShowcaseTemplate = ({
   title,
   tags,
+  image,
   showcaseSection01,
   showcaseSection02,
   showcaseSection03,
@@ -26,6 +29,30 @@ export const ShowcaseTemplate = ({
   <Theme>
     <Layout>
       <Section>
+        <styled.Section00>
+          <Container>
+            <Row>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={6}>
+                <Heading big noline>{title}</Heading>
+              </Col>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={6}>
+                <Row>
+                  {tags.map(({ tag }, index) => (
+                    <Col key={index} xs={4} sm={4} md={6}>
+                      <styled.Section00Tag>
+                        <Paragraph>{tag}</Paragraph>
+                      </styled.Section00Tag>
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
+            </Row>
+            <styled.Section00Image
+              fluid={image.childImageSharp.fluid}
+              style={{ position: 'absolute' }}
+            />
+          </Container>
+        </styled.Section00>
         <styled.Section01>
           <Container>
             <Row>
@@ -78,12 +105,14 @@ export const ShowcaseTemplate = ({
             <Row>
               {showcaseSection03.map(({ heading, body }, index) => (
                 <Col key={index} xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={3}>
-                  <Heading small dark as='h4'>
-                    {heading}
-                  </Heading>
-                  <Paragraph dark>
-                    {body}
-                  </Paragraph>
+                  <styled.Section03Item>
+                    <Heading small dark as='h4'>
+                      {heading}
+                    </Heading>
+                    <Paragraph dark>
+                      {body}
+                    </Paragraph>
+                  </styled.Section03Item>
                 </Col>
               ))}
             </Row>
@@ -91,118 +120,134 @@ export const ShowcaseTemplate = ({
         </styled.Section03>
       </Section>
       <Section>
-        <Container>
-          <Row>
-            <Col sm={4} sm={6} offset={{ sm: 1, md: 1 }} md={3}>
-
-            </Col>
-            <Col sm={4} sm={6} offset={{ sm: 1, md: 2 }} md={6}>
-
-            </Col>
-          </Row>
-        </Container>
+        <styled.Section04>
+          <Container>
+            <Row>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={3}>
+                <styled.Section04Text>
+                  <Row>
+                    <Col xs={4}>
+                      <Heading regular dark as='h3'>
+                        {showcaseSection04.heading}
+                      </Heading>
+                    </Col>
+                    <Col xs={4}>
+                      <Paragraph dark>
+                        {showcaseSection04.body}
+                      </Paragraph>
+                    </Col>
+                  </Row>
+                </styled.Section04Text>
+              </Col>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 2 }} md={6}>
+                <styled.Section04Image>
+                  <Img fluid={showcaseSection04.image.childImageSharp.fluid} />
+                </styled.Section04Image>
+              </Col>
+            </Row>
+          </Container>
+        </styled.Section04>
       </Section>
       <Section>
-        <Container>
-          <Row>
-            <Col sm={4} sm={6} offset={{ sm: 1, md: 1 }} md={3}>
-
-            </Col>
-            <Col sm={4} sm={6} offset={{ sm: 1, md: 2}} md={6}>
-
-            </Col>
-          </Row>
-        </Container>
+        <styled.Section05>
+          <Container>
+            <Row>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={3}>
+                <styled.Section05Text>
+                  <Row>
+                    <Col xs={4}>
+                      <Heading regular dark as='h3'>
+                        {showcaseSection05.heading}
+                      </Heading>
+                    </Col>
+                    <Col xs={4}>
+                      <Paragraph dark>
+                        {showcaseSection05.body}
+                      </Paragraph>
+                    </Col>
+                  </Row>
+                </styled.Section05Text>
+              </Col>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 2 }} md={6}>
+                <Accordions accordions={showcaseSection05.accordions} />
+              </Col>
+            </Row>
+          </Container>
+        </styled.Section05>
       </Section>
       <Section>
-        <Container fluid>
-          <Row>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-          </Row>
-        </Container>
+        <styled.Section06>
+          {showcaseSection06.map(({ image }, index) => (
+            <styled.Section06Div key={index}>
+              <Img
+                fluid={image.childImageSharp.fluid}
+                style={{
+                  height: '100%',
+                  minWidth: '100%'
+                }}
+              />
+            </styled.Section06Div>
+          ))}
+        </styled.Section06>
       </Section>
       <Section>
-        <Container>
-          <Row>
-            <Col xs={4} sm={8} md={3} offset={{ md: 1 }}>
-              <Row>
-                <Col xs={4} sm={3} offset={{ sm: 1, md: 0 }} md={12}>
-
+        <styled.Section07>
+          <Container>
+            <Row>
+              {showcaseSection07.map(({ value, addition, description }, index) => (
+                <Col key={index} xs={4} sm={8} md={3} offset={{ md: 1 }}>
+                  <Row>
+                    <Col xs={4} sm={3} offset={{ sm: 1, md: 0 }} md={12}>
+                      <styled.Section07Item>
+                        <Count countTo={Number(value)} suffix={addition} />
+                        <Paragraph dark>{description}</Paragraph>
+                      </styled.Section07Item>
+                    </Col>
+                  </Row>
                 </Col>
-              </Row>
-            </Col>
-            <Col xs={4} sm={8} md={3} offset={{ md: 1 }}>
-              <Row>
-                <Col xs={4} sm={3} offset={{ sm: 1, md: 0 }} md={12}>
-
-                </Col>
-              </Row>
-            </Col>
-            <Col xs={4} sm={8} md={3} offset={{ md: 1 }}>
-              <Row>
-                <Col xs={4} sm={3} offset={{ sm: 1, md: 0 }} md={12}>
-
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
+              ))}
+            </Row>
+          </Container>
+        </styled.Section07>
       </Section>
       <Section>
-        <Container>
-          <Row>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={10}>
-
-            </Col>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
-
-            </Col>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
-
-            </Col>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
-
-            </Col>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
-
-            </Col>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
-
-            </Col>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
-
-            </Col>
-          </Row>
-        </Container>
+        <styled.Section08>
+          <Container>
+            <Row>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={10}>
+                <styled.Section08Heading>
+                  <Heading dark noline regular as='h3'>{showcaseSection08.heading}</Heading>
+                </styled.Section08Heading>
+              </Col>
+              {showcaseSection08.items.map(({ icon, heading, descr }, index) => (
+                <Col key={index} xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
+                  <styled.Section08Item>
+                    <styled.Section08ItemImage>
+                      <img src={icon.publicURL} />
+                    </styled.Section08ItemImage>
+                    <styled.Section08ItemHeading>{heading}</styled.Section08ItemHeading>
+                    <Paragraph dark>{descr}</Paragraph>
+                  </styled.Section08Item>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </styled.Section08>
       </Section>
       <Section>
-        <Container fluid>
-          <Row>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-            <Col xs={4} sm={4} md={6}>
-
-            </Col>
-          </Row>
-        </Container>
+        <styled.Section09>
+          {showcaseSection09.map(({ image }, index) => (
+            <styled.Section09Div key={index}>
+              <Img
+                fluid={image.childImageSharp.fluid}
+                style={{
+                  height: '100%',
+                  minWidth: '100%'
+                }}
+              />
+            </styled.Section09Div>
+          ))}
+        </styled.Section09>
       </Section>
     </Layout>
   </Theme>
@@ -223,6 +268,13 @@ export const showcaseQuery = graphql`
         title
         tags {
           tag
+        }
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
         showcaseSection01 {
           heading
@@ -280,11 +332,6 @@ export const showcaseQuery = graphql`
           heading
           items {
             icon {
-              childImageSharp {
-                fixed(height: 52) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
               publicURL
             }
             heading

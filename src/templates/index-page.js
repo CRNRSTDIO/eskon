@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Heading from '../components/styled/Heading'
 import Paragraph from '../components/styled/Paragraph'
 import * as styled from '../components/styled/IndexPage'
+import * as styled1 from '../components/styled/IndexPage/index'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Counters from '../components/Counters'
 import Solutions from '../components/IndexSolutions'
@@ -28,71 +29,69 @@ export const IndexTemplate = ({
         {...landing}
         image={null}
       />
-      <styled.Section box>
+      <styled1.Section01 box>
         <Container className='container'>
           <Row className='row' reverse={['sm', 'md', 'lg', 'xl']}>
             <Col xs={3} offset={{ xs: 1, sm: 1, md: 1 }} sm={2} md={3} className='col'>
-              <styled.SectionImage>
+              <styled1.Section01Image>
                 <Img fluid={indexSection01.image.childImageSharp.fluid} />
-              </styled.SectionImage>
+              </styled1.Section01Image>
             </Col>
             <Col xs={4} sm={4} md={7} offset={{ md: 1 }}>
-              <Row>
-                <Col xs={4} className='col'>
-                  <Row>
-                    <Col xs={4} md={6}>
-                      <styled.SectionHeadingWrapper>
+              <styled1.Section01Text>
+                <Row>
+                  <Col xs={4} className='col'>
+                    <Row>
+                      <Col xs={4} md={6}>
                         <Heading dark regular as='h3'>{indexSection01.heading}</Heading>
-                      </styled.SectionHeadingWrapper>
-                    </Col>
-                    <Col xs={4} md={6}>
-                      <styled.SectionParagraphWrapper>
+                      </Col>
+                      <Col xs={4} md={6}>
                         <Paragraph dark>{indexSection01.body}</Paragraph>
-                      </styled.SectionParagraphWrapper>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </styled1.Section01Text>
             </Col>
           </Row>
         </Container>
-      </styled.Section>
-      <styled.ImageContainer>
+      </styled1.Section01>
+      <styled1.Section02>
         <Container>
           <Row>
             <Col xs={4} sm={6} md={6}>
-              <Img fluid={image.childImageSharp.fluid} />
+              <styled1.Section02Image>
+                <Img fluid={image.childImageSharp.fluid} />
+              </styled1.Section02Image>
             </Col>
           </Row>
         </Container>
-      </styled.ImageContainer>
-      <styled.Section>
+      </styled1.Section02>
+      <styled1.Section03>
         <Container>
           <Row>
-            <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
-              <Row>
-                <Col xs={4}>
-                  <styled.PullDown>
+            <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={3}>
+              <styled1.Section03Text>
+                <Row>
+                  <Col xs={4}>
                     <Heading dark regular as='h3'>{indexSection02.heading}</Heading>
-                  </styled.PullDown>
-                </Col>
-                <Col xs={4}>
-                  <styled.PullUp>
+                  </Col>
+                  <Col xs={4}>
                     <Paragraph dark>{indexSection02.body}</Paragraph>
-                  </styled.PullUp>
-                </Col>
-              </Row>
+                  </Col>
+                </Row>
+              </styled1.Section03Text>
             </Col>
             <Col xs={4} sm={8} md={4} offset={{ md: 3 }}>
               <Counters counters={indexSection03} />
             </Col>
           </Row>
         </Container>
-      </styled.Section>
-      <styled.Section>
+      </styled1.Section03>
+      <styled1.Section04>
         <Container>
           <Row>
-            <Col xs={4} sm={5} offset={{ sm: 1, md: 1}} md={4}>
+            <Col xs={4} sm={5} offset={{ sm: 1, md: 1 }} md={4}>
               <Row>
                 <Col xs={4}>
                   <Heading dark regular noline as='h3'>{indexSection04.heading}</Heading>
@@ -107,10 +106,8 @@ export const IndexTemplate = ({
             </Col>
           </Row>
         </Container>
-      </styled.Section>
-      <styled.Section>
-        <ShowcaseRoll nested/>
-      </styled.Section>
+      </styled1.Section04>
+      <ShowcaseRoll nested />
     </Layout>
   </Theme>
 )
@@ -119,7 +116,7 @@ export default ({ data }) => {
   const { markdownRemark } = data
 
   return (
-    <IndexTemplate {...markdownRemark.frontmatter}/>
+    <IndexTemplate {...markdownRemark.frontmatter} />
   )
 }
 
@@ -132,7 +129,7 @@ export const indexPageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 2048) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_tracedSVG
               }
             }
           }
@@ -150,7 +147,7 @@ export const indexPageQuery = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 538) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -160,7 +157,7 @@ export const indexPageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_tracedSVG
               }
             }
           }
@@ -181,11 +178,6 @@ export const indexPageQuery = graphql`
             heading
             body
             icon {
-              childImageSharp {
-                fixed(height: 52) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
               publicURL
             }
           }

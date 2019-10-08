@@ -4,8 +4,11 @@ import { Link } from 'gatsby'
 
 export const FooterCta = styled.div`
   background-color: ${({ theme: { blue2 } }) => blue2};
-  padding: 4.875rem 0;
   position: relative;
+
+  ${({ theme: { queries } }) => queries.sm`
+    padding: 4.875rem 0;
+  `}
 
   ::after,
   ::before {
@@ -25,11 +28,33 @@ export const FooterCta = styled.div`
 `
 
 export const FooterBox = styled.div`
-  align-items: ${({ alternate }) => alternate && `flex-end`};
+  align-items: ${({ alternate }) => alternate && 'flex-end'};
   background-color: ${({ alternate, theme: { blue1 } }) => alternate ? blue1 : 'transparent'};
-  display: ${({ alternate }) => alternate && `flex`};
-  padding: ${({ alternate }) => alternate ? `1.4375rem 1.8125rem 2.375rem 2.375rem` : `.4375rem 2rem 2.375rem 0`};
+  display: ${({ alternate }) => alternate && 'flex'};
+  padding: ${({ alternate }) => alternate ? '100px 0 58px' : '58px 0'};
   position: relative;
+  z-index: 1;
+
+  ${({ theme: { queries } }) => queries.sm`
+    height: 100%;
+    padding: ${({ alternate }) => alternate ? '1.4375rem 1.8125rem 2.375rem 2.375rem' : '.4375rem 2rem 2.375rem 0'};
+
+    ::before {
+      display: none;
+    }
+  `}
+
+  ::before {
+    background-color: ${({ alternate, theme: { blue1, blue2 } }) => alternate ? blue1 : blue2};
+    content: '';
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 150vw;
+    z-index: -1;
+  }
 
   *:last-child {
 
@@ -46,9 +71,14 @@ export const FooterBox = styled.div`
 
 export const FooterBoxLogo = styled.div`
   color: ${({ theme: { white } }) => white};
+  display: none;
   position: absolute;
   right: 1.875rem;
   top: 1.5rem;
+
+  ${({ theme: { queries } }) => queries.sm`
+    display: block;
+  `}
 `
 
 export const FooterWrapper = styled.div`
