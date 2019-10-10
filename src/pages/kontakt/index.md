@@ -12,6 +12,9 @@ kontaktSection01:
 kontaktSection02:
   body: Skorzystaj z poniższego formularza
   heading: Napisz do nas
-  options: []
+  options:
+    - option: Dom pod klucz - kompleksowa realizacja Twojego domu
+    - option: Usługi inżynieryjne dla przedsiębiorstw
+    - option: Pozostałe
 ---
 
