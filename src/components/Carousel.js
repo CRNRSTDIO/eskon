@@ -1,87 +1,50 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { wrap } from '@popmotion/popcorn'
+import React from 'react'
+import AliceCarousel from 'react-alice-carousel'
+import { Col } from 'react-awesome-styled-grid'
+import 'react-alice-carousel/lib/alice-carousel.css'
+import * as styled from './styled/Carousel'
 
-const slides = [
-  {
-    title: 'asd'
-  },
-  {
-    title: 'dsa'
-  },
-  {
-    title: 'sda'
-  }
-]
-
-const variants = {
-  enter: direction => ({
-    x: direction < 0 ? 1000 : -1000,
-    opacity: 0
-  }),
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1
-  },
-  exit: direction => ({
-    zIndex: 0,
-    x: direction < 0 ? 1000 : -1000,
-    opacity: 0
-  })
-}
-
-export const Carousel = () => {
-  const [[page, direction], setPage] = useState([0, 0])
-  const imageIndex = wrap(0, slides.length, page)
-  const paginate = newDirection => {
-    setPage([page + newDirection, newDirection])
-  }
-
-  console.log(page, direction, imageIndex)
+const Carousel = ({ carousel = [] }) => {
+  const items = carousel.map(({
+    body,
+    name,
+    link,
+    linkText
+  }, index) => (
+    <Col key={index} xs={4}>
+      <styled.CarouselItem>
+        <styled.CarouselItemBody>
+          {body}
+        </styled.CarouselItemBody>
+        <styled.CarouselItemName>
+          {name}
+        </styled.CarouselItemName>
+        {link && (
+          <styled.CarouselItemLink href={link}>
+            {linkText}
+          </styled.CarouselItemLink>
+        )}
+      </styled.CarouselItem>
+    </Col>
+  ))
 
   return (
-    <>
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          key={page}
-          custom={direction}
-          variants={variants}
-          initial='enter'
-          animate='center'
-          exit='exit'
-          transition={{
-            x: { type: 'spring', stiffness: 300, damping: 200 },
-            opacity: { duration: 0.2 }
-          }}
-          drag='x'
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x)
-
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1)
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1)
-            }
-          }}
-        >
-          {slides[imageIndex].title}
-        </motion.div>
-      </AnimatePresence>
-      <ul>
-        {slides.map((_, index) => (
-          <li key={index}>
-            <button style={{ background: index === imageIndex ? 'black' : 'white' }} />
-          </li>
-        ))}
-      </ul>
-    </>
+    <AliceCarousel
+      items={items}
+      buttonsDisabled
+      responsive={{
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1024: {
+          items: 3
+        }
+      }}
+    />
   )
 }
 
-const swipeConfidenceThreshold = 10000
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity
-}
+export default Carousel

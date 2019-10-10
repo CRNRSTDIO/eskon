@@ -1,0 +1,32 @@
+$blue1: #022358;
+$blue2: #12479D;
+$grey7: #242424;
+
+.alice-carousel {
+  .alice-carousel__dots {
+    display: flex;
+    margin: 0;
+    padding: 0 .5rem;
+    text-align: left;
+  }
+
+  .alice-carousel__dots-item {
+    background-color: $grey7;
+    border-radius: 0;
+    height: .5rem;
+    width: .5rem;
+
+    &.__active {
+      background-color: $blue2;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $blue1;
+    }
+
+    &:not(:last-child) {
+      margin-right: .375rem;
+    }
+  }
+}
