@@ -1,11 +1,11 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import Heading from './styled/Heading'
-import Paragraph from './styled/Paragraph'
-import Link from './styled/Link'
-import Icon from './Icons'
-import * as styled from './styled/Footer'
+import Heading from '../styled/Heading'
+import Paragraph from '../styled/Paragraph'
+import Link from '../styled/Link'
+import Icon from '../Icons'
+import * as styled from '../styled/Footer'
 
 const FooterCta = ({ data: { globalJson: { footer_cta: { heading, body, cta } } } }) => (
   <Container>

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from 'react'
 import * as styled from '../styled/Layout'
 import { motion, useCycle } from 'framer-motion'
-import NavList, { Nav, NavBar } from '../Nac'
+import NavList, { Nav, NavBar } from '../Nav'
 import TopNav from '../TopNav'
 import FooterCta from '../FooterCta'
 import FooterNav from '../FooterNav'
