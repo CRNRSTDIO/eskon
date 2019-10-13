@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Eskon',
+    description: 'Eskon'
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
