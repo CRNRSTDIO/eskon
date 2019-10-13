@@ -1,10 +1,10 @@
 import React, { useState, useRef, useLayoutEffect } from 'react'
-import * as styled from './styled/Layout'
+import * as styled from '../styled/Layout'
 import { motion, useCycle } from 'framer-motion'
-import NavList, { Nav, NavBar } from '../components/Nav'
-import TopNav from '../components/TopNav'
-import FooterCta from '../components/FooterCta'
-import FooterNav from '../components/FooterNav'
+import NavList, { Nav, NavBar } from '../Nac'
+import TopNav from '../TopNav'
+import FooterCta from '../FooterCta'
+import FooterNav from '../FooterNav'
 
 // function getScrollPosition ({ element, useWindow }) {
 //   const target = element ? document.querySelector('section') : document.body
@@ -14,7 +14,7 @@ import FooterNav from '../components/FooterNav'
 //     ? { x: window.scrollX, y: window.scrollY }
 //     : { x: position.left, y: position.top }
 // }
-// 
+//
 // export function useScrollPosition (effect, deps, element, useWindow, wait) {
 //   const position = useRef(getScrollPosition({ useWindow }))
 //
