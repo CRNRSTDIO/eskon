@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export const NavBar = styled.div`
   align-items: stretch;
-  background-color: ${({ theme: { blue2} }) => blue2};
+  background-color: ${({ theme: { blue2 } }) => blue2};
   display: flex;
   flex-direction: column;
   height: 100vh;
