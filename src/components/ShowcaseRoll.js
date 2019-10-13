@@ -27,7 +27,7 @@ const PanelList = ({ state, children }) => {
   }, [activeIndex, set])
 
   return (
-    <motion.div animate={{ height }} style={{ overflow: 'hidden' }}>
+    <motion.div animate={{ height }} initial={false} style={{ overflow: 'hidden' }}>
       <Row ref={panelRef}>
         {cloneElement(children[activeIndex], { active: true })}
       </Row>
@@ -35,11 +35,14 @@ const PanelList = ({ state, children }) => {
   )
 }
 
-const ShowcaseRoll = ({ data: {
-  allMarkdownRemark: { edges: items },
-  globalJson: { showcase: { front_limit } },
-  markdownRemark: { frontmatter: { title }, fields: { slug } }
-}, nested }) => {
+const ShowcaseRoll = ({
+  data: {
+    allMarkdownRemark: { edges: items },
+    globalJson: { showcase: { front_limit } },
+    markdownRemark: { frontmatter: { title }, fields: { slug } }
+  },
+  nested
+}) => {
   const state = useState(0)
   const [komercyjne, podKlucz] = items.reduce((arr, item) => {
     arr[item.node.frontmatter.category === 'Komercyjne' ? 0 : 1].push(item)
@@ -114,13 +117,15 @@ const ShowcaseRoll = ({ data: {
           </Row>
         </Container>
       </Tabs>
-      <Container>
-        <Row>
-          <Col xs={4} sm={4} offset={{ sm: 2, md: 4 }} md={4}>
-            <styled.ShowcaseAllLink to={slug}>Zobacz więcej</styled.ShowcaseAllLink>
-          </Col>
-        </Row>
-      </Container>
+      {nested && (
+        <Container>
+          <Row>
+            <Col xs={4} sm={4} offset={{ sm: 2, md: 4 }} md={4}>
+              <styled.ShowcaseAllLink to={slug}>Zobacz więcej</styled.ShowcaseAllLink>
+            </Col>
+          </Row>
+        </Container>
+      )}
     </styled.ShowcaseRoll>
   )
 }

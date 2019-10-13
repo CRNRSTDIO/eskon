@@ -6,6 +6,7 @@ import Heading from './styled/Heading'
 import Paragraph from './styled/Paragraph'
 import Columns from './styled/Columns'
 import IndexBox from './IndexBox'
+import ImageAnimated from '../components/ImageAnimated'
 
 const Landing = ({ heading, body, cta, background, box01, box02, image, ...rest }) => (
   <styled.Landing>
@@ -40,10 +41,12 @@ const Landing = ({ heading, body, cta, background, box01, box02, image, ...rest 
           </Row>
         </Col>
         {image && (
-          <Col xs={1} sm={2} offset={{ sm: 1, md: 1}} md={4}>
-            <styled.LandingImageWrapper>
-              <Img fluid={image.childImageSharp.fluid} />
-            </styled.LandingImageWrapper>
+          <Col xs={1} sm={2} offset={{ sm: 1, md: 1 }} md={4}>
+            <ImageAnimated>
+              <styled.LandingImageWrapper>
+                <Img fluid={image.childImageSharp.fluid} />
+              </styled.LandingImageWrapper>
+            </ImageAnimated>
           </Col>
         )}
       </Row>

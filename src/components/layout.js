@@ -6,7 +6,7 @@ import TopNav from '../components/TopNav'
 import FooterCta from '../components/FooterCta'
 import FooterNav from '../components/FooterNav'
 
-function getScrollPosition({ element, useWindow }) {
+function getScrollPosition ({ element, useWindow }) {
   const target = element ? document.querySelector('section') : document.body
   const position = target.getBoundingClientRect()
 
@@ -15,7 +15,7 @@ function getScrollPosition({ element, useWindow }) {
     : { x: position.left, y: position.top }
 }
 
-export function useScrollPosition(effect, deps, element, useWindow, wait) {
+export function useScrollPosition (effect, deps, element, useWindow, wait) {
   const position = useRef(getScrollPosition({ useWindow }))
 
   let throttleTimeout = null
@@ -48,7 +48,7 @@ useScrollPosition.defaultProps = {
   deps: [],
   element: false,
   useWindow: false,
-  wait: null,
+  wait: null
 }
 
 const mainVariants = {
@@ -60,7 +60,7 @@ const mainVariants = {
   }
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ nocta, darktop, children }) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const [showOnScroll, setShowOnScroll] = useState(false)
   const mainRef = useRef()
@@ -76,27 +76,28 @@ const Layout = ({ children }) => {
   )
 
   return (
-  <motion.div
-    initial={false}
-    animate={isOpen ? 'open' : 'closed'}
-  >
-    <NavBar show={showOnScroll} toggleOpen={toggleOpen} />
-    <motion.div animate={showOnScroll ? isOpen ? 'show' : 'hide' : 'show'}>
-      <TopNav open={isOpen} />
-    </motion.div>
-    <styled.Wrapper
-      variants={mainVariants}
+    <motion.div
+      initial={false}
+      animate={isOpen ? 'open' : 'closed'}
     >
-      <NavList />
-      <styled.Main ref={mainRef} scrollLock={isOpen}>
-        {children}
-        <styled.Footer>
-          <FooterCta />
-          <FooterNav />
-        </styled.Footer>
-      </styled.Main>
-    </styled.Wrapper>
-  </motion.div>
-)}
+      <NavBar show={showOnScroll} toggleOpen={toggleOpen} />
+      <motion.div animate={showOnScroll ? isOpen ? 'show' : 'hide' : 'show'}>
+        <TopNav dark={darktop} open={isOpen} />
+      </motion.div>
+      <styled.Wrapper
+        variants={mainVariants}
+      >
+        <NavList />
+        <styled.Main ref={mainRef} scrollLock={isOpen}>
+          {children}
+          <styled.Footer>
+            {nocta ? '' : (<FooterCta />)}
+            <FooterNav />
+          </styled.Footer>
+        </styled.Main>
+      </styled.Wrapper>
+    </motion.div>
+  )
+}
 
 export default Layout

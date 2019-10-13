@@ -16,7 +16,7 @@ export const TopNavLogo = styled(motion.div)`
 
 export const TopNavPhone = styled(motion.div)`
   align-items: center;
-  color: ${({ theme: { white } }) => white};
+  color: ${({ dark, theme: { dark1, white } }) => dark ? dark1 : white};
   display: flex;
   font-family: 'Roboto';
   font-size: .75rem;
@@ -41,7 +41,7 @@ export const TopNavItem = styled(motion.li)`
 `
 
 export const TopNavLink = styled(Link)`
-  color: ${({ theme: { white } }) => white};
+  color: ${({ dark, theme: { dark1, white } }) => dark ? dark1 : white};
   font-family: 'Roboto';
   font-size: .75rem;
   letter-spacing: 1px;

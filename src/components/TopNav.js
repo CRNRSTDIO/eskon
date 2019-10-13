@@ -49,17 +49,22 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
         </Visible>
         <Col xs={2} sm={1} offset={{ sm: 1, md: 1 }} md={1}>
           <styled.TopNavLogo variants={itemVariants}>
-            <img src={dark ? logo[0].variant : logo[1].variant} height={14} />
+            {!open
+              ? (
+                <img src={dark ? logo[0].variant : logo[1].variant} height={14} />
+              )
+              : (
+                <img src={logo[1].variant} height={14} />
+              )}
           </styled.TopNavLogo>
         </Col>
-        {console.log(open)}
         {!open && (
           <Hidden xs sm>
             <Col md={7} offset={{ md: 1 }}>
               <styled.TopNavList variants={listVariants}>
                 {pages.filter(({ node: { frontmatter: { templateKey } } }) => templateKey !== 'index-page').map(({ node: page }) => (
                   <styled.TopNavItem key={page.id} variants={itemVariants}>
-                    <styled.TopNavLink to={page.fields.slug}>
+                    <styled.TopNavLink dark={dark} to={page.fields.slug}>
                       {page.frontmatter.title}
                     </styled.TopNavLink>
                   </styled.TopNavItem>
@@ -71,14 +76,14 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
         <Visible xs sm>
           <Col xs={1} offset={{ sm: 5 }} sm={1}>
             <styled.TopNavLogo variants={itemVariants}>
-                <img src={dark ? logo[4].variant : logo[5].variant} height={30} />
+              <img src={dark ? logo[4].variant : logo[5].variant} height={30} />
             </styled.TopNavLogo>
           </Col>
         </Visible>
         {!open && (
           <Hidden xs sm>
             <Col md={2}>
-              <styled.TopNavPhone variants={itemVariants}>
+              <styled.TopNavPhone dark={dark} variants={itemVariants}>
                 Telefon
               </styled.TopNavPhone>
             </Col>

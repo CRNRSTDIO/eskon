@@ -5,7 +5,7 @@ import ShowcaseRoll from '../components/ShowcaseRoll'
 
 export default () => (
   <Theme>
-    <Layout>
+    <Layout darktop>
       <ShowcaseRoll />
     </Layout>
   </Theme>

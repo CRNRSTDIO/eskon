@@ -9,6 +9,7 @@ import Paragraph from '../components/styled/Paragraph'
 import Section from '../components/styled/Section'
 import Landing from '../components/Landing'
 import Cards from '../components/Cards'
+import ImageAnimated from '../components/ImageAnimated'
 
 export const ONasTemplate = ({
   oSection01,
@@ -16,7 +17,7 @@ export const ONasTemplate = ({
   oSection03
 }) => (
   <Theme>
-    <Layout>
+    <Layout darktop>
       <Landing
         medium
         dark
@@ -26,7 +27,9 @@ export const ONasTemplate = ({
         <Container>
           <Row>
             <Col xs={3} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
-              <Img fluid={oSection02.image.childImageSharp.fluid} />
+              <ImageAnimated>
+                <Img fluid={oSection02.image.childImageSharp.fluid} />
+              </ImageAnimated>
             </Col>
             <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={3}>
               <Row>

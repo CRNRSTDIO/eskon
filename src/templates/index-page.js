@@ -12,6 +12,7 @@ import Counters from '../components/Counters'
 import Solutions from '../components/IndexSolutions'
 import Landing from '../components/Landing'
 import ShowcaseRoll from '../components/ShowcaseRoll'
+import ImageAnimated from '../components/ImageAnimated'
 
 export const IndexTemplate = ({
   landing,
@@ -34,7 +35,9 @@ export const IndexTemplate = ({
           <Row className='row' reverse={['sm', 'md', 'lg', 'xl']}>
             <Col xs={3} offset={{ xs: 1, sm: 1, md: 1 }} sm={2} md={3} className='col'>
               <styled1.Section01Image>
-                <Img fluid={indexSection01.image.childImageSharp.fluid} />
+                <ImageAnimated>
+                  <Img fluid={indexSection01.image.childImageSharp.fluid} />
+                </ImageAnimated>
               </styled1.Section01Image>
             </Col>
             <Col xs={4} sm={4} md={7} offset={{ md: 1 }}>
@@ -61,7 +64,9 @@ export const IndexTemplate = ({
           <Row>
             <Col xs={4} sm={6} md={6}>
               <styled1.Section02Image>
-                <Img fluid={image.childImageSharp.fluid} />
+                <ImageAnimated>
+                  <Img fluid={image.childImageSharp.fluid} />
+                </ImageAnimated>
               </styled1.Section02Image>
             </Col>
           </Row>
