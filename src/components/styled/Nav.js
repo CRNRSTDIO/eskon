@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { rgba } from 'polished'
 import { motion } from 'framer-motion'
 
-export const NavBar = styled.div`
+export const NavBar = styled(motion.div)`
   align-items: stretch;
   background-color: ${({ theme: { blue2 } }) => blue2};
   display: flex;
@@ -11,11 +11,18 @@ export const NavBar = styled.div`
   height: 100vh;
   justify-content: space-between;
   position: fixed;
-  visibility: ${props => (props.show ? 'visible' : 'hidden')};
-  transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
-  transform: ${props => (props.show ? 'none' : 'translate(0, 100%)')};
   width: 3.75rem;
   z-index: 2;
+
+  ::before {
+    background-color: ${({ theme: { blue2 } }) => blue2};
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 3.75rem;
+  }
 `
 
 export const NavBarText = styled.div`

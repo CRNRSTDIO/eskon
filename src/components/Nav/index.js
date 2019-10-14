@@ -25,8 +25,17 @@ const itemVariants = {
   }
 }
 
+const navVariants = {
+  open: {
+    x: 0
+  },
+  closed: {
+    x: '-100%'
+  }
+}
+
 export const NavBar = ({ show, toggleOpen }) => (
-  <styled.NavBar show={show} onClick={() => toggleOpen()}>
+  <styled.NavBar animate={show ? 'open' : 'closed'} style={{ originX: 0 }} variants={navVariants} onClick={() => toggleOpen()}>
     Menu
     <styled.NavBarText>
       Eskon Przedsiębiorstwo budowlane &copy; Eskon {new Date().getFullYear()}

@@ -1,55 +1,11 @@
-import React, { useState, useRef, useLayoutEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import * as styled from '../styled/Layout'
 import { motion, useCycle } from 'framer-motion'
-import NavList, { Nav, NavBar } from '../Nav'
+import { useScroll } from 'react-use'
+import NavList, { NavBar } from '../Nav'
 import TopNav from '../TopNav'
 import FooterCta from '../FooterCta'
 import FooterNav from '../FooterNav'
-
-// function getScrollPosition ({ element, useWindow }) {
-//   const target = element ? document.querySelector('section') : document.body
-//   const position = target.getBoundingClientRect()
-//
-//   return useWindow
-//     ? { x: window.scrollX, y: window.scrollY }
-//     : { x: position.left, y: position.top }
-// }
-//
-// export function useScrollPosition (effect, deps, element, useWindow, wait) {
-//   const position = useRef(getScrollPosition({ useWindow }))
-//
-//   let throttleTimeout = null
-//
-//   const callBack = () => {
-//     const currPos = getScrollPosition({ element, useWindow })
-//     effect({ prevPos: position.current, currPos })
-//     position.current = currPos
-//     throttleTimeout = null
-//   }
-//
-//   useLayoutEffect(() => {
-//     const handleScroll = () => {
-//       if (wait) {
-//         if (throttleTimeout === null) {
-//           throttleTimeout = setTimeout(callBack, wait)
-//         }
-//       } else {
-//         callBack()
-//       }
-//     }
-//
-//     document.querySelector('main').addEventListener('scroll', handleScroll)
-//
-//     return () => document.querySelector('main').removeEventListener('scroll', handleScroll)
-//   }, deps)
-// }
-//
-// useScrollPosition.defaultProps = {
-//   deps: [],
-//   element: false,
-//   useWindow: false,
-//   wait: null
-// }
 
 const mainVariants = {
   open: {
@@ -63,17 +19,12 @@ const mainVariants = {
 const Layout = ({ nocta, darktop, children }) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const [showOnScroll, setShowOnScroll] = useState(false)
-  const mainRef = useRef()
+  const ref = useRef()
+  const { x, y } = useScroll(ref)
 
-  // useScrollPosition(
-  //   ({ currPos }) => {
-  //     const isShow = currPos.y < 0
-  //
-  //     if (isShow !== showOnScroll) setShowOnScroll(isShow)
-  //   },
-  //   [showOnScroll],
-  //   mainRef
-  // )
+  useEffect(() => {
+    setShowOnScroll(y > 0)
+  }, [x, y])
 
   return (
     <motion.div
@@ -88,7 +39,7 @@ const Layout = ({ nocta, darktop, children }) => {
         variants={mainVariants}
       >
         <NavList />
-        <styled.Main ref={mainRef} scrollLock={isOpen}>
+        <styled.Main ref={ref} scrollLock={isOpen}>
           {children}
           <styled.Footer>
             {nocta ? '' : (<FooterCta />)}

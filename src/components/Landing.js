@@ -51,10 +51,12 @@ const Landing = ({ heading, body, cta, background, box01, box02, image, ...rest 
         )}
       </Row>
     </Container>
-    {background && <styled.Image
-      fluid={background}
-      style={{ position: 'absolute' }}
-    />}
+    {background && (
+      <styled.Image
+        fluid={background}
+        style={{ position: 'absolute' }}
+      />
+    )}
   </styled.Landing>
 )
 

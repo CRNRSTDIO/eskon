@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Link from './Link'
 
-export const Box = styled.div`
+export const Box = styled(Link)`
   background-color: ${({ theme: { blue2 } }) => blue2};
   color: ${({ theme: { white } }) => white};
   display: flex;
@@ -56,10 +56,11 @@ export const BoxBody = styled.section`
     color: ${({ alternate, theme: { white, grey4 } }) => alternate ? grey4 : white};
     padding: 1.125rem 3.375rem 2.375rem;
   `}
+`
 
-  ${Link} {
-    ${({ theme: { queries } }) => queries.md`
-      color: ${({ alternate, theme: { white, blue2 } }) => alternate ? blue2 : white};
-    `}
-  }
+export const BoxFakeLink = styled.span`
+  color: inherit;
+  ${({ theme: { queries } }) => queries.md`
+    color: ${({ alternate, theme: { white, blue2 } }) => alternate ? blue2 : white};
+  `}
 `
