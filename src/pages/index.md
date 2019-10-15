@@ -8,14 +8,15 @@ landing:
       w Szczecinie i okolicach
     cta: Czytaj więcej
     heading: Budowa domu pod klucz
+    image: /img/housebuilding-3370969-2x.png
   box02:
     body: Doradztwo i usługi budowlane dla przemysłu i przedsiębiorstw
     cta: Czytaj więcej
     heading: Usługi Inżynieryjne
+    image: /img/solar-panels-on-house-px8nbjz-2x.png
   heading: |-
     Domy i konstrukcje
     stawiane na czas
-  image: /img/housebuilding-3370969-2x.png
 indexSection01:
   body: Body
   heading: Heading
