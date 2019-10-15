@@ -8,7 +8,7 @@ import Columns from './styled/Columns'
 import IndexBox from './IndexBox'
 import ImageAnimated from '../components/ImageAnimated'
 
-const Landing = ({ heading, body, cta, background, box01, box02, image, ...rest }) => (
+const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest }) => (
   <styled.Landing>
     <Container>
       <Row>
@@ -54,6 +54,18 @@ const Landing = ({ heading, body, cta, background, box01, box02, image, ...rest 
     {background && (
       <styled.Image
         fluid={background}
+        style={{ position: 'absolute' }}
+      />
+    )}
+    {box01.image && (
+      <styled.Image
+        fluid={box01.image.childImageSharp.fluid}
+        style={{ position: 'absolute' }}
+      />
+    )}
+    {box02.image && (
+      <styled.Image
+        fluid={box02.image.childImageSharp.fluid}
         style={{ position: 'absolute' }}
       />
     )}

@@ -5,7 +5,6 @@ import Theme from '../components/Theme'
 import Layout from '../components/Layout'
 import Heading from '../components/styled/Heading'
 import Paragraph from '../components/styled/Paragraph'
-import * as styled from '../components/styled/IndexPage'
 import * as styled1 from '../components/styled/IndexPage/index'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Counters from '../components/Counters'
@@ -26,7 +25,6 @@ export const IndexTemplate = ({
     <Layout>
       <Landing
         huge
-        background={landing.image.childImageSharp.fluid}
         {...landing}
         image={null}
       />
@@ -131,22 +129,29 @@ export const indexPageQuery = graphql`
       frontmatter {
         landing {
           heading
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
           box01 {
             heading
             body
             cta
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           box02 {
             heading
             body
             cta
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
         image {

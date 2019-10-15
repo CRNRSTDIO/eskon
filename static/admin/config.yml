@@ -165,7 +165,6 @@ collections:
             widget: object
             fields:
             - {label: Heading, name: heading, widget: text}
-            - {label: Image, name: image, requied: false, widget: image}
             - label: Box
               name: box01
               widget: object
@@ -173,6 +172,7 @@ collections:
                 - {label: Heading, name: heading, widget: text}
                 - {label: Body, name: body, widget: text}
                 - {label: CTA, name: cta, widget: string}
+                - {label: Image, name: image, requied: false, widget: image}
             - label: Box
               name: box02
               widget: object
@@ -180,6 +180,7 @@ collections:
                 - {label: Heading, name: heading, widget: text}
                 - {label: Body, name: body, widget: text}
                 - {label: CTA, name: cta, widget: string}
+                - {label: Image, name: image, requied: false, widget: image}
           - label: Section
             name: indexSection01
             widget: object

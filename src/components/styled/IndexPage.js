@@ -8,10 +8,11 @@ export const Box = styled(Link)`
   flex-direction: column;
   margin: .625rem 0;
   position: relative;
+  z-index: 1;
 
   ${({ theme: { queries } }) => queries.md`
-    background-color: ${({ alternate, theme: { white, blue2 } }) => alternate ? white : blue2};
-    color: ${({ alternate, theme: { white, grey6 } }) => alternate ? grey6 : white};
+    background-color: ${({ theme: { white } }) => white};
+    color: ${({ theme: { grey6 } }) => grey6};
     height: 100%;
     margin: 0;
   `}
@@ -24,18 +25,56 @@ export const Box = styled(Link)`
     left: 0;
     position: absolute;
     top: 0;
-    width: .75rem;
+    transform: scaleX(.03);
+    transform-origin: left;
+    transition: transform .15s ease-in-out;
+    width: 100%;
+    z-index: -1;
 
     ${({ theme: { queries } }) => queries.md`
-      display: ${({ alternate }) => alternate ? 'block' : 'none'};
+      display: block;
+    `}
+  }
+
+  :hover,
+  :focus {
+    ${({ theme: { queries } }) => queries.md`
+      color: ${({ theme: { white } }) => white};
+      height: 100%;
+      margin: 0;
+
+      ::after {
+        transform: scaleX(1);
+        transition: transform .35s ease-in-out;
+      }
+
+      ${BoxHeading} {
+        border-bottom: ${({ theme: { white } }) => `1px solid ${white}`};
+        transition: border-bottom .35s ease-in-out;
+      }
+
+      ${BoxBody} {
+        ${({ theme: { queries } }) => queries.md`
+          color: ${({ theme: { white } }) => white};
+          transition: color .35s ease-in-out;
+        `}
+      }
+
+      ${BoxFakeLink} {
+        ${({ theme: { queries } }) => queries.md`
+          color: ${({ theme: { white } }) => white};
+          transition: color .35s ease-in-out;
+        `}
+      }
     `}
   }
 `
 
 export const BoxHeading = styled.header`
-  border-bottom: ${({ alternate, theme: { white, grey1 } }) => `1px solid ${alternate ? grey1 : white}`};
+  border-bottom: ${({ theme: { grey1 } }) => `1px solid ${grey1}`};
   flex-shrink: 0;
   padding: 2rem 1.375rem 0;
+  transition: border-bottom .15s ease-in-out;
 
   ${({ theme: { queries } }) => queries.md`
     padding: 2rem 3.375rem 0;
@@ -53,14 +92,15 @@ export const BoxBody = styled.section`
   }
 
   ${({ theme: { queries } }) => queries.md`
-    color: ${({ alternate, theme: { white, grey4 } }) => alternate ? grey4 : white};
+    color: ${({ theme: { grey4 } }) => grey4};
     padding: 1.125rem 3.375rem 2.375rem;
+    transition: color .15s ease-in-out;
   `}
 `
 
 export const BoxFakeLink = styled.span`
-  color: inherit;
   ${({ theme: { queries } }) => queries.md`
-    color: ${({ alternate, theme: { white, blue2 } }) => alternate ? blue2 : white};
+    color: ${({ theme: { blue2 } }) => blue2};
+    transition: color .15s ease-in-out;
   `}
 `
