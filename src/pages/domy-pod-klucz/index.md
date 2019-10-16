@@ -85,9 +85,22 @@ section03:
         item:
           - image: /img/zasób-3.svg
             text: Dom pod klucz
+          - image: /img/zasób-4.svg
+            text: Termoizolacja
       rhs:
         item:
           - image: /img/zasób-3.svg
             text: Dom pod klucz
+    - heading: Zapotrzebowanie na ciepło
+      lhs:
+        item:
+          - big: 180 kWh
+            image: /img/image_svg12.svg
+            text: M2 na rok
+      rhs:
+        item:
+          - big: 70 kWh
+            image: /img/image_svg12.svg
+            text: M2 na rok
 ---
 
