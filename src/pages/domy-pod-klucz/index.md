@@ -71,7 +71,23 @@ domySection02:
     nowoczesnych
     technologii
 section03:
-  table:
-    - Formalności
+  header:
+    lhs:
+      image: /img/zasób-1.svg
+      small: Zamów teraz
+      text: Standard
+    rhs:
+      image: /img/zasób-2.svg
+      small: Zamów teraz
+      text: Energooszczędność
+  row:
+    - lhs:
+        item:
+          - image: /img/zasób-3.svg
+            text: Dom pod klucz
+      rhs:
+        item:
+          - image: /img/zasób-3.svg
+            text: Dom pod klucz
 ---
 
