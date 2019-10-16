@@ -114,6 +114,37 @@ export const domyPodKluczQuery = graphql`
           heading
           body
         }
+        domySection03 {
+          header {
+            lhs {
+              image
+              text
+              small
+            }
+            rhs {
+              image
+              text
+              small
+            }
+          }
+          row {
+            heading
+            lhs {
+              item {
+                image
+                big
+                text
+              }
+            }
+            rhs {
+              item {
+                image
+                big
+                text
+              }
+            }
+          }
+        }
       }
     }
   }
