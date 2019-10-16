@@ -70,7 +70,7 @@ domySection02:
     Dom z wykorzystaniem
     nowoczesnych
     technologii
-section03:
+domySection03:
   header:
     lhs:
       image: /img/zasób-1.svg
@@ -79,28 +79,28 @@ section03:
     rhs:
       image: /img/zasób-2.svg
       small: Zamów teraz
-      text: Energooszczędność
+      text: Energooszczędny
   row:
     - lhs:
         item:
           - image: /img/zasób-3.svg
             text: Dom pod klucz
-          - image: /img/zasób-4.svg
-            text: Termoizolacja
       rhs:
         item:
           - image: /img/zasób-3.svg
             text: Dom pod klucz
+          - image: /img/zasób-4.svg
+            text: Termoizolacja
     - heading: Zapotrzebowanie na ciepło
       lhs:
         item:
           - big: 180 kWh
             image: /img/image_svg12.svg
-            text: M2 na rok
+            text: m2 na rok
       rhs:
         item:
           - big: 70 kWh
             image: /img/image_svg12.svg
-            text: M2 na rok
+            text: m2 na rok
 ---
 
