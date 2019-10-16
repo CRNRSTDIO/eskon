@@ -1,6 +1,5 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { motion } from 'framer-motion'
 import { Container, Row, Col, Visible, Hidden } from 'react-awesome-styled-grid'
 import * as styled from '../components/styled/TopNav'
 

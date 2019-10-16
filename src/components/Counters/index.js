@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import CountersItem from './CountersItem'
 import * as styled from '../styled/IndexPageCounters'
+import CircularText from '../CircularText'
 
 const Counters = ({ counters }) => {
   return (
@@ -23,6 +24,9 @@ const Counters = ({ counters }) => {
         </Row>
       </Container>
       <styled.CountersLogo>
+        <styled.CoutersLogoWrap>
+          <CircularText />
+        </styled.CoutersLogoWrap>
         <styled.CountersLabel />
       </styled.CountersLogo>
     </styled.Counters>

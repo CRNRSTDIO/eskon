@@ -6,6 +6,7 @@ const Heading = styled.h1`
   margin: 0 0 1rem;
   position: relative;
   white-space: pre-line;
+  z-index: 2;
 
   ${({ huge }) => huge && css`
     font-size: 2.125rem;

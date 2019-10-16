@@ -54,6 +54,8 @@ collections:
       Description to be added
     folder: src/pages/showcase
     create: true
+    editor:
+      preview: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - label: TemplateKey
@@ -147,6 +149,8 @@ collections:
           - {label: Image, name: image, required: false, widget: image}
   - name: pages
     label: Pages
+    editor:
+      preview: false
     files:
       - file: src/pages/index.md
         label: Strona głowna
@@ -260,13 +264,55 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
-          - label: Section
+          - label: Table
             name: section03
             widget: object
             fields:
-              - label: Table
-                name: table
+              - label: Header
+                name: header
+                widget: object
+                fields:
+                  - label: Left side
+                    name: lhs
+                    widget: object
+                    fields:
+                      - {label: Image, name: image, widget: image, required: true}
+                      - {label: Text, name: text, widget: text, required: false}
+                      - {label: Small text, name: small, widget: string, required: false}
+                  - label: Right side
+                    name: rhs
+                    widget: object
+                    fields:
+                      - {label: Image, name: image, widget: image, required: true}
+                      - {label: Text, name: text, widget: text, required: false}
+                      - {label: Small text, name: small, widget: string, required: false}
+              - label: Row
+                name: row
                 widget: list
+                fields:
+                  - {label: Heading, name: heading, widget: string, required: false}
+                  - label: Left side
+                    name: lhs
+                    widget: object
+                    fields:
+                      - label: Item
+                        name: item
+                        widget: list
+                        fields:
+                          - {label: Image, name: image, widget: image, required: true}
+                          - {label: Big text, name: big, widget: text, required: false}
+                          - {label: Text, name: text, widget: text, required: false}
+                  - label: Right side
+                    name: rhs
+                    widget: object
+                    fields:
+                      - label: Item
+                        name: item
+                        widget: list
+                        fields:
+                          - {label: Image, name: image, widget: image, required: true}
+                          - {label: Big text, name: big, widget: text, required: false}
+                          - {label: Text, name: text, widget: text, required: false}
       - file: src/pages/uslugi-inzynieryjne/index.md
         label: Usługi inżynieryjne
         name: uslugi-inzynieryjne
