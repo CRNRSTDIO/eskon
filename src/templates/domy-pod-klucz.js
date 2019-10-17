@@ -10,12 +10,15 @@ import Section from '../components/styled/Section'
 import Landing from '../components/Landing'
 import Img from 'gatsby-image'
 import Accordions from '../components/Accordions'
+import Table from '../components/Table'
+import * as styled from '../components/styled/DomyPodKlucz'
 
 export const DomyPodKluczTemplate = ({
   landing,
   domySection01,
   image,
-  domySection02
+  domySection02,
+  domySection03: table
 }) => (
   <Theme>
     <Layout>
@@ -25,35 +28,35 @@ export const DomyPodKluczTemplate = ({
         {...landing}
         image={null}
       />
-      <Section>
+      <styled.Section01>
         <Container>
           <Row>
             <Col xs={4} sm={6} md={3} offset={{ sm: 1, md: 1 }}>
-              <Row>
-                <Col xs={4}>
-                  <Heading dark regular as='h3'>{domySection01.heading}</Heading>
-                </Col>
-                <Col xs={4}>
-                  <Paragraph dark>{domySection01.body}</Paragraph>
-                </Col>
-              </Row>
+              <styled.Section01Text>
+                <Row>
+                  <Col xs={4}>
+                    <Heading dark regular as='h3'>{domySection01.heading}</Heading>
+                  </Col>
+                  <Col xs={4}>
+                    <Paragraph dark>{domySection01.body}</Paragraph>
+                  </Col>
+                </Row>
+              </styled.Section01Text>
             </Col>
-            <Col xs={4} sm={6} md={6} offset={{ sm: 1, md: 1}}>
+            <Col xs={4} sm={6} md={6} offset={{ sm: 1, md: 1 }}>
               <Accordions cols={2} accordions={domySection01.accordions} />
             </Col>
           </Row>
         </Container>
-      </Section>
-      <Section>
-        <Container>
-          <Row>
-            <Col xs={4}>
-              <Img fluid={image.childImageSharp.fluid} />
-            </Col>
-          </Row>
-        </Container>
-      </Section>
-      <Section>
+      </styled.Section01>
+      <Container>
+        <Row>
+          <Col xs={4}>
+            <Img fluid={image.childImageSharp.fluid} />
+          </Col>
+        </Row>
+      </Container>
+      <styled.Section02>
         <Container>
           <Row>
             <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
@@ -63,6 +66,15 @@ export const DomyPodKluczTemplate = ({
               <Columns noline>
                 <Paragraph dark>{domySection02.body}</Paragraph>
               </Columns>
+            </Col>
+          </Row>
+        </Container>
+      </styled.Section02>
+      <Section>
+        <Container>
+          <Row>
+            <Col xs={4}>
+              <Table {...table} />
             </Col>
           </Row>
         </Container>
@@ -117,12 +129,16 @@ export const domyPodKluczQuery = graphql`
         domySection03 {
           header {
             lhs {
-              image
+              image {
+                publicURL
+              }
               text
               small
             }
             rhs {
-              image
+              image {
+                publicURL
+              }
               text
               small
             }
@@ -131,14 +147,18 @@ export const domyPodKluczQuery = graphql`
             heading
             lhs {
               item {
-                image
+                image {
+                  publicURL
+                }
                 big
                 text
               }
             }
             rhs {
               item {
-                image
+                image {
+                  publicURL
+                }
                 big
                 text
               }

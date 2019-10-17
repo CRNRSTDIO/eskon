@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Theme from '../components/Theme'
 import Layout from '../components/Layout'
 import Heading from '../components/styled/Heading'
-import Section from '../components/styled/Section'
+import Accordion from '../components/Accordions'
 import Landing from '../components/Landing'
 import Carousel from '../components/Carousel'
 import ShowcaseRoll from '../components/ShowcaseRoll'
@@ -34,18 +34,18 @@ export const UslugiInzynieryjneTemplate = ({
           {...landing}
           image={null}
         />
-        <Section>
+        <styled.Section01>
           <Container>
             <Row>
               <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
                 <Heading regular dark as='h3' noline>{uslugiSection01.heading}</Heading>
               </Col>
               <Col xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={9}>
-                accordions
+                <Accordion cols={3} accordions={uslugiSection01.accordions} />
               </Col>
             </Row>
           </Container>
-        </Section>
+        </styled.Section01>
         <styled.Section02>
           <styled.Section02BackgroundImage>
             <svg height='100%' viewBox='0 0 13 17' xmlns='http://www.w3.org/2000/svg'>

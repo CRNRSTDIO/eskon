@@ -15,12 +15,44 @@ export const AccordionItem = styled.button`
 
 export const AccordionHeader = styled.div`
   border-bottom: ${({ theme: { grey1 } }) => `1px solid ${grey1}`};
-  font-family: 'Roboto'
+  font-family: 'Roboto';
   font-size: .8125rem;
   padding: 1.125rem 0 1.125rem 1.75rem;
   position: relative;
   text-align: left;
   text-transform: uppercase;
+`
+
+export const AccordionBody = styled.div`
+  color: ${({ theme: { grey4 } }) => grey4};
+  font-family: 'Roboto';
+  font-size: .9375rem;
+
+  p, ul, ol {
+    color: inherit;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    position: relative;
+    margin: 6px 0;
+    padding: 0 0 0 22px;
+
+    ::before {
+      background-color: ${({ theme: { grey4 } }) => grey4};
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      width: 14px;
+    }
+  }
 `
 
 export const AccordionIndicator = styled.div`
@@ -39,19 +71,19 @@ export const AccordionIndicator = styled.div`
 
   ::before {
     background-color: ${({ theme: { white } }) => white};
-    bottom: 3px;
+    bottom: .1875rem;
     content: '';
     height: 1px;
     left: 0;
     position: absolute;
-    width: 4px;
+    width: .25rem;
   }
 `
 
 export const AccordionState = styled.div`
   border-color: ${({ theme: { grey5 } }) => `${grey5} transparent transparent transparent`};
   border-style: solid;
-  border-width: 5px 4px 0 4px;
+  border-width: .3125rem .25rem 0 .25rem;
   height: 0;
   position: absolute;
   right: 0;

@@ -53,7 +53,9 @@ const Accordions = ({ cols = 2, accordions }) => (
                     </styled.AccordionHeader>
                   </Tab>
                   <Panel>
-                    <MarkdownContent content={body} />
+                    <styled.AccordionBody>
+                      <MarkdownContent content={body} />
+                    </styled.AccordionBody>
                   </Panel>
                 </Col>
               ))}
