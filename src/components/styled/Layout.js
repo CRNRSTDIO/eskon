@@ -7,8 +7,22 @@ export const Wrapper = styled(motion.div)`
   position: fixed;
   right: 0;
   top: 0;
-  transform-origin: center right 100px;
   width: 100vw;
+  transform: translateX(0) scale(1);
+  transform-origin: center right;
+  transition: transform .15s ease-in-out;
+
+  ${({ isOpen }) => isOpen && css`
+    transform: translateX(50%) scale(.9);
+
+    ${({ theme: { queries } }) => queries.sm`
+      transform: translateX(124px) scale(.65);
+    `};
+
+    ${({ theme: { queries } }) => queries.md`
+      transform: scale(.65);
+    `}
+  `};
 `
 
 export const Main = styled.main`
@@ -18,6 +32,7 @@ export const Main = styled.main`
   position: absolute;
   right: 0;
   top: 0;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
 
   ${({ scrollLock }) => scrollLock && css`

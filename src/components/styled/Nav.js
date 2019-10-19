@@ -46,12 +46,17 @@ export const Nav = styled.div`
 `
 
 export const NavListWrapper = styled.div`
+  align-items: center;
+  display: flex;
   height: 100vh;
-  overflow: hidden;
+  padding: 0 0 0 48px;
   position: absolute;
   right: 100%;
   top: 0;
-  width: 100%;
+
+  ${({ theme: { queries } }) => queries.sm`
+    align-items: flex-start;
+  `};
 `
 
 export const NavFootNote = styled.div`
@@ -59,15 +64,19 @@ export const NavFootNote = styled.div`
   color: ${({ theme: { white } }) => rgba(white, 0.4)};
   bottom: 0;
   display: flex;
-  font-size: 1.3438rem;
+  font-size: 1rem;
+  left: 0;
   justify-content: flex-start;
   padding: 0 0 0 3rem;
   position: absolute;
-  right: 0;
-  width: 18.875rem;
+  width: 100%;
+
+  ${({ theme: { queries } }) => queries.sm`
+    font-size: 1.3438rem;
+  `};
 
   ::before {
-    background-color: ${({ theme: { white} }) => rgba(white, 0.4)};
+    background-color: ${({ theme: { white } }) => rgba(white, 0.4)};
     content: '';
     height: .25rem;
     position: absolute;
@@ -80,7 +89,6 @@ export const NavFootNote = styled.div`
 export const NavList = styled(motion.ul)`
   list-style: none;
   margin: 0 0 0 auto;
-  max-width: 18.75rem;
   padding: 0;
 `
 
@@ -96,14 +104,22 @@ export const NavLink = styled(Link)`
   align-items: center;
   color: ${({ theme: { white } }) => white};
   display: flex;
-  font-size: 1.3438rem;
+  font-size: 1rem;
   height: 100%;
   justify-content: flex-start;
+  letter-spacing: 1px;
+  padding: 0 28px 0 0;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
+  white-space: nowrap;
   z-index: 1;
+
+  ${({ theme: { queries } }) => queries.sm`
+    font-size: 1.3438rem;
+    padding: 0 94px 0 0;
+  `};
 
   ::after {
     background-color: ${({ theme: { white } }) => white};

@@ -41,12 +41,7 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
   <styled.TopNav variants={variants}>
     <Container>
       <Row>
-        <Visible xs>
-          <Col xs={1}>
-            Menu
-          </Col>
-        </Visible>
-        <Col xs={2} sm={1} offset={{ sm: 1, md: 1 }} md={1}>
+        <Col xs={2} sm={1} offset={{ xs: 1, sm: 1, md: 1 }} md={1}>
           <styled.TopNavLogo variants={itemVariants}>
             {!open
               ? (
@@ -93,7 +88,7 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
   </styled.TopNav>
 )
 
-export default ({ dark, open }) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query TopNavQuery {
@@ -120,6 +115,6 @@ export default ({ dark, open }) => (
         }
       }
     `}
-    render={(data) => <TopNav data={data} dark={dark} open={open} />}
+    render={(data) => <TopNav data={data} {...props} />}
   />
 )

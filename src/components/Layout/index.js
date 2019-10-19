@@ -7,15 +7,6 @@ import TopNav from '../TopNav'
 import FooterCta from '../FooterCta'
 import FooterNav from '../FooterNav'
 
-const mainVariants = {
-  open: {
-    scale: 0.65
-  },
-  closed: {
-    scale: 1
-  }
-}
-
 const Layout = ({ nocta, darktop, children }) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const [showOnScroll, setShowOnScroll] = useState(false)
@@ -35,9 +26,7 @@ const Layout = ({ nocta, darktop, children }) => {
       <motion.div animate={showOnScroll ? isOpen ? 'show' : 'hide' : 'show'}>
         <TopNav dark={darktop} open={isOpen} />
       </motion.div>
-      <styled.Wrapper
-        variants={mainVariants}
-      >
+      <styled.Wrapper isOpen={isOpen}>
         <NavList />
         <styled.Main ref={ref} scrollLock={isOpen}>
           {children}

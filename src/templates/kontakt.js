@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import axios from 'axios'
 import useForm from 'react-hook-form'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import Theme from '../components/Theme'
@@ -13,7 +14,11 @@ export const Kontakt = ({
   kontaktSection02
 }) => {
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = data => console.log(data)
+  const onSubmit = data => {
+    axios.post('/', {
+      ...data
+    }).then(() => { console.log('success') })
+  }
 
   return (
     <Theme>
