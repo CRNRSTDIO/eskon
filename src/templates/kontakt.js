@@ -14,17 +14,23 @@ export const Kontakt = ({
   kontaktSection02
 }) => {
   const { register, handleSubmit, errors } = useForm()
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&')
+  }
   const onSubmit = data => {
+    console.log(encode({ ...data }))
     axios({
       method: 'post',
-      url: '/',
+      url: '/kontakt',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      data: {
+      data: encode({
         'form-name': 'kontakt',
         ...data
-      }
+      })
     }).then(() => { console.log('success') })
   }
 
