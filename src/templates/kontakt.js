@@ -15,8 +15,16 @@ export const Kontakt = ({
 }) => {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => {
-    axios.post('/', {
-      ...data
+    axios({
+      method: 'post',
+      url: '/',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'form-name': 'kontakt',
+        ...data
+      }
     }).then(() => { console.log('success') })
   }
 
@@ -84,6 +92,7 @@ export const Kontakt = ({
             method='post'
             data-netlify='true'
           >
+            <input type='hidden' name='form-name' value='kontakt' />
             <Container>
               <Row>
                 <Col xs={4} sm={6} offset={{ sm: 1, md: 2 }} md={8}>
