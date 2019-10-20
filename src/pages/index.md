@@ -3,6 +3,7 @@ templateKey: index-page
 title: Strona główna
 landing:
   box01:
+    alt: Opis zdjęcia
     body: >-
       Zrealizuj swój wymarzony dom w technologii niskoenergetycznej lub pasywnej
       w Szczecinie i okolicach
@@ -10,6 +11,7 @@ landing:
     heading: Budowa domu pod klucz
     image: /img/housebuilding-3370969-2x.png
   box02:
+    alt: Opis zdjęcia
     body: Doradztwo i usługi budowlane dla przemysłu i przedsiębiorstw
     cta: Czytaj więcej
     heading: Usługi Inżynieryjne
@@ -18,6 +20,7 @@ landing:
     Domy i konstrukcje
     stawiane na czas
 indexSection01:
+  alt: Opis zdjęcia
   body: Body
   heading: Heading
   image: /img/some-solar-panels-on-the-roof-of-a-private-house-c2qx9nm-2x.png
