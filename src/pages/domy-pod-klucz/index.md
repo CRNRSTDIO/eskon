@@ -2,6 +2,7 @@
 templateKey: domy-pod-klucz
 title: Domy pod klucz
 landing:
+  alt: Opis zdjęcia
   body: >-
     Jesteśmy po to aby służyć Ci pomocą i doradztwem w realizacji Twojego
     przyszłego domu od fundamentów po wykończenie - gwarantując, że cały proces
@@ -43,7 +44,6 @@ domySection01:
 
         * Stolarka
       heading: Proces budowlany
-      isOpen: true
     - body: Geologia
       heading: Geologia
     - body: Projekt
