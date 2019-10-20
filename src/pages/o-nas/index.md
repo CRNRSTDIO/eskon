@@ -2,6 +2,7 @@
 templateKey: o-nas
 title: O nas
 oSection01:
+  alt: Opis zdjęcia
   body: >-
     Świat zmienia się z upływem lat, a wraz z nim technologie i standardy w
     branży budowlanej. Budowa domu to jedna z najważniejszych decyzji w życiu
@@ -14,6 +15,7 @@ oSection01:
     jak przystało na XXI wiek
   image: /img/abstract-glass-window-roof-architecture-exterior-4z7hcy3-2x.png
 oSection02:
+  alt: Opis zdjęcia
   body: >-
     Wyznacznikiem naszych czasów jest brak czasu. Ogromna część inwestorów
     budujących domy na własną rękę posiwiała od ilości spraw do załatwienia.
@@ -25,16 +27,19 @@ oSection02:
   image: /img/modern-silver-facade-p7bjps7-2x.png
 oSection03:
   cards:
-    - descr: |-
+    - alt: Opis zdjęcia
+      descr: |-
         Właściciel
         Meneger budowy
         magister inżynier
       image: /img/rooney-00-2x.png
       name: Szymon Siemiński
-    - descr: |-
+    - alt: Opis zdjęcia
+      descr: |-
         Meneger budowy
         magister inżynier
       image: /img/zlatan-2x.png
       name: Tata Siemiński
   heading: Zespół Eskon
 ---
+
