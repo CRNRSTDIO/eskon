@@ -2,6 +2,7 @@
 templateKey: uslugi-inzynieryjne
 title: Usługi inżynieryjne
 landing:
+  alt: Opis zdjęcia
   body: >-
     Posiadamy kilkunastoletnie doświadczenie w doradztwie i wykonywaniu
     konstrukcji i napraw dla przemysłu i biznesu.
@@ -19,7 +20,6 @@ uslugiSection01:
   accordions:
     - body: Lorem ipsum
       heading: Diagnoza
-      isOpen: true
     - body: Lorem ipsum
       heading: Konstrukcje stalowe
   heading: Nasze usługi dla biznesu
