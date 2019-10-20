@@ -58,6 +58,7 @@ domySection01:
     który zapewnia,
     wysoką jakość
 image: /img/modern-house-with-garden-swimming-pool-and-wooden-rzg7hu2-2x.png
+alt: Opis zdjęcia
 domySection02:
   body: >-
     Zarówno technologia materiałów budowlanych jak i prefabrykatów pozwala na
