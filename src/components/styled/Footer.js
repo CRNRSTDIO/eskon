@@ -83,25 +83,36 @@ export const FooterBoxLogo = styled.div`
 
 export const FooterWrapper = styled.div`
   background-color: ${({ theme: { dark1 } }) => dark1};
+  padding: 58px 0 46px;
 `
 
 export const FooterHr = styled.hr`
-  background-color: ${({ theme: { white } }) => `${rgba(white, .11)}`};
+  background-color: ${({ theme: { white } }) => `${rgba(white, 0.11)}`};
   border: 0;
   height: 1px;
-  margin: 0;
+  margin: 46px 0;
   width: 100%;
 `
 
 export const FooterLink = styled(Link)`
   color: ${({ theme: { grey2 } }) => grey2};
-  display: inline-block;
+  display: block;
+  font-family: 'Roboto';
   font-size: .75rem;
+  letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
 
+  ${({ theme: { queries } }) => queries.md`
+    display: inline-block;
+  `};
+
   & + & {
-    margin: 0 0 0 4.125rem;
+    margin: 38px 0 0;
+
+    ${({ theme: { queries } }) => queries.md`
+      margin: 0 0 0 64px;
+    `};
   }
 
   &[aria-current] {
@@ -111,16 +122,48 @@ export const FooterLink = styled(Link)`
 `
 
 export const FooterColumnInside = styled.div`
+  margin: 0 0 28px;
   white-space: pre;
 `
 
 export const FooterColumnLine = styled.p`
   color: ${({ theme: { grey2 } }) => grey2};
-  font-size: .8125rem;
+  font-family: 'Roboto';
+  font-size: 15px;
   line-height: 1.375rem;
   margin: 0;
 
+  ${({ theme: { queries } }) => queries.md`
+    font-size: 13px;
+  `};
+
   :first-child {
     color: ${({ theme: { grey0 } }) => grey0};
+  }
+`
+
+export const FooterCopy = styled.div`
+  display: block;
+  justify-content: space-between;
+  margin: 32px 0;
+
+  ${({ theme: { queries } }) => queries.md`
+    display: flex;
+    margin: 0;
+  `};
+`
+
+export const FooterCopyItem = styled.span`
+  color: ${({ theme: { grey3 } }) => grey3};
+  display: block;
+  font-family: 'Roboto';
+  font-size: 12px;
+
+  & + & {
+    margin: 32px 0 0;
+
+    ${({ theme: { queries } }) => queries.md`
+      margin: 0;
+    `};
   }
 `

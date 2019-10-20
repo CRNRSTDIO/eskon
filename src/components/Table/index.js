@@ -7,7 +7,7 @@ const Table = ({ header, row: rows }) => (
       {Object.values(header).map(({ image: { publicURL }, small, text }, index) => (
         <styled.TableHeaderItem key={index}>
           <styled.TableHeaderItemIcon>
-            <img src={publicURL} />
+            <img src={publicURL} alt='' />
           </styled.TableHeaderItemIcon>
           <styled.TableHeaderItemText>
             {text}
@@ -31,7 +31,7 @@ const Table = ({ header, row: rows }) => (
               <styled.TableItem key={index}>
                 {!big && (
                   <styled.TableItemIcon>
-                    <img src={publicURL} />
+                    <img src={publicURL} alt='' />
                   </styled.TableItemIcon>
                 )}
                 <styled.TableItemBig>
@@ -48,7 +48,7 @@ const Table = ({ header, row: rows }) => (
               <styled.TableItem key={index}>
                 {!big && (
                   <styled.TableItemIcon>
-                    <img src={publicURL} />
+                    <img src={publicURL} alt='' />
                   </styled.TableItemIcon>
                 )}
                 <styled.TableItemBig>

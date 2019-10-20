@@ -46,10 +46,10 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
             <styled.TopNavLogoLink to='/'>
               {!open
                 ? (
-                  <img src={dark ? logo[0].variant : logo[1].variant} height={14} />
+                  <img src={dark ? logo[0].variant : logo[1].variant} height={14} alt='Eskon logo' />
                 )
                 : (
-                  <img src={logo[1].variant} height={14} />
+                  <img src={logo[1].variant} height={14} alt='Eskon logo' />
                 )}
             </styled.TopNavLogoLink>
           </styled.TopNavLogo>
@@ -72,7 +72,7 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
         <Visible xs sm>
           <Col xs={1} offset={{ sm: 5 }} sm={1}>
             <styled.TopNavLogo variants={itemVariants}>
-              <img src={dark ? logo[4].variant : logo[5].variant} height={30} />
+              <img src={dark ? logo[4].variant : logo[5].variant} height={30} alt='Eskon logo' />
             </styled.TopNavLogo>
           </Col>
         </Visible>

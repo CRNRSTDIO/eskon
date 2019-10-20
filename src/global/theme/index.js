@@ -13,7 +13,6 @@ const aboveSmQuery = query([mediaType(), aboveWidth('sm')])
 const aboveMdQuery = query([mediaType(), aboveWidth('md')])
 const aboveLgQuery = query([mediaType(), aboveWidth('lg')])
 
-
 const theme = {
   queries: {
     sm: aboveSmQuery,

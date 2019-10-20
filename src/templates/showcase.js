@@ -226,7 +226,7 @@ export const ShowcaseTemplate = ({
                 <Col key={index} xs={4} sm={6} offset={{ sm: 1, md: 1 }} md={5}>
                   <styled.Section08Item>
                     <styled.Section08ItemImage>
-                      <img src={icon.publicURL} />
+                      <img src={icon.publicURL} alt='' />
                     </styled.Section08ItemImage>
                     <styled.Section08ItemHeading>{heading}</styled.Section08ItemHeading>
                     <Paragraph dark>{descr}</Paragraph>
