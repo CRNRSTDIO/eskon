@@ -2,6 +2,7 @@
 templateKey: kontakt
 title: Kontakt
 kontaktSection01:
+  alt: Opis zdjęcia
   body: |-
     p. [+48 601 858 412](<tel: +48 601 858 412>)
 
