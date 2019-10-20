@@ -3,14 +3,14 @@ import * as styled from './styled/IndexPage'
 import Heading from './styled/Heading'
 import Paragraph from './styled/Paragraph'
 
-const IndexBox = ({ alternate, heading, body, cta }) => (
-  <styled.Box alternate={alternate} to='/'>
-    <styled.BoxHeading alternate={alternate}>
+const IndexBox = ({ heading, body, cta }) => (
+  <styled.Box to='/'>
+    <styled.BoxHeading>
       <Heading inherit small as='h3'>{heading}</Heading>
     </styled.BoxHeading>
-    <styled.BoxBody alternate={alternate}>
+    <styled.BoxBody>
       <Paragraph inherit>{body}</Paragraph>
-      <styled.BoxFakeLink alternate={alternate} inherit to='/'>{cta}</styled.BoxFakeLink>
+      <styled.BoxFakeLink inherit to='/'>{cta}</styled.BoxFakeLink>
     </styled.BoxBody>
   </styled.Box>
 )

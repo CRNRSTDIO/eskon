@@ -91,7 +91,8 @@ collections:
         fields:
           - {label: Heading, name: heading, widget: text}
           - {label: Body, name: body, widget: text}
-          - {label: Image, name: image, required: false, widget: image}
+          - {label: Image, name: image, widget: image}
+          - {label: Image descr, name: alt, widget: string}
       - label: Section
         name: showcaseSection03
         widget: list
@@ -104,7 +105,8 @@ collections:
         fields:
           - {label: Heading, name: heading, widget: text}
           - {label: Body, name: body, widget: text}
-          - {label: Image, name: image, required: false, widget: image}
+          - {label: Image, name: image, widget: image}
+          - {label: Image descr, name: alt, widget: string}
       - label: Section
         name: showcaseSection05
         widget: object
@@ -117,12 +119,12 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Body, name: body, widget: text}
-              - {label: Open, name: isOpen, required: false, widget: boolean}
       - label: Section
         name: showcaseSection06
         widget: list
         fields:
-          - {label: Image, name: image, required: false, widget: image}
+          - {label: Image, name: image, widget: image}
+          - {label: Image descr, name: alt, widget: string}
       - label: Section
         name: showcaseSection07
         widget: list
@@ -146,7 +148,8 @@ collections:
         name: showcaseSection09
         widget: list
         fields:
-          - {label: Image, name: image, required: false, widget: image}
+          - {label: Image, name: image, widget: image}
+          - {label: Image descr, name: alt, widget: string}
   - name: pages
     label: Pages
     editor:
@@ -176,7 +179,8 @@ collections:
                 - {label: Heading, name: heading, widget: text}
                 - {label: Body, name: body, widget: text}
                 - {label: CTA, name: cta, widget: string}
-                - {label: Image, name: image, requied: false, widget: image}
+                - {label: Image, name: image, widget: image}
+                - {label: Image descr, name: alt, widget: string}
             - label: Box
               name: box02
               widget: object
@@ -184,30 +188,35 @@ collections:
                 - {label: Heading, name: heading, widget: text}
                 - {label: Body, name: body, widget: text}
                 - {label: CTA, name: cta, widget: string}
-                - {label: Image, name: image, requied: false, widget: image}
+                - {label: Image, name: image, widget: image}
+                - {label: Image descr, name: alt, widget: string}
           - label: Section
             name: indexSection01
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
-              - {label: Image, name: image, required: false, widget: image}
+              - {label: Image, name: image, widget: image}
+              - {label: Image descr, name: alt, widget: string}
           - label: Image
             name: image
             widget: image
+          - label: Image descr
+            name: alt
+            widget: string
           - label: Section
             name: indexSection02
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
-              -  {label: Body, name: body, widget: text}
+              - {label: Body, name: body, widget: text}
           - label: Section
             name: indexSection03
             widget: list
             fields:
               - {label: Value, name: value, widget: number}
               - {label: Description, name: desc, widget: string}
-              - {label: Special character, required: false, name: special, widget: string}
+              - {label: Special character, name: special, widget: string}
           - label: Section
             name: indexSection04
             widget: object
@@ -218,7 +227,7 @@ collections:
                 name: items
                 widget: list
                 fields:
-                - {label: Icon, name: icon, required: false, widget: image}
+                - {label: Icon, name: icon, widget: image}
                 - {label: Heading, name: heading, widget: string}
                 - {label: Body, name: body, widget: text}
       - file: src/pages/domy-pod-klucz/index.md
@@ -241,6 +250,7 @@ collections:
               - {label: Body, name: body, widget: text}
               - {label: CTA, name: cta, widget: string}
               - {label: Image, name: image, widget: image}
+              - {label: Image descr, name: alt, widget: string}
           - label: Section
             name: domySection01
             widget: object
@@ -253,11 +263,12 @@ collections:
                 fields:
                   - {label: Heading, name: heading, widget: string}
                   - {label: Body, name: body, widget: markdown}
-                  - {label: Open, name: isOpen, required: false, widget: boolean}
           - label: Image
             name: image
             widget: image
-            required: false
+          - label: Image descr
+            name: alt
+            widget: string
           - label: Section
             name: domySection02
             widget: object
@@ -330,7 +341,8 @@ collections:
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
-              - {label: Image, required: false, name: image, widget: image}
+              - {label: Image, name: image, widget: image}
+              - {label: Image descr, name: alt, widget: string}
               - {label: Body, name: body, widget: text}
               - {label: CTA, name: cta, widget: string}
           - label: Section
@@ -344,7 +356,6 @@ collections:
                 fields:
                 - {label: Heading, name: heading, widget: string}
                 - {label: Body, name: body, widget: markdown}
-                - {label: Open, name: isOpen, required: false, widget: boolean}
           - label: Section
             name: uslugiSection02
             widget: object
@@ -388,14 +399,16 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
-              - {label: Image, name: image, required: false, widget: image}
+              - {label: Image, name: image, widget: image}
+              - {label: Image descr, name: alt, widget: string}
           - label: Section
             name: oSection02
             widget: object
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: text}
-              - {label: Image, name: image, required: false, widget: image}
+              - {label: Image, name: image, widget: image}
+              - {label: Image descr, name: alt, widget: string}
           - label: Section
             name: oSection03
             widget: object
@@ -405,7 +418,8 @@ collections:
                 name: cards
                 widget: list
                 fields:
-                  - {label: Image, name: image, required: false, widget: image}
+                  - {label: Image, name: image, widget: image}
+                  - {label: Image descr, name: alt, widget: string}
                   - {label: Name, name: name, widget: string}
                   - {label: Description, name: descr, widget: text}
       - file: src/pages/kontakt/index.md
@@ -426,7 +440,8 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: text}
               - {label: Body, name: body, widget: markdown}
-              - {label: Image, name: image, required: false, widget: image}
+              - {label: Image, name: image, widget: image}
+              - {label: Image descr, name: alt, widget: string}
               - {label: Helmet, name: helmet, widget: image}
           - label: Section
             name: kontaktSection02

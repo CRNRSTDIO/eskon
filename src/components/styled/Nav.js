@@ -25,6 +25,39 @@ export const NavBar = styled(motion.div)`
   }
 `
 
+export const NavBarHamburger = styled.div`
+
+  span {
+    background-color: ${({ isOpen, theme: { blue2, white } }) => isOpen ? blue2 : white};
+    height: 2px;
+    position: absolute;
+    right: 50%;
+    top: 48px;
+    transform: translateX(50%);
+    transition: background-color .15s ease-in-out;
+    width: 28px;
+
+    ::after,
+    ::before {
+      background-color: ${({ theme: { white } }) => white};
+      content: '';
+      height: 2px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: ${({ isOpen }) => isOpen ? 'translateY(0) rotate(-45deg)' : 'translateY(-7px)'};
+      transform-origin: center;
+      transition: transform .15s ease-in-out;
+      width: ${({ isOpen }) => isOpen ? '100%' : '1rem'};
+    }
+
+    ::after {
+      transform: ${({ isOpen }) => isOpen ? 'translateY(0) rotate(45deg)' : 'translateY(7px)'};
+      width: ${({ isOpen }) => isOpen ? '100%' : '23px'};
+    }
+  }
+`
+
 export const NavBarText = styled.div`
   align-items: center;
   color: ${({ theme: { white } }) => white};

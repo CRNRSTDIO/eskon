@@ -157,7 +157,7 @@ export const indexPageQuery = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 538) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -167,7 +167,7 @@ export const indexPageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid_tracedSVG
+                ...GatsbyImageSharpFluid
               }
             }
           }

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Link from '../Link'
 import Heading from '../Heading'
 
 export const Section01 = styled.div`

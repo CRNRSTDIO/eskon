@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useState, useMemo, useContext, cloneElement } from 'react'
+import React, { createContext, useState, useMemo, useContext, cloneElement } from 'react'
 
 const TabsState = createContext()
 const Elements = createContext()

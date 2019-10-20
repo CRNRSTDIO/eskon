@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 export const TopNav = styled(motion.div)`
   left: 0;
+  pointer-events: none;
   position: absolute;
   right: 0;
   top: 2.625rem;
@@ -12,6 +13,10 @@ export const TopNav = styled(motion.div)`
 
 export const TopNavLogo = styled(motion.div)`
   color: ${({ theme: { white } }) => white};
+`
+
+export const TopNavLogoLink = styled(Link)`
+  pointer-events: all;
 `
 
 export const TopNavPhone = styled(motion.div)`
@@ -45,6 +50,7 @@ export const TopNavLink = styled(Link)`
   font-family: 'Roboto';
   font-size: .75rem;
   letter-spacing: 1px;
+  pointer-events: all;
   text-decoration: none;
   text-transform: uppercase;
 `

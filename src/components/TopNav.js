@@ -43,13 +43,15 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
       <Row>
         <Col xs={2} sm={1} offset={{ xs: 1, sm: 1, md: 1 }} md={1}>
           <styled.TopNavLogo variants={itemVariants}>
-            {!open
-              ? (
-                <img src={dark ? logo[0].variant : logo[1].variant} height={14} />
-              )
-              : (
-                <img src={logo[1].variant} height={14} />
-              )}
+            <styled.TopNavLogoLink to='/'>
+              {!open
+                ? (
+                  <img src={dark ? logo[0].variant : logo[1].variant} height={14} />
+                )
+                : (
+                  <img src={logo[1].variant} height={14} />
+                )}
+            </styled.TopNavLogoLink>
           </styled.TopNavLogo>
         </Col>
         {!open && (

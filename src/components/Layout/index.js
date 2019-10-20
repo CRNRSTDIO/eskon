@@ -22,8 +22,9 @@ const Layout = ({ nocta, darktop, children }) => {
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
     >
-      <NavBar show={showOnScroll} toggleOpen={toggleOpen} />
-      <motion.div animate={showOnScroll ? isOpen ? 'show' : 'hide' : 'show'}>
+      <NavBar isOpen={isOpen} show={showOnScroll} toggleOpen={toggleOpen} />
+      {/* <motion.div animate={showOnScroll ? isOpen ? 'show' : 'hide' : 'show'}> */}
+      <motion.div animate={showOnScroll ? 'hide' : 'show'} initial={false}>
         <TopNav dark={darktop} open={isOpen} />
       </motion.div>
       <styled.Wrapper isOpen={isOpen}>

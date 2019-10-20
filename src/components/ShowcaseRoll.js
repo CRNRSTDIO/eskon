@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import { Tabs, useTabState, Panel } from './Tabs'
 import Heading from './styled/Heading'
-import { Link, graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 import { motion } from 'framer-motion'
 import * as styled from './styled/ShowcaseRoll'
 
