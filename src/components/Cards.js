@@ -15,10 +15,10 @@ const Cards = ({ heading, cards }) => (
             <Heading noline regular dark as='h3'>{heading}</Heading>
           </styled.CardsHeading>
         </Col>
-        {cards.slice(0, MAX_CARDS).map(({ image, name, descr }, index) => (
+        {cards.slice(0, MAX_CARDS).map(({ image, alt, name, descr }, index) => (
           <Col xs={2} sm={2} md={3} key={index}>
             <styled.CardsItem>
-              <Img fluid={image.childImageSharp.fluid} />
+              <Img fluid={image.childImageSharp.fluid} alt={alt} />
               <styled.CardsItemName>{name}</styled.CardsItemName>
               <styled.CardsItemDescr>{descr}</styled.CardsItemDescr>
             </styled.CardsItem>

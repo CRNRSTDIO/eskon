@@ -17,6 +17,7 @@ export const DomyPodKluczTemplate = ({
   landing,
   domySection01,
   image,
+  alt,
   domySection02,
   domySection03: table
 }) => (
@@ -52,7 +53,7 @@ export const DomyPodKluczTemplate = ({
       <Container>
         <Row>
           <Col xs={4}>
-            <Img fluid={image.childImageSharp.fluid} />
+            <Img fluid={image.childImageSharp.fluid} alt={alt} />
           </Col>
         </Row>
       </Container>
@@ -105,6 +106,7 @@ export const domyPodKluczQuery = graphql`
               }
             }
           }
+          alt
         }
         domySection01 {
           heading
@@ -112,7 +114,6 @@ export const domyPodKluczQuery = graphql`
           accordions {
             heading
             body
-            isOpen
           }
         }
         image {
@@ -122,6 +123,7 @@ export const domyPodKluczQuery = graphql`
             }
           }
         }
+        alt
         domySection02 {
           heading
           body

@@ -68,8 +68,10 @@ collections:
         widget: string
       - label: Image
         name: image
-        required: false
         widget: image
+      - label: Image descr
+        name: alt
+        widget: string
       - label: Tags
         name: tags
         widget: list

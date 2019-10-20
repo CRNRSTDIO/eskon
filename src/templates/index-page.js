@@ -17,6 +17,7 @@ export const IndexTemplate = ({
   landing,
   indexSection01,
   image,
+  alt,
   indexSection02,
   indexSection03,
   indexSection04
@@ -34,7 +35,7 @@ export const IndexTemplate = ({
             <Col xs={3} offset={{ xs: 1, sm: 1, md: 1 }} sm={2} md={3} className='col'>
               <styled1.Section01Image>
                 <ImageAnimated>
-                  <Img fluid={indexSection01.image.childImageSharp.fluid} />
+                  <Img fluid={indexSection01.image.childImageSharp.fluid} alt={indexSection01.alt} />
                 </ImageAnimated>
               </styled1.Section01Image>
             </Col>
@@ -63,7 +64,7 @@ export const IndexTemplate = ({
             <Col xs={4} sm={6} md={6}>
               <styled1.Section02Image>
                 <ImageAnimated>
-                  <Img fluid={image.childImageSharp.fluid} />
+                  <Img fluid={image.childImageSharp.fluid} alt={alt} />
                 </ImageAnimated>
               </styled1.Section02Image>
             </Col>
@@ -140,6 +141,7 @@ export const indexPageQuery = graphql`
                 }
               }
             }
+            alt
           }
           box02 {
             heading
@@ -152,6 +154,7 @@ export const indexPageQuery = graphql`
                 }
               }
             }
+            alt
           }
         }
         image {
@@ -161,6 +164,7 @@ export const indexPageQuery = graphql`
             }
           }
         }
+        alt
         indexSection01 {
           heading
           body
@@ -171,6 +175,7 @@ export const indexPageQuery = graphql`
               }
             }
           }
+          alt
         }
         indexSection02 {
           heading

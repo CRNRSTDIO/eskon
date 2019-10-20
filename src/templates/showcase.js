@@ -16,6 +16,7 @@ export const ShowcaseTemplate = ({
   title,
   tags,
   image,
+  alt,
   showcaseSection01,
   showcaseSection02,
   showcaseSection03,
@@ -50,6 +51,7 @@ export const ShowcaseTemplate = ({
             <styled.Section00Image
               fluid={image.childImageSharp.fluid}
               style={{ position: 'absolute' }}
+              alt={alt}
             />
           </Container>
         </styled.Section00>
@@ -95,7 +97,7 @@ export const ShowcaseTemplate = ({
             </Row>
           </Container>
           <styled.Section02Image>
-            <Img fluid={showcaseSection02.image.childImageSharp.fluid} />
+            <Img fluid={showcaseSection02.image.childImageSharp.fluid} alt={showcaseSection02.alt} />
           </styled.Section02Image>
         </styled.Section02>
       </Section>
@@ -141,7 +143,7 @@ export const ShowcaseTemplate = ({
               </Col>
               <Col xs={4} sm={6} offset={{ sm: 1, md: 2 }} md={6}>
                 <styled.Section04Image>
-                  <Img fluid={showcaseSection04.image.childImageSharp.fluid} />
+                  <Img fluid={showcaseSection04.image.childImageSharp.fluid} alt={showcaseSection04.alt} />
                 </styled.Section04Image>
               </Col>
             </Row>
@@ -177,7 +179,7 @@ export const ShowcaseTemplate = ({
       </Section>
       <Section>
         <styled.Section06>
-          {showcaseSection06.map(({ image }, index) => (
+          {showcaseSection06.map(({ image, alt }, index) => (
             <styled.Section06Div key={index}>
               <Img
                 fluid={image.childImageSharp.fluid}
@@ -185,6 +187,7 @@ export const ShowcaseTemplate = ({
                   height: '100%',
                   minWidth: '100%'
                 }}
+                alt={alt}
               />
             </styled.Section06Div>
           ))}
@@ -236,7 +239,7 @@ export const ShowcaseTemplate = ({
       </Section>
       <Section>
         <styled.Section09>
-          {showcaseSection09.map(({ image }, index) => (
+          {showcaseSection09.map(({ image, alt }, index) => (
             <styled.Section09Div key={index}>
               <Img
                 fluid={image.childImageSharp.fluid}
@@ -244,6 +247,7 @@ export const ShowcaseTemplate = ({
                   height: '100%',
                   minWidth: '100%'
                 }}
+                alt={alt}
               />
             </styled.Section09Div>
           ))}
@@ -276,6 +280,7 @@ export const showcaseQuery = graphql`
             }
           }
         }
+        alt
         showcaseSection01 {
           heading
           body
@@ -290,6 +295,7 @@ export const showcaseQuery = graphql`
               }
             }
           }
+          alt
         }
         showcaseSection03 {
           heading
@@ -305,6 +311,7 @@ export const showcaseQuery = graphql`
               }
             }
           }
+          alt
         }
         showcaseSection05 {
           heading
@@ -322,6 +329,7 @@ export const showcaseQuery = graphql`
               }
             }
           }
+          alt
         }
         showcaseSection07 {
           value
@@ -346,6 +354,7 @@ export const showcaseQuery = graphql`
               }
             }
           }
+          alt
         }
       }
     }

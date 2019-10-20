@@ -29,7 +29,7 @@ export const ONasTemplate = ({
           <Row>
             <Col xs={3} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
               <ImageAnimated>
-                <Img fluid={oSection02.image.childImageSharp.fluid} />
+                <Img fluid={oSection02.image.childImageSharp.fluid} alt={oSection02.alt} />
               </ImageAnimated>
             </Col>
             <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={3}>
@@ -76,6 +76,7 @@ export const oNasQuery = graphql`
               }
             }
           }
+          alt
         }
         oSection02 {
           heading
@@ -87,6 +88,7 @@ export const oNasQuery = graphql`
               }
             }
           }
+          alt
         }
         oSection03 {
           heading
@@ -98,6 +100,7 @@ export const oNasQuery = graphql`
                 }
               }
             }
+            alt
             name
             descr
           }

@@ -53,7 +53,7 @@ const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest 
             <Col xs={1} sm={2} offset={{ sm: 1, md: 1 }} md={4}>
               <ImageAnimated>
                 <styled.LandingImageWrapper>
-                  <Img fluid={image.childImageSharp.fluid} />
+                  <Img fluid={image.childImageSharp.fluid} alt='' />
                 </styled.LandingImageWrapper>
               </ImageAnimated>
             </Col>
@@ -64,12 +64,14 @@ const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest 
         <styled.Image
           fluid={background}
           style={{ position: 'absolute' }}
+          alt=''
         />
       )}
       {box01 && box01.image && (
         <styled.Image
           fluid={box01.image.childImageSharp.fluid}
           style={{ position: 'absolute' }}
+          alt={box01.alt}
         />
       )}
       <AnimatePresence>
@@ -82,6 +84,7 @@ const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest 
             <styled.Image
               fluid={box02.image.childImageSharp.fluid}
               style={{ position: 'absolute' }}
+              alt={box02.alt}
             />
           </motion.div>
         )}

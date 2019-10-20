@@ -44,12 +44,14 @@ export const Kontakt = ({
               style={{
                 position: 'absolute'
               }}
+              alt={kontaktSection01.alt}
             />
             <styled.Section00Helmet
               fluid={kontaktSection01.helmet.childImageSharp.fluid}
               style={{
                 position: 'absolute'
               }}
+              alt=''
             />
           </Container>
         </styled.Section00>
@@ -268,6 +270,7 @@ export const kontaktQuery = graphql`
               }
             }
           }
+          alt
           helmet {
             childImageSharp {
               fluid(maxWidth: 710) {

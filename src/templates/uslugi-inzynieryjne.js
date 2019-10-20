@@ -80,6 +80,7 @@ export const uslugiInzynieryjneQuery = graphql`
               }
             }
           }
+          alt
           body
           cta
         }
@@ -88,7 +89,6 @@ export const uslugiInzynieryjneQuery = graphql`
           accordions {
             heading
             body
-            isOpen
           }
         }
         uslugiSection02 {
