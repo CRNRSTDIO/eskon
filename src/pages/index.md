@@ -25,6 +25,7 @@ indexSection01:
   heading: Heading
   image: /img/some-solar-panels-on-the-roof-of-a-private-house-c2qx9nm-2x.png
 image: /img/housebuilding-1407462-2x.png
+alt: Opis zdjęcia
 indexSection02:
   body: >-
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
