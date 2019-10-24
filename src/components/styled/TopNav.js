@@ -13,6 +13,11 @@ export const TopNav = styled(motion.div)`
 
 export const TopNavLogo = styled(motion.div)`
   color: ${({ theme: { white } }) => white};
+  text-align: center;
+`
+
+export const TopNavLogoSecondary = styled(motion.div)`
+  text-align: right;
 `
 
 export const TopNavLogoLink = styled(Link)`

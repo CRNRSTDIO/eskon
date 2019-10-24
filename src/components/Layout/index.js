@@ -23,7 +23,6 @@ const Layout = ({ nocta, darktop, children }) => {
       animate={isOpen ? 'open' : 'closed'}
     >
       <NavBar isOpen={isOpen} show={showOnScroll} toggleOpen={toggleOpen} />
-      {/* <motion.div animate={showOnScroll ? isOpen ? 'show' : 'hide' : 'show'}> */}
       <motion.div animate={showOnScroll ? 'hide' : 'show'} initial={false}>
         <TopNav dark={darktop} open={isOpen} />
       </motion.div>

@@ -3,32 +3,39 @@ import { Link } from 'gatsby'
 import { rgba } from 'polished'
 import { motion } from 'framer-motion'
 
-export const NavBar = styled(motion.div)`
+export const NavBar = styled.div`
   align-items: stretch;
-  background-color: ${({ theme: { blue2 } }) => blue2};
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  pointer-events: none;
   position: fixed;
-  width: 3.75rem;
+  transition: transform .15s ease-in-out;
+  transition: transform .15s ease-in-out;
+  width: 106px;
   z-index: 2;
 
-  ::before {
+  ${({ theme: { queries } }) => queries.sm`
     background-color: ${({ theme: { blue2 } }) => blue2};
-    content: '';
-    height: 100%;
-    position: absolute;
-    right: 100%;
-    top: 0;
     width: 3.75rem;
-  }
+  `};
+
+  ${({ theme: { queries } }) => queries.md`
+    background-color: ${({ theme: { blue2 } }) => blue2};
+    transform: ${({ show }) => show ? 'translateX(0)' : 'translateX(-100%)'};
+    width: 3.75rem;
+  `};
 `
 
 export const NavBarHamburger = styled.div`
+  margin-top: 1rem;
+  padding: 2rem;
+  pointer-events: all;
 
   span {
-    background-color: ${({ isOpen, theme: { blue2, white } }) => isOpen ? blue2 : white};
+    background-color: ${({ isOpen, theme: { blue1, white } }) => isOpen ? blue1 : white};
     height: 2px;
     position: absolute;
     right: 50%;
@@ -36,6 +43,10 @@ export const NavBarHamburger = styled.div`
     transform: translateX(50%);
     transition: background-color .15s ease-in-out;
     width: 28px;
+
+    ${({ theme: { queries } }) => queries.md`
+      background-color: ${({ isOpen, theme: { blue2, white } }) => isOpen ? blue2 : white};
+    `};
 
     ::after,
     ::before {
@@ -61,11 +72,15 @@ export const NavBarHamburger = styled.div`
 export const NavBarText = styled.div`
   align-items: center;
   color: ${({ theme: { white } }) => white};
-  display: flex;
+  display: none;
   font-size: .5625rem;
   padding: 0 0 1.875rem 0;
   text-orientation: mixed;
   writing-mode: vertical-rl;
+
+  ${({ theme: { queries } }) => queries.sm`
+    display: flex;
+  `};
 `
 
 export const Nav = styled.div`

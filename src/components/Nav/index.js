@@ -35,7 +35,7 @@ const navVariants = {
 }
 
 export const NavBar = ({ isOpen, show, toggleOpen }) => (
-  <styled.NavBar animate={show ? 'open' : 'closed'} style={{ originX: 0 }} variants={navVariants} onClick={() => toggleOpen()}>
+  <styled.NavBar show={show} onClick={() => toggleOpen()}>
     <styled.NavBarHamburger isOpen={isOpen}>
       <span />
     </styled.NavBarHamburger>

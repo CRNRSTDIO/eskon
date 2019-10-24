@@ -10,7 +10,7 @@ const Columns = styled.article`
 
   ::after {
     background: ${({ theme: { grey0 } }) => `linear-gradient(
-      90deg, ${grey0} 0%, ${grey0} calc(50% - .5rem), transparent calc(50% - .5rem), transparent calc(50% + .5rem), ${grey0} calc(50% + .5rem), ${grey0} 100%)`
+      90deg, ${grey0} 0%, ${grey0} 100%)`
     };
     content: '';
     display: ${({ noline }) => noline ? 'none' : 'block'};
@@ -19,6 +19,12 @@ const Columns = styled.article`
     position: absolute;
     top: 0;
     width: 100%;
+
+    ${({ theme: { queries } }) => queries.sm`
+    background: ${({ theme: { grey0 } }) => `linear-gradient(
+      90deg, ${grey0} 0%, ${grey0} calc(50% - .5rem), transparent calc(50% - .5rem), transparent calc(50% + .5rem), ${grey0} calc(50% + .5rem), ${grey0} 100%)`
+    };
+    `};
   }
 `
 
