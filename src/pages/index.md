@@ -16,7 +16,7 @@ homepage_section_2:
         zaczynają się od 
         wspaniałych relacji
       image: /img/james-baldwin-wuimyu2x6w4-unsplash-2x.png
-      label: proces
+      label: Proces
       subheading: >-
         Throughout the design process, we collaborate with each client to gain
         an understanding of their unique needs – defining the success of each
