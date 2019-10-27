@@ -26,7 +26,7 @@ homepage_section_2:
         odpowiednie materiały
         we wszystkich fazach budowy
       image: /img/james-baldwin-wuimyu2x6w4-unsplash-2x.png
-      label: materiały
+      label: Materiały
       subheading: >-
         Throughout the design process, we collaborate with each client to gain
         an understanding of their unique needs – defining the success of each
