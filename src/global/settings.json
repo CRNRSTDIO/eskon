@@ -1,25 +1,6 @@
 {
   "site_title": "ESKON",
-  "logo": [
-    {
-      "variant": "/img/zasób-17.svg"
-    },
-    {
-      "variant": "/img/zasób-17-white.svg"
-    },
-    {
-      "variant": "/img/zasób-16.svg"
-    },
-    {
-      "variant": "/img/zasób-16-white.svg"
-    },
-    {
-      "variant": "/img/zasób-15.svg"
-    },
-    {
-      "variant": "/img/zasób-15-white.svg"
-    }
-  ],
+  "topNavTel": "+48 601 858 412",
   "showcase": {
     "front_limit": 3
   },
