@@ -5,27 +5,20 @@ import { motion } from 'framer-motion'
 
 export const NavBar = styled.div`
   align-items: stretch;
-  background-color: transparent;
-  display: flex;
+  background-color: ${({ theme: { blue2 } }) => blue2};
+  display: none;
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
   pointer-events: none;
   position: fixed;
-  transition: transform .15s ease-in-out;
-  transition: transform .15s ease-in-out;
-  width: 106px;
+  transform: ${({ show }) => show ? 'translateX(0)' : 'translateX(-100%)'};
+  transition: transform .15s linear;
+  width: 3.75rem;
   z-index: 2;
 
   ${({ theme: { queries } }) => queries.sm`
-    background-color: ${({ theme: { blue2 } }) => blue2};
-    width: 3.75rem;
-  `};
-
-  ${({ theme: { queries } }) => queries.md`
-    background-color: ${({ theme: { blue2 } }) => blue2};
-    transform: ${({ show }) => show ? 'translateX(0)' : 'translateX(-100%)'};
-    width: 3.75rem;
+    display: flex;
   `};
 `
 
@@ -35,18 +28,14 @@ export const NavBarHamburger = styled.div`
   pointer-events: all;
 
   span {
-    background-color: ${({ isOpen, theme: { blue1, white } }) => isOpen ? blue1 : white};
+    background-color: ${({ isOpen, theme: { blue2, white } }) => isOpen ? blue2 : white};
     height: 2px;
     position: absolute;
     right: 50%;
     top: 48px;
     transform: translateX(50%);
-    transition: background-color .15s ease-in-out;
+    transition: background-color .15s linear;
     width: 28px;
-
-    ${({ theme: { queries } }) => queries.md`
-      background-color: ${({ isOpen, theme: { blue2, white } }) => isOpen ? blue2 : white};
-    `};
 
     ::after,
     ::before {
@@ -58,7 +47,7 @@ export const NavBarHamburger = styled.div`
       top: 0;
       transform: ${({ isOpen }) => isOpen ? 'translateY(0) rotate(-45deg)' : 'translateY(-7px)'};
       transform-origin: center;
-      transition: transform .15s ease-in-out;
+      transition: transform .15s linear;
       width: ${({ isOpen }) => isOpen ? '100%' : '1rem'};
     }
 
@@ -72,15 +61,11 @@ export const NavBarHamburger = styled.div`
 export const NavBarText = styled.div`
   align-items: center;
   color: ${({ theme: { white } }) => white};
-  display: none;
+  display: flex;
   font-size: .5625rem;
   padding: 0 0 1.875rem 0;
   text-orientation: mixed;
   writing-mode: vertical-rl;
-
-  ${({ theme: { queries } }) => queries.sm`
-    display: flex;
-  `};
 `
 
 export const Nav = styled.div`
@@ -126,7 +111,7 @@ export const NavFootNote = styled.div`
   ::before {
     background-color: ${({ theme: { white } }) => rgba(white, 0.4)};
     content: '';
-    height: .25rem;
+    height: 2px;
     position: absolute;
     right: 0;
     top: -2rem;

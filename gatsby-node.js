@@ -40,8 +40,9 @@ exports.createPages = ({ actions, graphql }) => {
         ),
         // additional data can be passed via context
         context: {
-          id,
-        },
+          info: JSON.stringify(edge.node),
+          id
+        }
       })
     })
   })

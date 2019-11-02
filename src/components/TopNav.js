@@ -1,90 +1,44 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { Container, Row, Col, Visible, Hidden } from 'react-awesome-styled-grid'
+import { Container, Row, Col } from 'react-awesome-styled-grid'
+import { LogotypeB, LogotypeW, PhoneB, PhoneW } from '../components/SVG'
 import * as styled from '../components/styled/TopNav'
 
-const variants = {
-  show: {
-    transition: {
-      staggerChildren: 0.25
-    }
-  },
-  hide: {
-    staggerDirection: -1
-  }
-}
-
-const listVariants = {
-  show: {
-    transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.2
-    }
-  },
-  hide: {
-    staggerDirection: -1
-  }
-}
-
-const itemVariants = {
-  show: {
-    y: 0,
-    opacity: 1
-  },
-  hide: {
-    y: -50,
-    opacity: 0
-  }
-}
-
-const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: { logo } }, dark, open }) => (
-  <styled.TopNav variants={variants}>
+const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: { topNavTel } }, dark, show, isOpen, toggleOpen }) => (
+  <styled.TopNav show={show} isOpen={isOpen}>
     <Container>
       <Row>
-        <Col xs={2} sm={1} offset={{ xs: 1, sm: 1, md: 1 }} md={1}>
-          <styled.TopNavLogo variants={itemVariants}>
+        <Col xs={1} sm={1} md={1}>
+          <styled.TopNavHamburgerWrapper>
+            <styled.TopNavHamburger isOpen={isOpen} onClick={toggleOpen}>
+              <span />
+            </styled.TopNavHamburger>
+          </styled.TopNavHamburgerWrapper>
+        </Col>
+        <Col xs={2} sm={1} md={1}>
+          <styled.TopNavLogo>
             <styled.TopNavLogoLink to='/'>
-              {!open
-                ? (
-                  <img src={dark ? logo[0].variant : logo[1].variant} height={14} alt='Eskon logo' />
-                )
-                : (
-                  <img src={logo[1].variant} height={14} alt='Eskon logo' />
-                )}
+              {dark ? <LogotypeB /> : <LogotypeW />}
             </styled.TopNavLogoLink>
           </styled.TopNavLogo>
         </Col>
-        {!open && (
-          <Hidden xs sm>
-            <Col md={7} offset={{ md: 1 }}>
-              <styled.TopNavList variants={listVariants}>
-                {pages.filter(({ node: { frontmatter: { templateKey } } }) => templateKey !== 'index-page').map(({ node: page }) => (
-                  <styled.TopNavItem key={page.id} variants={itemVariants}>
-                    <styled.TopNavLink dark={dark} to={page.fields.slug}>
-                      {page.frontmatter.title}
-                    </styled.TopNavLink>
-                  </styled.TopNavItem>
-                ))}
-              </styled.TopNavList>
-            </Col>
-          </Hidden>
-        )}
-        <Visible xs sm>
-          <Col xs={1} offset={{ sm: 5 }} sm={1}>
-            <styled.TopNavLogoSecondary variants={itemVariants}>
-              <img src={dark ? logo[4].variant : logo[5].variant} height={30} alt='Eskon logo' />
-            </styled.TopNavLogoSecondary>
-          </Col>
-        </Visible>
-        {!open && (
-          <Hidden xs sm>
-            <Col md={2}>
-              <styled.TopNavPhone dark={dark} variants={itemVariants}>
-                Telefon
-              </styled.TopNavPhone>
-            </Col>
-          </Hidden>
-        )}
+        <Col xs={0} md={7} offset={{ md: 1 }}>
+          <styled.TopNavList>
+            {pages.filter(({ node: { frontmatter: { templateKey } } }) => templateKey !== 'index-page').map(({ node: page }) => (
+              <styled.TopNavItem key={page.id}>
+                <styled.TopNavLink dark={dark} to={page.fields.slug}>
+                  {page.frontmatter.title}
+                </styled.TopNavLink>
+              </styled.TopNavItem>
+            ))}
+          </styled.TopNavList>
+        </Col>
+        <Col xs={4} sm={8} md={2}>
+          <styled.TopNavPhone dark={dark}>
+            {dark ? <PhoneB /> : <PhoneW />}
+            {topNavTel}
+          </styled.TopNavPhone>
+        </Col>
       </Row>
     </Container>
   </styled.TopNav>
@@ -111,9 +65,7 @@ export default props => (
           }
         }
         globalJson {
-          logo {
-            variant
-          }
+          topNavTel
         }
       }
     `}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { LogoW } from '../SVG'
 import * as styled from '../styled/CircularText'
 
 const CircularText = ({ text = 'eskon est. 2008 dobrze zbudowane ', data: { globalJson: { logo } } }) => {
@@ -16,22 +16,11 @@ const CircularText = ({ text = 'eskon est. 2008 dobrze zbudowane ', data: { glob
           {letters[index]}
         </styled.CircularTextNode>
       ))}
-      <styled.CircularTextImage src={logo[5].variant} />
+      <styled.CircularTextImage>
+        <LogoW />
+      </styled.CircularTextImage>
     </styled.CircularText>
   )
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query CircularTextQuery {
-        globalJson {
-          logo {
-            variant
-          }
-        }
-      }
-    `}
-    render={data => <CircularText data={data} />}
-  />
-)
+export default CircularText

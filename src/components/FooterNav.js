@@ -1,9 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
+import { LogoCombW } from '../components/SVG'
 import * as styled from './styled/Footer'
 
-const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { footer: { columns }, logo } } }) => {
+const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { footer: { columns } } } }) => {
   return (
     <styled.FooterWrapper>
       <Container>
@@ -36,7 +37,7 @@ const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { 
                 </Col>
               ))}
               <Col xs={4} md={2} offset={{ md: 3 }}>
-                <img src={logo[3].variant} alt='' style={{ width: '86px' }} />
+                <LogoCombW style={{ width: '86px' }} />
               </Col>
             </Row>
           </Col>
@@ -91,9 +92,6 @@ export default () => (
             columns {
               body
             }
-          }
-          logo {
-            variant
           }
         }
       }

@@ -18,11 +18,14 @@ export const CircularTextNode = styled.div`
   text-transform: uppercase;
 `
 
-export const CircularTextImage = styled.img`
-  display: block;
-  height: 36px;
-  position: absolute;
-  right: 50%;
-  top: 50%;
-  transform: translate(50%, -50%);
+export const CircularTextImage = styled.div`
+
+  img {
+    display: block;
+    height: 36px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
 `

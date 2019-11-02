@@ -25,17 +25,8 @@ const itemVariants = {
   }
 }
 
-const navVariants = {
-  open: {
-    x: 0
-  },
-  closed: {
-    x: '-100%'
-  }
-}
-
 export const NavBar = ({ isOpen, show, toggleOpen }) => (
-  <styled.NavBar show={show} onClick={() => toggleOpen()}>
+  <styled.NavBar show={show} onClick={toggleOpen}>
     <styled.NavBarHamburger isOpen={isOpen}>
       <span />
     </styled.NavBarHamburger>

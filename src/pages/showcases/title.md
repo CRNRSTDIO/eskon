@@ -1,5 +1,0 @@
----
-template: showcase
-title: Title
----
-

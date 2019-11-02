@@ -21,11 +21,9 @@ collections:
             name: 'site_title'
             widget: string
             default: Eskon
-          - label: Logo variants
-            name: logo
-            widget: list
-            fields:
-              - {label: Variant, name: variant, widget: image}
+          - label: Top Nav phone
+            name: topNavTel
+            widget: string
           - label: Showcase settings
             name: showcase
             widget: object
