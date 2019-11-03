@@ -2,7 +2,7 @@ import React from 'react'
 import { LogoW } from '../SVG'
 import * as styled from '../styled/CircularText'
 
-const CircularText = ({ text = 'eskon est. 2008 dobrze zbudowane ', data: { globalJson: { logo } } }) => {
+const CircularText = ({ text = 'eskon est. 2008 dobrze zbudowane ' }) => {
   const letters = [...text]
   const range = Array.from({ length: Math.ceil((360 + 1) / (360 / letters.length)) }, (_, i) => i * (360 / letters.length))
 

@@ -51,11 +51,11 @@ const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest 
           </Col>
           {image && (
             <Col xs={1} sm={2} offset={{ sm: 1, md: 1 }} md={4}>
-              <ImageAnimated>
-                <styled.LandingImageWrapper>
+              <styled.LandingImageWrapper>
+                <ImageAnimated>
                   <Img fluid={image.childImageSharp.fluid} alt='' />
-                </styled.LandingImageWrapper>
-              </ImageAnimated>
+                </ImageAnimated>
+              </styled.LandingImageWrapper>
             </Col>
           )}
         </Row>

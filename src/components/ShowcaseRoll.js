@@ -41,10 +41,11 @@ const ShowcaseRoll = ({
     globalJson: { showcase: { front_limit } },
     markdownRemark: { frontmatter: { title }, fields: { slug } }
   },
-  nested
+  nested,
+  exclude
 }) => {
   const state = useState(0)
-  const [komercyjne, podKlucz] = items.reduce((arr, item) => {
+  const [komercyjne, podKlucz] = items.filter(({ node: { id } }) => id !== exclude).reduce((arr, item) => {
     arr[item.node.frontmatter.category === 'Komercyjne' ? 0 : 1].push(item)
 
     return arr
@@ -130,7 +131,7 @@ const ShowcaseRoll = ({
   )
 }
 
-export default ({ nested }) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query ShowcaseRollQuery {
@@ -173,6 +174,6 @@ export default ({ nested }) => (
         }
       }
       `}
-    render={data => <ShowcaseRoll data={data} nested={nested} />}
+    render={data => <ShowcaseRoll data={data} {...props} />}
   />
 )

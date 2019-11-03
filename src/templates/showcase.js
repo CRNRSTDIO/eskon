@@ -10,9 +10,11 @@ import Columns from '../components/styled/Columns'
 import Paragraph from '../components/styled/Paragraph'
 import Accordions from '../components/Accordions'
 import Count from '../components/Count'
+import ShowcaseRoll from '../components/ShowcaseRoll'
 import * as styled from '../components/styled/Showcase'
 
 export const ShowcaseTemplate = ({
+  id,
   title,
   tags,
   image,
@@ -253,6 +255,7 @@ export const ShowcaseTemplate = ({
           ))}
         </styled.Section09>
       </Section>
+      <ShowcaseRoll exclude={id} nested />
     </Layout>
   </Theme>
 )
@@ -261,13 +264,14 @@ export default ({ data }) => {
   const { markdownRemark } = data
 
   return (
-    <ShowcaseTemplate {...markdownRemark.frontmatter} />
+    <ShowcaseTemplate id={markdownRemark.id} {...markdownRemark.frontmatter} />
   )
 }
 
 export const showcaseQuery = graphql`
   query ShowcaseById($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      id
       frontmatter {
         title
         tags {

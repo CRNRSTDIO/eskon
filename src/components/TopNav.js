@@ -5,20 +5,23 @@ import { LogotypeB, LogotypeW, PhoneB, PhoneW } from '../components/SVG'
 import * as styled from '../components/styled/TopNav'
 
 const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: { topNavTel } }, dark, show, isOpen, toggleOpen }) => (
-  <styled.TopNav show={show} isOpen={isOpen}>
+  <styled.TopNav dark={dark} show={show} isOpen={isOpen}>
     <Container>
       <Row>
         <Col xs={1} sm={1} md={1}>
           <styled.TopNavHamburgerWrapper>
-            <styled.TopNavHamburger isOpen={isOpen} onClick={toggleOpen}>
-              <span />
+            <styled.TopNavHamburger dark={dark} isOpen={isOpen} onClick={toggleOpen}>
+              <span dark={dark} />
             </styled.TopNavHamburger>
           </styled.TopNavHamburgerWrapper>
         </Col>
         <Col xs={2} sm={1} md={1}>
           <styled.TopNavLogo>
             <styled.TopNavLogoLink to='/'>
-              {dark ? <LogotypeB /> : <LogotypeW />}
+              {dark
+                ? isOpen ? <LogotypeW /> : <LogotypeB />
+                : <LogotypeW />
+              }
             </styled.TopNavLogoLink>
           </styled.TopNavLogo>
         </Col>

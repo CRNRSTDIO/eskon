@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 const Heading = styled.h1`
   color: ${({ inherit, dark, theme: { white, grey6 } }) => inherit ? 'inherit' : dark ? grey6 : white};
   font-family: 'Noway';
-  margin: 0 0 1rem;
+  margin: auto 0 1rem;
   position: relative;
   white-space: pre-line;
   z-index: 2;

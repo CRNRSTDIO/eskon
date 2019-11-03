@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Section01 = styled.section`
+  margin: 0 auto 200px;
   position: relative;
 
   ::after {

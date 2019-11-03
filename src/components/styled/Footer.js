@@ -153,6 +153,13 @@ export const FooterCopy = styled.div`
   `};
 `
 
+export const FooterLogo = styled.div`
+
+  img {
+    width: 5.375rem;
+  }
+`
+
 export const FooterCopyItem = styled.span`
   color: ${({ theme: { grey3 } }) => grey3};
   display: block;

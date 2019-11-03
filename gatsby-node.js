@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
@@ -40,7 +39,6 @@ exports.createPages = ({ actions, graphql }) => {
         ),
         // additional data can be passed via context
         context: {
-          info: JSON.stringify(edge.node),
           id
         }
       })

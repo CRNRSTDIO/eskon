@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 export const TopNav = styled.div`
-  background-color: ${({ isOpen, theme: { blue2 } }) => isOpen ? 'transparent' : blue2};
+  background-color: ${({ isOpen, dark, theme: { blue2, white } }) => !dark ? isOpen ? 'transparent' : blue2 : isOpen ? 'transparent' : white};
   left: 0;
   padding: .75rem 0;
   pointer-events: none;
@@ -38,7 +38,10 @@ export const TopNavHamburger = styled.div`
   top: 0;
 
   span {
-    background-color: ${({ isOpen, theme: { blue1, white } }) => isOpen ? blue1 : white};
+    background-color: ${({ dark, isOpen, theme: { blue2, white } }) => dark
+      ? isOpen ? 'transparent' : blue2
+      : isOpen ? 'transparent' : white
+    };
     height: .125rem;
     position: absolute;
     right: 50%;
@@ -49,7 +52,10 @@ export const TopNavHamburger = styled.div`
 
     ::after,
     ::before {
-      background-color: ${({ theme: { white } }) => white};
+      background-color: ${({ dark, isOpen, theme: { blue2, white } }) => dark
+        ? isOpen ? white : blue2
+        : white
+      };
       content: '';
       height: .125rem;
       left: 0;

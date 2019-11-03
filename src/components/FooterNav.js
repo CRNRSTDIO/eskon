@@ -37,7 +37,9 @@ const FooterNav = ({ data: { allMarkdownRemark: { edges: pages }, globalJson: { 
                 </Col>
               ))}
               <Col xs={4} md={2} offset={{ md: 3 }}>
-                <LogoCombW style={{ width: '86px' }} />
+                <styled.FooterLogo>
+                  <LogoCombW />
+                </styled.FooterLogo>
               </Col>
             </Row>
           </Col>
