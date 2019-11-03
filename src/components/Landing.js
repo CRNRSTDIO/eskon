@@ -10,7 +10,7 @@ import Columns from './styled/Columns'
 import IndexBox from './IndexBox'
 import ImageAnimated from '../components/ImageAnimated'
 
-const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest }) => {
+const Landing = ({ scrollTo, heading, background, body, cta, box01, box02, image, ...rest }) => {
   const Hoverable = () => (
     <Col xs={4} sm={8} md={5}>
       <IndexBox alternate {...box02} />
@@ -18,6 +18,7 @@ const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest 
   )
 
   const [hoverable, hovered] = useHover(Hoverable)
+  const scrollToRef = () => scrollTo.current.scrollIntoView({ behavior: 'smooth' })
 
   return (
     <styled.Landing>
@@ -39,11 +40,20 @@ const Landing = ({ heading, background, body, cta, box01, box02, image, ...rest 
                     hoverable
                   )}
                   {body && (
-                    <Col xs={4} md={image ? 12 : 6} offset={{ md: image ? 0 : 1 }}>
-                      <Columns>
-                        <Paragraph {...rest}>{body}</Paragraph>
-                      </Columns>
-                    </Col>
+                    <>
+                      <Col xs={4} md={image ? 12 : 6} offset={{ md: image ? 0 : 1 }}>
+                        <Columns>
+                          <Paragraph {...rest}>{body}</Paragraph>
+                        </Columns>
+                      </Col>
+                      {!image && (
+                        <Col xs={4} md={6} offset={{ md: 1 }}>
+                          <styled.LandingButtonWrapper>
+                            <styled.LandingButton onClick={scrollToRef}>Dowiedz się więcej</styled.LandingButton>
+                          </styled.LandingButtonWrapper>
+                        </Col>
+                      )}
+                    </>
                   )}
                 </Row>
               </Col>

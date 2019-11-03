@@ -10,7 +10,7 @@ import FooterNav from '../FooterNav'
 const Layout = ({ nocta, darktop, children }) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const [showOnScroll, setShowOnScroll] = useState(false)
-  const ref = useRef()
+  const ref = useRef(null)
   const { x, y } = useScroll(ref)
 
   useEffect(() => {

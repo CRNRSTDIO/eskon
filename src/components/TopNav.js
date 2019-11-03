@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import { LogotypeB, LogotypeW, PhoneB, PhoneW } from '../components/SVG'
+import { LogotypeB, LogotypeW, PhoneB, PhoneW, LogoB, LogoW } from '../components/SVG'
 import * as styled from '../components/styled/TopNav'
 
 const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: { topNavTel } }, dark, show, isOpen, toggleOpen }) => (
@@ -16,17 +16,17 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
           </styled.TopNavHamburgerWrapper>
         </Col>
         <Col xs={2} sm={1} md={1}>
-          <styled.TopNavLogo>
+          <styled.TopNavLogotype>
             <styled.TopNavLogoLink to='/'>
               {dark
                 ? isOpen ? <LogotypeW /> : <LogotypeB />
                 : <LogotypeW />
               }
             </styled.TopNavLogoLink>
-          </styled.TopNavLogo>
+          </styled.TopNavLogotype>
         </Col>
         <Col xs={0} md={7} offset={{ md: 1 }}>
-          <styled.TopNavList>
+          <styled.TopNavList isOpen={isOpen}>
             {pages.filter(({ node: { frontmatter: { templateKey } } }) => templateKey !== 'index-page').map(({ node: page }) => (
               <styled.TopNavItem key={page.id}>
                 <styled.TopNavLink dark={dark} to={page.fields.slug}>
@@ -35,9 +35,12 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
               </styled.TopNavItem>
             ))}
           </styled.TopNavList>
+          <styled.TopNavLogo isOpen={isOpen}>
+            {dark ? <LogoB /> : <LogoW />}
+          </styled.TopNavLogo>
         </Col>
         <Col xs={4} sm={8} md={2}>
-          <styled.TopNavPhone dark={dark}>
+          <styled.TopNavPhone dark={dark} isOpen={isOpen}>
             {dark ? <PhoneB /> : <PhoneW />}
             {topNavTel}
           </styled.TopNavPhone>

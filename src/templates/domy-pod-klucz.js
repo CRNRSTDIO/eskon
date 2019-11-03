@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { graphql } from 'gatsby'
 import Theme from '../components/Theme'
 import Layout from '../components/Layout'
@@ -20,69 +20,74 @@ export const DomyPodKluczTemplate = ({
   alt,
   domySection02,
   domySection03: table
-}) => (
-  <Theme>
-    <Layout>
-      <Landing
-        medium
-        background={landing.image.childImageSharp.fluid}
-        {...landing}
-        image={null}
-      />
-      <styled.Section01>
-        <Container>
-          <Row>
-            <Col xs={4} sm={6} md={3} offset={{ sm: 1, md: 1 }}>
-              <styled.Section01Text>
-                <Row>
-                  <Col xs={4}>
-                    <Heading dark regular as='h3'>{domySection01.heading}</Heading>
-                  </Col>
-                  <Col xs={4}>
-                    <Paragraph dark>{domySection01.body}</Paragraph>
-                  </Col>
-                </Row>
-              </styled.Section01Text>
-            </Col>
-            <Col xs={4} sm={6} md={6} offset={{ sm: 1, md: 1 }}>
-              <Accordions cols={2} accordions={domySection01.accordions} />
-            </Col>
-          </Row>
-        </Container>
-      </styled.Section01>
-      <Container>
-        <Row>
-          <Col xs={4}>
-            <Img fluid={image.childImageSharp.fluid} alt={alt} />
-          </Col>
-        </Row>
-      </Container>
-      <styled.Section02>
-        <Container>
-          <Row>
-            <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
-              <Heading dark regular as='h3'>{domySection02.heading}</Heading>
-            </Col>
-            <Col xs={4} sm={6} offset={{ sm: 1, md: 0 }} md={6}>
-              <Columns noline>
-                <Paragraph dark>{domySection02.body}</Paragraph>
-              </Columns>
-            </Col>
-          </Row>
-        </Container>
-      </styled.Section02>
-      <Section>
+}) => {
+  const ref = useRef()
+
+  return (
+    <Theme>
+      <Layout>
+        <Landing
+          scrollTo={ref}
+          medium
+          background={landing.image.childImageSharp.fluid}
+          {...landing}
+          image={null}
+        />
+        <styled.Section01 ref={ref}>
+          <Container>
+            <Row>
+              <Col xs={4} sm={6} md={3} offset={{ sm: 1, md: 1 }}>
+                <styled.Section01Text>
+                  <Row>
+                    <Col xs={4}>
+                      <Heading dark regular as='h3'>{domySection01.heading}</Heading>
+                    </Col>
+                    <Col xs={4}>
+                      <Paragraph dark>{domySection01.body}</Paragraph>
+                    </Col>
+                  </Row>
+                </styled.Section01Text>
+              </Col>
+              <Col xs={4} sm={6} md={6} offset={{ sm: 1, md: 1 }}>
+                <Accordions cols={2} accordions={domySection01.accordions} />
+              </Col>
+            </Row>
+          </Container>
+        </styled.Section01>
         <Container>
           <Row>
             <Col xs={4}>
-              <Table {...table} />
+              <Img fluid={image.childImageSharp.fluid} alt={alt} />
             </Col>
           </Row>
         </Container>
-      </Section>
-    </Layout>
-  </Theme>
-)
+        <styled.Section02>
+          <Container>
+            <Row>
+              <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
+                <Heading dark regular as='h3'>{domySection02.heading}</Heading>
+              </Col>
+              <Col xs={4} sm={6} offset={{ sm: 1, md: 0 }} md={6}>
+                <Columns noline>
+                  <Paragraph dark>{domySection02.body}</Paragraph>
+                </Columns>
+              </Col>
+            </Row>
+          </Container>
+        </styled.Section02>
+        <Section>
+          <Container>
+            <Row>
+              <Col xs={4}>
+                <Table {...table} />
+              </Col>
+            </Row>
+          </Container>
+        </Section>
+      </Layout>
+    </Theme>
+  )
+}
 
 export default ({ data }) => {
   const { markdownRemark } = data

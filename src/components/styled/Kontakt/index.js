@@ -52,7 +52,7 @@ export const Section00Helmet = styled(Img)`
 
 export const Section01Wrapper = styled.div`
   background-color: ${({ theme: { white } }) => white};
-  padding: 3rem 0 0;
+  padding: 3rem 0 1rem;
 `
 
 export const Section01 = styled.section`

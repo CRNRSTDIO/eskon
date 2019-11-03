@@ -14,10 +14,10 @@ export const TopNav = styled.div`
 
   ${({ theme: { queries } }) => queries.sm`
     background-color: transparent;
-    opacity: ${({ show }) => show ? '1' : '0'};
+    opacity: ${({ show, isOpen }) => isOpen ? '1' : show ? '1' : '0'};
     padding: 0;
     top: 2.625rem;
-    transform: ${({ show }) => show ? 'translateY(0)' : 'translateY(-100%)'};
+    transform: ${({ show, isOpen }) => isOpen ? 'translateY(0)' : show ? 'translateY(0)' : 'translateY(-100%)'};
   `};
 `
 export const TopNavHamburgerWrapper = styled.div`
@@ -74,7 +74,7 @@ export const TopNavHamburger = styled.div`
   }
 `
 
-export const TopNavLogo = styled.div`
+export const TopNavLogotype = styled.div`
   align-items: center;
   color: ${({ theme: { white } }) => white};
   display: flex;
@@ -84,6 +84,23 @@ export const TopNavLogo = styled.div`
 
   img {
     height: 1rem;
+  }
+`
+
+export const TopNavLogo = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+
+  ${({ theme: { queries } }) => queries.md`
+    display: none;
+  `};
+
+  img {
+    opacity: ${({ isOpen }) => isOpen ? '0' : '1'};
+    height: 26px;
+    transition: opacity .15s linear;
   }
 `
 
@@ -106,8 +123,8 @@ export const TopNavPhone = styled.div`
   letter-spacing: 1px;
   text-align: right;
 
-  ${({ theme: { queries } }) => queries.sm`
-    display: flex;
+  ${({ theme: { queries } }) => queries.md`
+    display: ${({ isOpen }) => isOpen ? 'none' : 'flex'};
   `};
 
   img {
@@ -126,8 +143,8 @@ export const TopNavList = styled.ul`
   margin: 0;
   padding: 0;
 
-  ${({ theme: { queries } }) => queries.sm`
-    display: flex;
+  ${({ theme: { queries } }) => queries.md`
+    display: ${({ isOpen }) => isOpen ? 'none' : 'flex'};
   `};
 `
 

@@ -10,6 +10,7 @@ import Section from '../components/styled/Section'
 import Landing from '../components/Landing'
 import Cards from '../components/Cards'
 import ImageAnimated from '../components/ImageAnimated'
+import CircularText from '../components/CircularText'
 import * as styled from '../components/styled/ONas'
 
 export const ONasTemplate = ({
@@ -28,9 +29,11 @@ export const ONasTemplate = ({
         <Container>
           <Row>
             <Col xs={3} sm={4} offset={{ sm: 1, md: 1 }} md={4}>
-              <ImageAnimated>
-                <Img fluid={oSection02.image.childImageSharp.fluid} alt={oSection02.alt} />
-              </ImageAnimated>
+              <styled.Section01Image>
+                <ImageAnimated>
+                  <Img fluid={oSection02.image.childImageSharp.fluid} alt={oSection02.alt} />
+                </ImageAnimated>
+              </styled.Section01Image>
             </Col>
             <Col xs={4} sm={4} offset={{ sm: 1, md: 1 }} md={3}>
               <styled.Section01Text>
@@ -46,6 +49,9 @@ export const ONasTemplate = ({
             </Col>
           </Row>
         </Container>
+        <styled.Section01CircularText>
+          <CircularText blue />
+        </styled.Section01CircularText>
       </styled.Section01>
       <Section>
         <Cards {...oSection03} />

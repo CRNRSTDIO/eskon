@@ -12,13 +12,16 @@ export const NavBar = styled.div`
   justify-content: space-between;
   pointer-events: none;
   position: fixed;
-  transform: ${({ show }) => show ? 'translateX(0)' : 'translateX(-100%)'};
   transition: transform .15s linear;
   width: 3.75rem;
   z-index: 2;
 
   ${({ theme: { queries } }) => queries.sm`
     display: flex;
+  `};
+
+  ${({ theme: { queries } }) => queries.md`
+    transform: ${({ show }) => show ? 'translateX(0)' : 'translateX(-100%)'};
   `};
 `
 
