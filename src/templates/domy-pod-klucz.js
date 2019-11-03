@@ -11,9 +11,11 @@ import Landing from '../components/Landing'
 import Img from 'gatsby-image'
 import Accordions from '../components/Accordions'
 import Table from '../components/Table'
+import Seo from '../components/seo'
 import * as styled from '../components/styled/DomyPodKlucz'
 
 export const DomyPodKluczTemplate = ({
+  title: page,
   landing,
   domySection01,
   image,
@@ -25,6 +27,7 @@ export const DomyPodKluczTemplate = ({
 
   return (
     <Theme>
+      <Seo page={page} />
       <Layout>
         <Landing
           scrollTo={ref}
@@ -101,6 +104,7 @@ export const domyPodKluczQuery = graphql`
   query DomyPodKlucz {
     markdownRemark(frontmatter: { templateKey: { eq: "domy-pod-klucz" } }) {
       frontmatter {
+        title,
         landing {
           heading
           body

@@ -17,10 +17,16 @@ collections:
         description: General site settings
         file: src/global/settings.json
         fields:
-          - label: Global title
-            name: 'site_title'
-            widget: string
-            default: Eskon
+          - label: SEO
+            name: seo
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: descr
+                widget: text
           - label: Top Nav phone
             name: topNavTel
             widget: string

@@ -26,7 +26,7 @@ const FooterCta = ({ data: { globalJson: { footer_cta: { heading, body, cta } } 
                     <styled.FooterBoxLogo>
                       <Icon name='logo' height='20px' />
                     </styled.FooterBoxLogo>
-                    <Link to='/'>{cta}</Link>
+                    <Link to='/kontakt'>{cta}</Link>
                   </styled.FooterBox>
                 </Col>
               </Row>

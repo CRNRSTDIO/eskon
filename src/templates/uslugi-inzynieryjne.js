@@ -8,9 +8,11 @@ import Accordion from '../components/Accordions'
 import Landing from '../components/Landing'
 import Carousel from '../components/Carousel'
 import ShowcaseRoll from '../components/ShowcaseRoll'
+import Seo from '../components/seo'
 import * as styled from '../components/styled/UslugiInzynieryjne'
 
 export const UslugiInzynieryjneTemplate = ({
+  title: page,
   landing,
   uslugiSection01,
   uslugiSection02
@@ -19,6 +21,7 @@ export const UslugiInzynieryjneTemplate = ({
 
   return (
     <Theme>
+      <Seo page={page} />
       <Layout>
         <Landing
           scrollTo={ref}
@@ -76,6 +79,7 @@ export const uslugiInzynieryjneQuery = graphql`
   query UslugiInzynieryjne {
     markdownRemark(frontmatter: { templateKey: { eq: "uslugi-inzynieryjne" } }) {
       frontmatter {
+        title
         landing {
           heading
           image {

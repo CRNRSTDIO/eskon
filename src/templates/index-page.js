@@ -12,8 +12,10 @@ import Solutions from '../components/IndexSolutions'
 import Landing from '../components/Landing'
 import ShowcaseRoll from '../components/ShowcaseRoll'
 import ImageAnimated from '../components/ImageAnimated'
+import Seo from '../components/seo'
 
 export const IndexTemplate = ({
+  title: page,
   landing,
   indexSection01,
   image,
@@ -23,6 +25,7 @@ export const IndexTemplate = ({
   indexSection04
 }) => (
   <Theme>
+    <Seo page={page} />
     <Layout>
       <Landing
         huge
@@ -128,6 +131,7 @@ export const indexPageQuery = graphql`
   query IndexPage {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
+        title,
         landing {
           heading
           box01 {

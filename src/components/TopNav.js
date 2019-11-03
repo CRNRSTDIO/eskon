@@ -40,7 +40,7 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
           </styled.TopNavLogo>
         </Col>
         <Col xs={4} sm={8} md={2}>
-          <styled.TopNavPhone dark={dark} isOpen={isOpen}>
+          <styled.TopNavPhone href={`tel:${topNavTel}}`} dark={dark} isOpen={isOpen}>
             {dark ? <PhoneB /> : <PhoneW />}
             {topNavTel}
           </styled.TopNavPhone>

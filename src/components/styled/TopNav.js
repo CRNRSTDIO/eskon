@@ -112,7 +112,7 @@ export const TopNavLogoLink = styled(Link)`
   pointer-events: all;
 `
 
-export const TopNavPhone = styled.div`
+export const TopNavPhone = styled.a`
   align-items: center;
   color: ${({ dark, theme: { dark1, white } }) => dark ? dark1 : white};
   display: none;
@@ -121,7 +121,9 @@ export const TopNavPhone = styled.div`
   height: 100%;
   justify-content: flex-end;
   letter-spacing: 1px;
+  pointer-events: all;
   text-align: right;
+  text-decoration: none;
 
   ${({ theme: { queries } }) => queries.md`
     display: ${({ isOpen }) => isOpen ? 'none' : 'flex'};

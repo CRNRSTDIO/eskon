@@ -7,9 +7,11 @@ import Theme from '../components/Theme'
 import Layout from '../components/Layout'
 import MarkdownContent from '../components/MarkdownContent'
 import KontaktAccordion from '../components/KontaktAccordion'
+import Seo from '../components/seo'
 import * as styled from '../components/styled/Kontakt'
 
 export const Kontakt = ({
+  title: page,
   kontaktSection01,
   kontaktSection02
 }) => {
@@ -20,7 +22,6 @@ export const Kontakt = ({
       .join('&')
   }
   const onSubmit = data => {
-    console.log(encode({ ...data }))
     axios({
       method: 'post',
       url: '/kontakt',
@@ -36,6 +37,7 @@ export const Kontakt = ({
 
   return (
     <Theme>
+      <Seo page={page} />
       <Layout nocta darktop>
         <styled.Section00>
           <Container>
@@ -260,6 +262,7 @@ export const kontaktQuery = graphql`
   query KontaktQuery {
     markdownRemark(frontmatter: { templateKey: { eq: "kontakt" } }) {
       frontmatter {
+        title,
         kontaktSection01 {
           heading
           body

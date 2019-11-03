@@ -11,6 +11,7 @@ import Paragraph from '../components/styled/Paragraph'
 import Accordions from '../components/Accordions'
 import Count from '../components/Count'
 import ShowcaseRoll from '../components/ShowcaseRoll'
+import Seo from '../components/seo'
 import * as styled from '../components/styled/Showcase'
 
 export const ShowcaseTemplate = ({
@@ -30,6 +31,7 @@ export const ShowcaseTemplate = ({
   showcaseSection09
 }) => (
   <Theme>
+    <Seo page={title} />
     <Layout>
       <Section>
         <styled.Section00>

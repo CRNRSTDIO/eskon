@@ -11,14 +11,17 @@ import Landing from '../components/Landing'
 import Cards from '../components/Cards'
 import ImageAnimated from '../components/ImageAnimated'
 import CircularText from '../components/CircularText'
+import Seo from '../components/seo'
 import * as styled from '../components/styled/ONas'
 
 export const ONasTemplate = ({
+  title: page,
   oSection01,
   oSection02,
   oSection03
 }) => (
   <Theme>
+    <Seo page={page} />
     <Layout darktop>
       <Landing
         medium
@@ -72,6 +75,7 @@ export const oNasQuery = graphql`
   query ONas {
     markdownRemark(frontmatter: { templateKey: { eq: "o-nas" } }) {
       frontmatter {
+        title,
         oSection01 {
           heading
           body
