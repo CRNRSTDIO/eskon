@@ -62,9 +62,8 @@ collections:
       preview: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: TemplateKey
+      - label: templateKey
         name: templateKey
-        required: true
         widget: hidden
         default: showcase
       - label: Title
