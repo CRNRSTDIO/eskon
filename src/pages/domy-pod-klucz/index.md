@@ -9,6 +9,7 @@ landing:
     przyszłego domu od fundamentów po wykończenie - gwarantując, że cały proces
     budowy będzie kontrolowany.
 
+
     Oszczędzimy zarówno Twój czas jak i pieniądze poprzez organizację i
     optymalizacje kosztów.
   cta: Dowiedz się więcej
@@ -22,6 +23,12 @@ domySection01:
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
       heading: Doradztwo i opt.
+    - body: Geologia
+      heading: Geologia
+    - body: Projekt
+      heading: Projekt
+    - body: Formalności
+      heading: Formalności
     - body: >-
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -45,12 +52,14 @@ domySection01:
 
         * Stolarka
       heading: Proces budowlany
-    - body: Geologia
-      heading: Geologia
-    - body: Projekt
-      heading: Projekt
-    - body: Formalności
-      heading: Formalności
+    - body: >-
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      heading: Wykończenie
+    - body: >-
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      heading: Prace zewnętrzne
   body: >
     Stworzymy dla Ciebie dom dostosowany do Twoich potrzeb. Poznaj wszystkie
     etapy, które są w zakresie naszej kompleksowej usługi domu pod klucz.
@@ -104,4 +113,44 @@ domySection03:
           - big: 70 kWh
             image: /img/image_svg12.svg
             text: m2 na rok
+    - heading: Koszty ogrzewania (~200m2)
+      lhs:
+        item:
+          - big: 4-5 tys. zł
+            image: /img/image_svg12.svg
+            text: rocznie
+      rhs:
+        item:
+          - big: 2-3 tys. zł
+            image: /img/image_svg11.svg
+            text: rocznie
+    - heading: Izolacja akustyczna
+      lhs:
+        item:
+          - big: ''
+            image: /img/bar-2.svg
+            text: Standardowa
+      rhs:
+        item:
+          - image: /img/bar-3.svg
+            text: Wysoka
+    - heading: Cyrkulacja powietrza
+      lhs:
+        item:
+          - image: /img/bar-1.svg
+            text: Ograniczona
+      rhs:
+        item:
+          - image: /img/bar-3.svg
+            text: Rekuperacja
+    - heading: Wpływ na środowisko
+      lhs:
+        item:
+          - image: /img/bar-2.svg
+            text: Standardowy
+      rhs:
+        item:
+          - image: /img/bar-0.svg
+            text: Bardzo niski
 ---
+

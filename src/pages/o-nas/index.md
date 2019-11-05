@@ -41,5 +41,18 @@ oSection03:
         magister inżynier
       image: /img/zlatan-2x.png
       name: Tata Siemiński
+    - alt: Opis zdjęcia
+      descr: |-
+        Architekt
+        magister inżynier
+      image: /img/rooney-00-2x.png
+      name: Marian Kowalski
+    - alt: Opis zdjęcia
+      descr: |-
+        Architekt
+        magister inżynier
+      image: /img/zlatan-2x.png
+      name: Marian Kowalski
   heading: Zespół Eskon
 ---
+

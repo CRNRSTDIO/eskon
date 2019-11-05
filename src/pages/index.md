@@ -22,8 +22,14 @@ landing:
     stawiane na czas
 indexSection01:
   alt: Opis zdjęcia
-  body: Body
-  heading: Heading
+  body: >-
+    Jesteśmy przedsiębiorstwem dostarczającym wszelkiej maści usługi budowlane.
+    Rozwiązujemy problemy konstrukcyjne zarówno prywatnych inwestorów jak i
+    klientów biznesowych. 
+  heading: |-
+    Nowoczesne rozwiązania 
+    dla Twojej firmy
+    i dla Twojego domu
   image: /img/some-solar-panels-on-the-roof-of-a-private-house-c2qx9nm-2x.png
 image: /img/housebuilding-1407462-2x.png
 alt: Opis zdjęcia
@@ -68,3 +74,4 @@ indexSection04:
       heading: Instalacje mediów
       icon: /img/image_svg14.svg
 ---
+

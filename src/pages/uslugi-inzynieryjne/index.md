@@ -23,6 +23,18 @@ uslugiSection01:
       heading: Diagnoza
     - body: Lorem ipsum
       heading: Konstrukcje stalowe
+    - body: Konstrukcje drewniane
+      heading: Konstrukcje drewniane
+    - body: Konstrukcje betonowe
+      heading: Konstrukcje betonowe
+    - body: Stany surowe
+      heading: Stany surowe
+    - body: Instalacje
+      heading: Instalacje
+    - body: Modernizacja obiektów
+      heading: Modernizacja obiektów
+    - body: Naprawa konstrukcji
+      heading: Naprawa konstrukcji
   heading: Nasze usługi dla biznesu
 uslugiSection02:
   carousel:
@@ -40,12 +52,20 @@ uslugiSection02:
         eirmod tempor invidunt ut labore et dolore magna
       linkText: Tomasz Koss
       name: Tomasz Koss
-    - body: Tomasz Koss
+    - body: >-
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum
       linkText: Tomasz Koss
       name: Tomasz Koss
     - body: >-
-        or sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut la
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum
       linkText: >-
         or sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
         invidunt ut la
@@ -54,3 +74,4 @@ uslugiSection02:
         invidunt ut la
   heading: Referencje
 ---
+
