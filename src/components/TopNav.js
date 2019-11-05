@@ -27,6 +27,7 @@ const TopNav = ({ data: { allMarkdownRemark: { edges: pages = [] }, globalJson: 
         </Col>
         <Col xs={0} md={7} offset={{ md: 1 }}>
           <styled.TopNavList isOpen={isOpen}>
+            {console.log(pages)}
             {pages.filter(({ node: { frontmatter: { templateKey } } }) => templateKey !== 'index-page').map(({ node: page }) => (
               <styled.TopNavItem key={page.id}>
                 <styled.TopNavLink dark={dark} to={page.fields.slug}>
@@ -55,7 +56,8 @@ export default props => (
     query={graphql`
       query TopNavQuery {
         allMarkdownRemark(
-          filter: { frontmatter: { templateKey: { ne: "showcase" } } }
+          filter: { frontmatter: { templateKey: { ne: "showcase" } } },
+          sort: {order: ASC, fields: frontmatter___sortOrder}
         ) {
           edges {
             node {
@@ -63,6 +65,7 @@ export default props => (
               frontmatter {
                 title
                 templateKey
+                sortOrder
               }
               fields {
                 slug

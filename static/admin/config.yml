@@ -171,7 +171,7 @@ collections:
             default: index-page
           - label: sortOrder
             name: sortOrder
-            widget: number
+            widget: hidden
             default: 1
           - label: Title
             name: title
@@ -250,7 +250,7 @@ collections:
             default: domy-pod-klucz
           - label: sortOrder
             name: sortOrder
-            widget: number
+            widget: hidden
             default: 2
           - label: Title
             name: title
@@ -348,7 +348,7 @@ collections:
             default: uslugi-inzynieryjne
           - label: sortOrder
             name: sortOrder
-            widget: number
+            widget: hidden
             default: 3
           - label: Title
             name: title
@@ -397,7 +397,7 @@ collections:
             default: realizacje
           - label: sortOrder
             name: sortOrder
-            widget: number
+            widget: hidden
             default: 4
           - label: Title
             name: title
@@ -413,7 +413,7 @@ collections:
             default: o-nas
           - label: sortOrder
             name: sortOrder
-            widget: number
+            widget: hidden
             default: 5
           - label: Title
             name: title
@@ -458,7 +458,7 @@ collections:
             default: kontakt
           - label: sortOrder
             name: sortOrder
-            widget: number
+            widget: hidden
             default: 6
           - label: Title
             name: title

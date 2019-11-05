@@ -62,7 +62,8 @@ export default () => (
     query={graphql`
       query NavQuery {
         allMarkdownRemark(
-          filter: { frontmatter: { templateKey: {ne: "showcase"} } }
+          filter: { frontmatter: { templateKey: {ne: "showcase"} } },
+          sort: {order: ASC, fields: frontmatter___sortOrder}
         ) {
           edges {
             node {
