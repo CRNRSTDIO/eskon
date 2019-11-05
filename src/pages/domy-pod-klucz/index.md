@@ -1,5 +1,6 @@
 ---
 templateKey: domy-pod-klucz
+sortOrder: 2
 title: Domy pod klucz
 landing:
   alt: Opis zdjęcia
@@ -104,4 +105,3 @@ domySection03:
             image: /img/image_svg12.svg
             text: m2 na rok
 ---
-

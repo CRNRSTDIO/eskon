@@ -1,5 +1,6 @@
 ---
 templateKey: uslugi-inzynieryjne
+sortOrder: 3
 title: Usługi inżynieryjne
 landing:
   alt: Opis zdjęcia
@@ -36,7 +37,7 @@ uslugiSection02:
       name: Tomasz Koss
     - body: >-
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna 
+        eirmod tempor invidunt ut labore et dolore magna
       linkText: Tomasz Koss
       name: Tomasz Koss
     - body: Tomasz Koss
@@ -53,4 +54,3 @@ uslugiSection02:
         invidunt ut la
   heading: Referencje
 ---
-

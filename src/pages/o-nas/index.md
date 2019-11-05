@@ -1,5 +1,6 @@
 ---
 templateKey: o-nas
+sortOrder: 5
 title: O nas
 oSection01:
   alt: Opis zdjęcia
@@ -42,4 +43,3 @@ oSection03:
       name: Tata Siemiński
   heading: Zespół Eskon
 ---
-

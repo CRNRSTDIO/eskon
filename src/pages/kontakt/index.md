@@ -1,5 +1,6 @@
 ---
 templateKey: kontakt
+sortOrder: 6
 title: Kontakt
 kontaktSection01:
   alt: Opis zdjęcia
@@ -18,4 +19,3 @@ kontaktSection02:
     - option: Usługi inżynieryjne dla przedsiębiorstw
     - option: Pozostałe
 ---
-

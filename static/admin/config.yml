@@ -169,6 +169,10 @@ collections:
             name: templateKey
             widget: hidden
             default: index-page
+          - label: sortOrder
+            name: sortOrder
+            widget: number
+            default: 1
           - label: Title
             name: title
             widget: string
@@ -244,6 +248,10 @@ collections:
             name: templateKey
             widget: hidden
             default: domy-pod-klucz
+          - label: sortOrder
+            name: sortOrder
+            widget: number
+            default: 2
           - label: Title
             name: title
             widget: string
@@ -338,6 +346,10 @@ collections:
             name: templateKey
             widget: hidden
             default: uslugi-inzynieryjne
+          - label: sortOrder
+            name: sortOrder
+            widget: number
+            default: 3
           - label: Title
             name: title
             widget: string
@@ -383,6 +395,10 @@ collections:
             name: templateKey
             widget: hidden
             default: realizacje
+          - label: sortOrder
+            name: sortOrder
+            widget: number
+            default: 4
           - label: Title
             name: title
             widget: string
@@ -395,6 +411,10 @@ collections:
             name: templateKey
             widget: hidden
             default: o-nas
+          - label: sortOrder
+            name: sortOrder
+            widget: number
+            default: 5
           - label: Title
             name: title
             widget: string
@@ -436,6 +456,10 @@ collections:
             name: templateKey
             widget: hidden
             default: kontakt
+          - label: sortOrder
+            name: sortOrder
+            widget: number
+            default: 6
           - label: Title
             name: title
             widget: string

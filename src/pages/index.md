@@ -1,5 +1,6 @@
 ---
 templateKey: index-page
+sortOrder: 1
 title: Strona główna
 landing:
   box01:
