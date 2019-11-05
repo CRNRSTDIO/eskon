@@ -102,6 +102,24 @@ domySection03:
             text: Dom pod klucz
           - image: /img/zasób-4.svg
             text: Termoizolacja
+          - image: /img/zasób-5.svg
+            text: Fotowoltaika
+          - image: /img/zasób-6.svg
+            text: Pompy Ciepła
+          - image: /img/zasób-7.svg
+            text: Rekuperacja
+          - image: /img/zasób-8.svg
+            text: |-
+              Domowa 
+              oczyszczalnia
+          - image: /img/zasób-9.svg
+            text: |-
+              Studnia 
+              głebinowa
+          - image: /img/zasób-10.svg
+            text: |-
+              Zbiorniki
+              deszczowe
     - heading: Zapotrzebowanie na ciepło
       lhs:
         item:
