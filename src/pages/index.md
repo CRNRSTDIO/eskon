@@ -16,7 +16,7 @@ landing:
     body: Doradztwo i usługi budowlane dla przemysłu i przedsiębiorstw
     cta: Czytaj więcej
     heading: Usługi Inżynieryjne
-    image: /img/solar-panels-on-house-px8nbjz-2x.png
+    image: /img/empty-steel-structure-building-pvbeuj4.jpg
   heading: |-
     Domy i konstrukcje
     stawiane na czas
